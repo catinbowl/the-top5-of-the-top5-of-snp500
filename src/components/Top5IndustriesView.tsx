@@ -94,7 +94,8 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
         {top5Sectors.map((sector) => {
           const isCollapsed = collapsedSectors[sector.name];
           const layout = layoutModes[sector.name] || 'table';
-          const isPositive = sector.avgChange >= 0;
+          const isTop5Positive = sector.avgChangeTop5 >= 0;
+          const isTop10Positive = sector.avgChangeTop10 >= 0;
 
           // Filter stocks by search query if present
           const q = searchQuery.toLowerCase().trim();
@@ -169,12 +170,22 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                     </div>
 
                     <div className="sector-metric-item">
-                      <span className="metric-label">Avg 1M Move</span>
+                      <span className="metric-label">Top 5 Avg 1M</span>
                       <span
-                        className={`metric-val font-mono ${isPositive ? 'text-green' : 'text-rose'}`}
+                        className={`metric-val font-mono ${isTop5Positive ? 'text-green' : 'text-rose'}`}
                       >
-                        {isPositive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
-                        {formatPercent(sector.avgChange)}
+                        {isTop5Positive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
+                        {formatPercent(sector.avgChangeTop5)}
+                      </span>
+                    </div>
+
+                    <div className="sector-metric-item">
+                      <span className="metric-label">Top 10 Avg 1M</span>
+                      <span
+                        className={`metric-val font-mono ${isTop10Positive ? 'text-green' : 'text-rose'}`}
+                      >
+                        {isTop10Positive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
+                        {formatPercent(sector.avgChangeTop10)}
                       </span>
                     </div>
                   </div>

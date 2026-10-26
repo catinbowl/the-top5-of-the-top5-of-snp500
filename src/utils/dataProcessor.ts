@@ -118,9 +118,16 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
     stocksInSector.sort((a, b) => b.marketCap - a.marketCap);
 
     const totalSectorMarketCap = stocksInSector.reduce((sum, s) => sum + s.marketCap, 0);
-    const avgChange = stocksInSector.length > 0
-      ? stocksInSector.reduce((sum, s) => sum + (s.perf1M ?? s.change), 0) / stocksInSector.length
-      : 0;
+
+    const calcAvgMove = (list: Stock[]): number => {
+      if (list.length === 0) return 0;
+      const sum = list.reduce((acc, s) => acc + (s.perf1M ?? s.change), 0);
+      return Number((sum / list.length).toFixed(2));
+    };
+
+    const avgChangeTop5 = calcAvgMove(stocksInSector.slice(0, 5));
+    const avgChangeTop10 = calcAvgMove(stocksInSector.slice(0, 10));
+    const avgChange = avgChangeTop5;
 
     // Sub-industries breakdown
     const indMap = new Map<string, { count: number; mcap: number }>();
@@ -206,7 +213,9 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
       rank: 0, // Assigned after sorting
       totalMarketCap: totalSectorMarketCap,
       stockCount: stocksInSector.length,
-      avgChange: Number(avgChange.toFixed(2)),
+      avgChange,
+      avgChangeTop5,
+      avgChangeTop10,
       shareOfSP500: totalSP500MarketCap > 0 ? Number(((totalSectorMarketCap / totalSP500MarketCap) * 100).toFixed(2)) : 0,
       stocks: stocksInSector,
       top10Stocks,
