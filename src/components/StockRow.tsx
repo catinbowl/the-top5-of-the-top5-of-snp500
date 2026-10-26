@@ -79,7 +79,9 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
                   className="quarter-status-pill entered font-mono"
                   title={`Entered Top 5 this quarter (was #${stock.prevQuarterRankInSector} in prior quarter)`}
                 >
-                  <ArrowUpRight size={10} /> ENTERED TOP 5
+                  <ArrowUpRight size={10} />
+                  <span className="pill-text-desktop">ENTERED TOP 5</span>
+                  <span className="pill-text-mobile">IN</span>
                 </span>
               )}
               {stock.top5QuarterStatus === 'exited' && (
@@ -87,13 +89,16 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
                   className="quarter-status-pill exited font-mono"
                   title={`Exited Top 5 this quarter (was #${stock.prevQuarterRankInSector} in prior quarter)`}
                 >
-                  <ArrowDownRight size={10} /> EXITED TOP 5
+                  <ArrowDownRight size={10} />
+                  <span className="pill-text-desktop">EXITED TOP 5</span>
+                  <span className="pill-text-mobile">OUT</span>
                 </span>
               )}
             </div>
             <span className="stock-company-name" title={stock.name}>
               {stock.name}
             </span>
+            <span className="stock-mobile-industry">{stock.industry}</span>
           </div>
         </div>
       </td>
@@ -134,7 +139,10 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
               }}
             ></div>
           </div>
-          <span className="mcap-weight-text">{(stock.sectorWeight || 0).toFixed(1)}% of Sector</span>
+          <span className="mcap-weight-text">
+            <span className="mcap-weight-desktop">{(stock.sectorWeight || 0).toFixed(1)}% of Sector</span>
+            <span className="mcap-weight-mobile">{(stock.sectorWeight || 0).toFixed(1)}%</span>
+          </span>
         </div>
       </td>
 

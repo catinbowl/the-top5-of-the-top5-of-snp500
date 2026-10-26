@@ -74,12 +74,14 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
       {currentQuarter && (
         <div className="section-intro-bar">
           <div className="quarter-running-indicator-tag">
-            <span className="live-pulsing-dot" />
-            <Calendar size={13} className="text-cyan mr-1" />
-            <span className="quarter-active-title font-mono">
-              RUNNING CYCLE: <strong>{currentQuarter.label}</strong>
-            </span>
-            <span className="quarter-dates-sub font-mono">({currentQuarter.dateRange})</span>
+            <div className="quarter-cycle-line">
+              <span className="live-pulsing-dot" />
+              <Calendar size={13} className="text-cyan mr-1" />
+              <span className="quarter-active-title font-mono">
+                RUNNING CYCLE: <strong>{currentQuarter.label}</strong>
+              </span>
+              <span className="quarter-dates-sub font-mono">({currentQuarter.dateRange})</span>
+            </div>
             <span className="quarter-rebalance-tag font-mono">
               Next Quarter Begins: <strong>{currentQuarter.nextQuarterStartDate}</strong>
             </span>
@@ -245,12 +247,18 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                       <table className="stocks-data-table">
                         <thead>
                           <tr>
-                            <th className="th-rank">Rank</th>
+                            <th className="th-rank">
+                              <span className="th-desktop">Rank</span>
+                              <span className="th-mobile">#</span>
+                            </th>
                             <th className="th-symbol">Company</th>
                             <th className="th-industry">Sub-Industry</th>
                             <th className="th-price">Price</th>
                             <th className="th-change">1M Chg</th>
-                            <th className="th-mcap">Market Cap &amp; Weight</th>
+                            <th className="th-mcap">
+                              <span className="th-desktop">Market Cap &amp; Weight</span>
+                              <span className="th-mobile">Mkt Cap</span>
+                            </th>
                             <th className="th-range">52-Week Range</th>
                             <th className="th-pe">P/E</th>
                             <th className="th-action"></th>

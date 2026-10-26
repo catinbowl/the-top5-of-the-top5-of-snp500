@@ -78,22 +78,22 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="navbar-container">
-      <div className="navbar-left">
-        <div className="brand-logo">
-          <div className="logo-icon-wrap">
-            <TrendingUp size={22} className="logo-icon" />
+      {/* Brand Logo & Title */}
+      <div className="brand-logo">
+        <div className="logo-icon-wrap">
+          <TrendingUp size={20} className="logo-icon" />
+        </div>
+        <div className="brand-text">
+          <div className="brand-title-row">
+            <span className="brand-title">S&amp;P 500</span>
+            <span className="brand-badge font-mono">TOP 5</span>
           </div>
-          <div className="brand-text">
-            <div className="brand-title-row">
-              <span className="brand-title">S&amp;P 500</span>
-              <span className="brand-badge">TOP 5 OF TOP 5</span>
-            </div>
-            <span className="brand-subtitle">TradingView 19 Sectors Classification</span>
-          </div>
+          <span className="brand-subtitle">TradingView 19 Sectors Classification</span>
         </div>
       </div>
 
-      <div className="navbar-right">
+      {/* Status Bar: Quarter, Market Hours, Auto Refresh, Timestamp */}
+      <div className="navbar-status-bar">
         {/* Active Quarter Indicator */}
         {currentQuarter && (
           <div
@@ -115,27 +115,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span className="market-time font-mono">({nyTime})</span>
         </div>
 
-        {/* Live sync status & refresh button */}
-        <div className="sync-group">
-          <button
-            onClick={onRefresh}
-            disabled={isLiveLoading}
-            className={`btn-sync ${isLiveLoading ? 'syncing' : ''}`}
-            title="Fetch real-time quotes from TradingView Scanner"
-          >
-            <RefreshCw size={15} className={`sync-icon ${isLiveLoading ? 'spin' : ''}`} />
-            <span>{isLiveLoading ? 'Syncing...' : 'Sync Live'}</span>
-          </button>
-
-          <button
-            onClick={onToggleAutoRefresh}
-            className={`btn-auto-toggle ${autoRefresh ? 'active' : ''}`}
-            title={autoRefresh ? 'Auto-refresh active (30s)' : 'Enable auto-refresh every 30s'}
-          >
-            <span className="auto-indicator"></span>
-            <span>Auto</span>
-          </button>
-        </div>
+        {/* Auto Refresh toggle */}
+        <button
+          onClick={onToggleAutoRefresh}
+          className={`btn-auto-toggle ${autoRefresh ? 'active' : ''}`}
+          title={autoRefresh ? 'Auto-refresh active (30s)' : 'Enable auto-refresh every 30s'}
+        >
+          <span className="auto-indicator"></span>
+          <span>Auto</span>
+        </button>
 
         {/* Timestamp */}
         <div className="last-sync-time" title={liveError ? `Last error: ${liveError}` : 'Live data stream'}>
@@ -153,15 +141,27 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
           )}
         </div>
+      </div>
 
-        {/* Theme Toggle Button */}
+      {/* Actions: Sync Live + Theme Toggle */}
+      <div className="navbar-actions">
+        <button
+          onClick={onRefresh}
+          disabled={isLiveLoading}
+          className={`btn-sync ${isLiveLoading ? 'syncing' : ''}`}
+          title="Fetch real-time quotes from TradingView Scanner"
+        >
+          <RefreshCw size={14} className={`sync-icon ${isLiveLoading ? 'spin' : ''}`} />
+          <span className="sync-btn-text">{isLiveLoading ? 'Syncing...' : 'Sync Live'}</span>
+        </button>
+
         <button
           onClick={onToggleTheme}
           className="theme-toggle-btn"
           aria-label="Toggle dark/light theme"
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
-          {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
         </button>
       </div>
     </header>
