@@ -15,7 +15,7 @@ interface MatrixViewProps {
   searchQuery: string;
 }
 
-type MatrixSortKey = 'marketCap' | 'change' | 'price' | 'pe' | 'perfYTD' | 'rankInSP500';
+type MatrixSortKey = 'marketCap' | 'perf1M' | 'price' | 'pe' | 'perfYTD' | 'rankInSP500';
 
 export const MatrixView: React.FC<MatrixViewProps> = ({
   top50Stocks,
@@ -137,9 +137,9 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 <span>Price</span>
                 {renderSortIndicator('price')}
               </th>
-              <th className="th-change sortable" onClick={() => handleSort('change')}>
-                <span>24h Change</span>
-                {renderSortIndicator('change')}
+              <th className="th-change sortable" onClick={() => handleSort('perf1M')}>
+                <span>1M Change</span>
+                {renderSortIndicator('perf1M')}
               </th>
               <th className="th-mcap sortable" onClick={() => handleSort('marketCap')}>
                 <span>Market Cap</span>

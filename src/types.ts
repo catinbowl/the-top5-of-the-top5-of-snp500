@@ -49,5 +49,5 @@ export interface SectorData {
 
 export type ViewMode = 'top5' | 'matrix' | 'treemap' | 'all19';
 
-export type SortField = 'marketCap' | 'change' | 'price' | 'pe' | 'perfYTD';
+export type SortField = 'marketCap' | 'perf1M' | 'change' | 'price' | 'pe' | 'perfYTD';
 export type SortDirection = 'asc' | 'desc';

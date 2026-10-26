@@ -161,7 +161,7 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                     </div>
 
                     <div className="sector-metric-item">
-                      <span className="metric-label">Avg 24h Move</span>
+                      <span className="metric-label">Avg 1M Move</span>
                       <span
                         className={`metric-val font-mono ${isPositive ? 'text-green' : 'text-rose'}`}
                       >
@@ -242,7 +242,7 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                             <th className="th-symbol">Company</th>
                             <th className="th-industry">Sub-Industry</th>
                             <th className="th-price">Price</th>
-                            <th className="th-change">24h Chg</th>
+                            <th className="th-change">1M Chg</th>
                             <th className="th-mcap">Market Cap &amp; Weight</th>
                             <th className="th-range">52-Week Range</th>
                             <th className="th-pe">P/E</th>

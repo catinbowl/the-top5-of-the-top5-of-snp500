@@ -22,14 +22,14 @@ export const TreemapView: React.FC<TreemapViewProps> = ({
     0
   );
 
-  // Calculate background color based on daily change
+  // Calculate background color based on monthly performance (perf1M)
   const getPerfColor = (change: number) => {
-    if (change > 3) return '#059669'; // vivid emerald
-    if (change > 1.5) return '#10b981';
+    if (change > 6) return '#059669'; // vivid emerald
+    if (change > 2) return '#10b981';
     if (change > 0) return '#34d399';
     if (change === 0) return '#64748b';
-    if (change > -1.5) return '#fb7185';
-    if (change > -3) return '#f43f5e';
+    if (change > -2) return '#fb7185';
+    if (change > -6) return '#f43f5e';
     return '#e11d48'; // deep rose
   };
 
@@ -44,18 +44,18 @@ export const TreemapView: React.FC<TreemapViewProps> = ({
             Top 5 Industries &bull; Market Cap Weight &amp; Performance Treemap
           </h2>
           <p className="section-subtitle">
-            Proportional tile representation of the 50 premier stocks. Box size represents Market Capitalization; color denotes 24h percentage return.
+            Proportional tile representation of the 50 premier stocks. Box size represents Market Capitalization; color denotes monthly (1M) percentage return.
           </p>
         </div>
 
         <div className="treemap-legend">
-          <span className="legend-label font-mono">24h Return:</span>
+          <span className="legend-label font-mono">1M Return:</span>
           <div className="legend-scale">
-            <span className="legend-chip bg-rose-deep">&lt; -3%</span>
-            <span className="legend-chip bg-rose-mid">-1.5%</span>
+            <span className="legend-chip bg-rose-deep">&lt; -6%</span>
+            <span className="legend-chip bg-rose-mid">-2%</span>
             <span className="legend-chip bg-neutral">0%</span>
-            <span className="legend-chip bg-green-mid">+1.5%</span>
-            <span className="legend-chip bg-green-deep">&gt; +3%</span>
+            <span className="legend-chip bg-green-mid">+2%</span>
+            <span className="legend-chip bg-green-deep">&gt; +6%</span>
           </div>
         </div>
       </div>
@@ -96,24 +96,25 @@ export const TreemapView: React.FC<TreemapViewProps> = ({
                   const stockWeightInTop50 =
                     top50TotalCap > 0 ? (stock.marketCap / top50TotalCap) * 100 : 2;
 
+                  const stockMonthlyPerf = stock.perf1M ?? stock.change;
                   return (
                     <div
                       key={stock.symbol}
                       className="treemap-tile"
                       style={{
                         flexGrow: Math.max(1, Math.round(stockWeightInTop50 * 10)),
-                        backgroundColor: getPerfColor(stock.change),
+                        backgroundColor: getPerfColor(stockMonthlyPerf),
                       }}
                       onClick={() => onSelectStock(stock)}
                       onMouseEnter={() => setHoveredStock(stock)}
                       onMouseLeave={() => setHoveredStock(null)}
                       tabIndex={0}
                       role="button"
-                      aria-label={`${stock.symbol}: ${formatPrice(stock.price)}, ${formatPercent(stock.change)}`}
+                      aria-label={`${stock.symbol}: ${formatPrice(stock.price)}, 1M: ${formatPercent(stockMonthlyPerf)}`}
                     >
                       <div className="treemap-tile-content font-mono">
                         <span className="tile-symbol">{stock.symbol}</span>
-                        <span className="tile-change">{formatPercent(stock.change)}</span>
+                        <span className="tile-change">{formatPercent(stockMonthlyPerf)}</span>
                         <span className="tile-cap">{formatMarketCap(stock.marketCap)}</span>
                       </div>
                     </div>
@@ -133,8 +134,8 @@ export const TreemapView: React.FC<TreemapViewProps> = ({
           </div>
           <div className="tooltip-details">
             <span>Price: {formatPrice(hoveredStock.price)}</span>
-            <span className={hoveredStock.change >= 0 ? 'text-green' : 'text-rose'}>
-              24h: {formatPercent(hoveredStock.change)}
+            <span className={(hoveredStock.perf1M ?? hoveredStock.change) >= 0 ? 'text-green' : 'text-rose'}>
+              1M Return: {formatPercent(hoveredStock.perf1M ?? hoveredStock.change)}
             </span>
             <span>Market Cap: {formatMarketCap(hoveredStock.marketCap)}</span>
             <span>Sector: {hoveredStock.sector}</span>

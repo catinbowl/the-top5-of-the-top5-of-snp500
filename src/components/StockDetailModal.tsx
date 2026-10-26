@@ -31,7 +31,8 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
 
   if (!stock) return null;
 
-  const isPositive = stock.change >= 0;
+  const monthlyChange = stock.perf1M ?? stock.change;
+  const isPositive = monthlyChange >= 0;
   const tradingViewSymbol = `${stock.exchange}:${stock.symbol}`;
   const tradingViewExternalUrl = `https://www.tradingview.com/symbols/${stock.exchange}-${stock.symbol}/`;
 
@@ -100,9 +101,13 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
         <div className="modal-price-bar">
           <div className="modal-price-wrap">
             <span className="modal-price font-mono">{formatPrice(stock.price)}</span>
-            <span className={`modal-change font-mono ${isPositive ? 'text-green' : 'text-rose'}`}>
+            <span
+              className={`modal-change font-mono ${isPositive ? 'text-green' : 'text-rose'}`}
+              title="Monthly (1M) Price Change"
+            >
               {isPositive ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
-              {formatPercent(stock.change)}
+              <span className="modal-change-period">1M</span>
+              {formatPercent(monthlyChange)}
             </span>
           </div>
 

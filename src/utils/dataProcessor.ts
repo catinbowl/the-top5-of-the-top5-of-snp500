@@ -53,7 +53,7 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
 
     const totalSectorMarketCap = stocksInSector.reduce((sum, s) => sum + s.marketCap, 0);
     const avgChange = stocksInSector.length > 0
-      ? stocksInSector.reduce((sum, s) => sum + s.change, 0) / stocksInSector.length
+      ? stocksInSector.reduce((sum, s) => sum + (s.perf1M ?? s.change), 0) / stocksInSector.length
       : 0;
 
     // Sub-industries breakdown
@@ -79,8 +79,10 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
 
     const top10Stocks = stocksInSector.slice(0, 10);
 
-    // Top gainer and loser
-    const sortedByChange = [...stocksInSector].sort((a, b) => b.change - a.change);
+    // Top gainer and loser (ranked by monthly performance)
+    const sortedByChange = [...stocksInSector].sort(
+      (a, b) => (b.perf1M ?? b.change) - (a.perf1M ?? a.change)
+    );
     const topGainer = sortedByChange[0];
     const topLoser = sortedByChange[sortedByChange.length - 1];
 
