@@ -39,7 +39,7 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
       <td className="col-rank">
         <div className="rank-cell-wrapper">
           <span
-            className={`rank-badge font-mono ${index < 3 ? 'top-three' : ''}`}
+            className={`rank-badge font-mono ${(stock.rankInSector ?? index + 1) <= 5 ? 'top-five' : ''}`}
             style={index === 0 && sectorColor ? { borderColor: sectorColor, color: sectorColor } : undefined}
           >
             #{stock.rankInSector || index + 1}

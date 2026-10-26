@@ -884,6 +884,7 @@
   color: var(--text-secondary);
 }
 
+.rank-badge.top-five,
 .rank-badge.top-three {
   border-color: rgba(6, 182, 212, 0.4);
   color: var(--cyan-accent);
@@ -1152,9 +1153,11 @@
   color: var(--text-muted);
 }
 
+.card-rank-badge.top-five,
 .card-rank-badge.top-three {
   color: var(--cyan-accent);
   border-color: rgba(6, 182, 212, 0.4);
+  background: rgba(6, 182, 212, 0.08);
 }
 
 .card-industry-tag {
