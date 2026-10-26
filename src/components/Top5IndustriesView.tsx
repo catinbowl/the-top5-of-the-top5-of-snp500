@@ -148,7 +148,6 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                   <div className="sector-name-group">
                     <div className="sector-title-row">
                       <h3 className="sector-name">{sector.name}</h3>
-                      <span className="sector-tag font-mono">TradingView Sector</span>
                     </div>
                     <p className="sector-desc">{sector.description}</p>
                   </div>
