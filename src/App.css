@@ -2126,3 +2126,445 @@
     gap: 0.5rem;
   }
 }
+
+/* ==========================================================================
+   13. Quarterly Ranking Cycle & Top 5 Inner Group Tiering
+   ========================================================================== */
+
+/* Navbar Running Quarter Pill */
+.quarter-nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.28);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.08);
+  cursor: default;
+  transition: all var(--transition-fast);
+}
+
+.quarter-nav-pill:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.45);
+}
+
+.quarter-nav-icon {
+  flex-shrink: 0;
+}
+
+.quarter-nav-label {
+  font-size: 0.76rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.quarter-nav-status {
+  display: inline-block;
+  padding: 0.08rem 0.35rem;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: var(--green-accent);
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Intro Bar Running Quarter Indicator */
+.quarter-running-indicator-tag {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  margin-bottom: 0.65rem;
+  font-size: 0.75rem;
+}
+
+.live-pulsing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green-accent);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: livePulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.quarter-active-title {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.quarter-active-title strong {
+  color: var(--cyan-accent);
+}
+
+.quarter-dates-sub {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.quarter-rebalance-tag {
+  background: var(--bg-badge);
+  border: 1px solid var(--border-subtle);
+  padding: 0.12rem 0.45rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+}
+
+.quarter-rebalance-tag strong {
+  color: var(--cyan-accent);
+}
+
+.section-badge-sub {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Sector Header Rebalance Pill */
+.sector-rebalance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+}
+
+.rebalance-in {
+  color: var(--green-accent);
+  font-weight: 700;
+}
+
+.rebalance-divider {
+  color: var(--text-dim);
+}
+
+.rebalance-out {
+  color: var(--rose-accent);
+  font-weight: 700;
+}
+
+/* Table View Group Divider Rows */
+.group-divider-row td {
+  padding: 0.65rem 1rem !important;
+  background: transparent !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.inner-group-divider td {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 40%, transparent 100%) !important;
+  border-left: 3px solid #f59e0b !important;
+}
+
+.outer-group-divider td {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.06) 0%, rgba(6, 182, 212, 0.01) 40%, transparent 100%) !important;
+  border-left: 3px solid rgba(6, 182, 212, 0.45) !important;
+}
+
+.group-divider-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.group-divider-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.group-icon-svg {
+  flex-shrink: 0;
+}
+
+.group-badge {
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.inner-badge {
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.outer-badge {
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: var(--cyan-accent);
+}
+
+.group-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.group-divider-right {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Rank column delta pill */
+.rank-cell-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.rank-delta-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  line-height: 1.1;
+}
+
+.rank-delta-pill.up {
+  background: rgba(16, 185, 129, 0.18);
+  color: var(--green-accent);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.rank-delta-pill.down {
+  background: rgba(244, 63, 94, 0.18);
+  color: var(--rose-accent);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+/* Row-level quarterly entry/exit indicators */
+.row-entered-top5 {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.row-entered-top5:hover {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+.row-exited-top5 {
+  background: rgba(244, 63, 94, 0.05);
+}
+
+.row-exited-top5:hover {
+  background-color: rgba(244, 63, 94, 0.1) !important;
+}
+
+.quarter-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.quarter-status-pill.entered {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34d399;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.quarter-status-pill.exited {
+  background: rgba(244, 63, 94, 0.18);
+  border: 1px solid rgba(244, 63, 94, 0.45);
+  color: #fb7185;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
+}
+
+/* Card View Tier Grouping */
+.grouped-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.25rem;
+}
+
+.cards-tier-section {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.01);
+  overflow: hidden;
+}
+
+.cards-tier-section.inner-tier {
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: inset 0 1px 0 rgba(245, 158, 11, 0.2);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.04) 0%, transparent 120px);
+}
+
+.cards-tier-section.outer-tier {
+  border-color: rgba(6, 182, 212, 0.25);
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.02) 0%, transparent 120px);
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.tier-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tier-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+}
+
+.inner-tier-badge {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.outer-tier-badge {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: var(--cyan-accent);
+}
+
+.tier-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tier-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Card-level quarterly movement badges */
+.card-rank-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.quarter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.quarter-badge.entered {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34d399;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
+}
+
+.quarter-badge.exited {
+  background: rgba(244, 63, 94, 0.18);
+  border: 1px solid rgba(244, 63, 94, 0.45);
+  color: #fb7185;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.15);
+}
+
+.quarter-badge.core {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+.quarter-badge.contender {
+  background: var(--bg-badge);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.card-entered-top5 {
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.12);
+}
+
+.card-exited-top5 {
+  border-color: rgba(244, 63, 94, 0.45) !important;
+  box-shadow: 0 0 18px rgba(244, 63, 94, 0.12);
+}
+
+/* Modal quarterly badges */
+.modal-quarter-badge {
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.modal-quarter-badge.entered {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+}
+
+.modal-quarter-badge.exited {
+  background: rgba(244, 63, 94, 0.2);
+  border: 1px solid rgba(244, 63, 94, 0.5);
+  color: #fb7185;
+}
+
+.modal-quarter-badge.core {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.modal-quarter-badge.contender {
+  background: var(--bg-badge);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Stock } from '../types';
 import { formatMarketCap, formatPrice, formatPercent } from '../utils/formatters';
-import { TrendingUp, TrendingDown, ChevronRight } from 'lucide-react';
+import { TrendingUp, TrendingDown, ChevronRight, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import { StockLogo } from './StockLogo';
 
 interface StockRowProps {
@@ -23,7 +23,7 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
 
   return (
     <tr
-      className="stock-table-row"
+      className={`stock-table-row ${stock.top5QuarterStatus === 'entered' ? 'row-entered-top5' : ''} ${stock.top5QuarterStatus === 'exited' ? 'row-exited-top5' : ''}`}
       onClick={() => onSelectStock(stock)}
       tabIndex={0}
       role="button"
@@ -35,14 +35,24 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
         }
       }}
     >
-      {/* Rank within Sector */}
+      {/* Rank within Sector & Quarterly Delta */}
       <td className="col-rank">
-        <span
-          className={`rank-badge font-mono ${index < 3 ? 'top-three' : ''}`}
-          style={index === 0 && sectorColor ? { borderColor: sectorColor, color: sectorColor } : undefined}
-        >
-          #{stock.rankInSector || index + 1}
-        </span>
+        <div className="rank-cell-wrapper">
+          <span
+            className={`rank-badge font-mono ${index < 3 ? 'top-three' : ''}`}
+            style={index === 0 && sectorColor ? { borderColor: sectorColor, color: sectorColor } : undefined}
+          >
+            #{stock.rankInSector || index + 1}
+          </span>
+          {stock.quarterlyRankDelta !== undefined && stock.quarterlyRankDelta !== 0 && (
+            <span
+              className={`rank-delta-pill font-mono ${stock.quarterlyRankDelta > 0 ? 'up' : 'down'}`}
+              title={`Quarterly movement: ${stock.quarterlyRankDelta > 0 ? '+' : ''}${stock.quarterlyRankDelta} rank vs prior quarter (was #${stock.prevQuarterRankInSector})`}
+            >
+              {stock.quarterlyRankDelta > 0 ? `▲+${stock.quarterlyRankDelta}` : `▼${stock.quarterlyRankDelta}`}
+            </span>
+          )}
+        </div>
       </td>
 
       {/* Stock Symbol + Logo + Name */}
@@ -53,6 +63,23 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
             <div className="symbol-row">
               <span className="stock-symbol font-mono">{stock.symbol}</span>
               <span className="stock-exchange font-mono">{stock.exchange}</span>
+
+              {stock.top5QuarterStatus === 'entered' && (
+                <span
+                  className="quarter-status-pill entered font-mono"
+                  title={`Entered Top 5 this quarter (was #${stock.prevQuarterRankInSector} in prior quarter)`}
+                >
+                  <ArrowUpRight size={10} /> ENTERED TOP 5
+                </span>
+              )}
+              {stock.top5QuarterStatus === 'exited' && (
+                <span
+                  className="quarter-status-pill exited font-mono"
+                  title={`Exited Top 5 this quarter (was #${stock.prevQuarterRankInSector} in prior quarter)`}
+                >
+                  <ArrowDownRight size={10} /> EXITED TOP 5
+                </span>
+              )}
             </div>
             <span className="stock-company-name" title={stock.name}>
               {stock.name}

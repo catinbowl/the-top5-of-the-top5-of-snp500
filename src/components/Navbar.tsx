@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { RefreshCw, Moon, Sun, TrendingUp, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
+import type { QuarterInfo } from '../types';
+import { RefreshCw, Moon, Sun, TrendingUp, Clock, CheckCircle2, AlertCircle, Calendar } from 'lucide-react';
 
 interface NavbarProps {
   lastUpdated: Date;
@@ -11,6 +12,7 @@ interface NavbarProps {
   liveError: string | null;
   theme: 'dark' | 'light';
   onToggleTheme: () => void;
+  currentQuarter?: QuarterInfo;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -23,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   liveError,
   theme,
   onToggleTheme,
+  currentQuarter,
 }) => {
   const [nyTime, setNyTime] = useState<string>('');
   const [marketStatus, setMarketStatus] = useState<{ status: string; isOpen: boolean }>({
@@ -91,6 +94,20 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       <div className="navbar-right">
+        {/* Active Quarter Indicator */}
+        {currentQuarter && (
+          <div
+            className="quarter-nav-pill"
+            title={`Active Rebalance Quarter: ${currentQuarter.label} (${currentQuarter.dateRange}) • Next quarterly rebalance in ~${currentQuarter.daysRemaining} days`}
+          >
+            <Calendar size={13} className="quarter-nav-icon text-cyan" />
+            <span className="quarter-nav-label font-mono">
+              <strong>{currentQuarter.label}</strong>
+              <span className="quarter-nav-status">Running</span>
+            </span>
+          </div>
+        )}
+
         {/* US Market Hours Pill */}
         <div className="market-pill" title={`New York Time: ${nyTime}`}>
           <span className={`pulse-dot ${marketStatus.isOpen ? 'online' : 'after-hours'}`}></span>

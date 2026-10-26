@@ -18,6 +18,7 @@ const SCAN_COLUMNS = [
   'dividends_yield_current',
   'Perf.W',
   'Perf.1M',
+  'Perf.3M',
   'Perf.YTD',
   'Perf.Y',
 ];
@@ -91,8 +92,9 @@ export async function fetchLiveTradingViewStocks(tickers: string[]): Promise<Sto
         divYield: typeof d[12] === 'number' ? Number(d[12].toFixed(2)) : null,
         perfW: typeof d[13] === 'number' ? Number(d[13].toFixed(2)) : null,
         perf1M: typeof d[14] === 'number' ? Number(d[14].toFixed(2)) : null,
-        perfYTD: typeof d[15] === 'number' ? Number(d[15].toFixed(2)) : null,
-        perfY: typeof d[16] === 'number' ? Number(d[16].toFixed(2)) : null,
+        perf3M: typeof d[15] === 'number' ? Number(d[15].toFixed(2)) : null,
+        perfYTD: typeof d[16] === 'number' ? Number(d[16].toFixed(2)) : null,
+        perfY: typeof d[17] === 'number' ? Number(d[17].toFixed(2)) : null,
       });
     }
 

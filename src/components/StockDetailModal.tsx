@@ -75,6 +75,26 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
                 {stock.rankInSP500 && (
                   <span className="modal-sp-rank-badge">#{stock.rankInSP500} S&amp;P 500</span>
                 )}
+                {stock.top5QuarterStatus === 'entered' && (
+                  <span className="modal-quarter-badge entered font-mono">
+                    ▲ ENTERED TOP 5
+                  </span>
+                )}
+                {stock.top5QuarterStatus === 'exited' && (
+                  <span className="modal-quarter-badge exited font-mono">
+                    ▼ EXITED TOP 5
+                  </span>
+                )}
+                {stock.top5QuarterStatus === 'retained' && (
+                  <span className="modal-quarter-badge core font-mono">
+                    ⭐ TOP 5 INNER GROUP
+                  </span>
+                )}
+                {stock.top5QuarterStatus === 'contender' && (
+                  <span className="modal-quarter-badge contender font-mono">
+                    🎯 CONTENDER
+                  </span>
+                )}
               </div>
               <p className="modal-company-name">{stock.name}</p>
             </div>
@@ -174,6 +194,45 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
               }`}
             >
               {formatPercent(stock.perf1M)}
+            </span>
+          </div>
+
+          <div className="modal-stat-box">
+            <span className="stat-label">3-Month (Quarterly)</span>
+            <span
+              className={`stat-value font-mono ${
+                (stock.perf3M || 0) >= 0 ? 'text-green' : 'text-rose'
+              }`}
+            >
+              {formatPercent(stock.perf3M)}
+            </span>
+          </div>
+
+          <div className="modal-stat-box">
+            <span className="stat-label">Quarterly Move</span>
+            <span className="stat-value font-mono">
+              {stock.prevQuarterRankInSector != null ? (
+                <span>
+                  Q3 #{stock.prevQuarterRankInSector} &rarr; Q4 #{stock.rankInSector}{' '}
+                  <strong
+                    className={
+                      (stock.quarterlyRankDelta ?? 0) > 0
+                        ? 'text-green'
+                        : (stock.quarterlyRankDelta ?? 0) < 0
+                        ? 'text-rose'
+                        : 'text-muted'
+                    }
+                  >
+                    ({(stock.quarterlyRankDelta ?? 0) > 0
+                      ? `▲+${stock.quarterlyRankDelta}`
+                      : (stock.quarterlyRankDelta ?? 0) < 0
+                      ? `▼${stock.quarterlyRankDelta}`
+                      : '0'})
+                  </strong>
+                </span>
+              ) : (
+                'New'
+              )}
             </span>
           </div>
 

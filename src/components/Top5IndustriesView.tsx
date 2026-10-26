@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { SectorData, Stock } from '../types';
+import type { SectorData, Stock, QuarterInfo } from '../types';
 import { StockRow } from './StockRow';
 import { StockCard } from './StockCard';
 import { formatMarketCap, formatPercent } from '../utils/formatters';
@@ -17,18 +17,23 @@ import {
   ShoppingBag,
   Layers,
   Sparkles,
+  Calendar,
+  ShieldCheck,
+  Target,
 } from 'lucide-react';
 
 interface Top5IndustriesViewProps {
   top5Sectors: SectorData[];
   onSelectStock: (stock: Stock) => void;
   searchQuery: string;
+  currentQuarter?: QuarterInfo;
 }
 
 export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
   top5Sectors,
   onSelectStock,
   searchQuery,
+  currentQuarter,
 }) => {
   // Sector display layout mode: table or cards (per sector or global)
   const [layoutModes, setLayoutModes] = useState<Record<string, 'table' | 'cards'>>({});
@@ -71,16 +76,31 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
       {/* Intro banner */}
       <div className="section-intro-bar">
         <div>
+          {currentQuarter && (
+            <div className="quarter-running-indicator-tag">
+              <span className="live-pulsing-dot" />
+              <Calendar size={13} className="text-cyan mr-1" />
+              <span className="quarter-active-title font-mono">
+                RUNNING CYCLE: <strong>{currentQuarter.label}</strong>
+              </span>
+              <span className="quarter-dates-sub font-mono">({currentQuarter.dateRange})</span>
+              <span className="quarter-rebalance-tag font-mono">
+                Next Rebalance: <strong>{currentQuarter.daysRemaining}d</strong>
+              </span>
+            </div>
+          )}
           <h2 className="section-title">
             <Sparkles size={18} className="title-icon text-cyan" />
             Top 5 S&amp;P 500 Industries &bull; Top 10 Stocks in Each
           </h2>
           <p className="section-subtitle">
             Ranked by aggregate Market Capitalization based on the 19 core economic sectors classified by TradingView (FactSet).
+            Rankings and Top 5 membership reflect the <strong>{currentQuarter?.label ?? 'Q4 2026'}</strong> quarter benchmarked against <strong>{currentQuarter?.prevQuarterLabel ?? 'Q3 2026'}</strong>.
           </p>
         </div>
         <div className="section-badge-info">
           <span>5 Industries &bull; 50 Premier Equities</span>
+          <span className="section-badge-sub font-mono">⭐ Top 5 Inner Group &bull; 🎯 Contenders</span>
         </div>
       </div>
 
@@ -101,6 +121,10 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
               s.industry.toLowerCase().includes(q)
             );
           });
+
+          // Partition into Top 5 Inner Group and Outer Contenders
+          const innerGroup = filteredTop10.filter((s) => (s.rankInSector ?? 0) <= 5);
+          const outerContenders = filteredTop10.filter((s) => (s.rankInSector ?? 0) > 5);
 
           return (
             <section
@@ -168,6 +192,21 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                         {isPositive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
                         {formatPercent(sector.avgChange)}
                       </span>
+                    </div>
+
+                    <div className="sector-metric-item">
+                      <span className="metric-label">Quarterly Move</span>
+                      {sector.enteredCount > 0 || sector.exitedCount > 0 ? (
+                        <span className="metric-val font-mono text-cyan sector-rebalance-pill">
+                          <span className="rebalance-in">▲ {sector.enteredCount} In</span>
+                          <span className="rebalance-divider">&bull;</span>
+                          <span className="rebalance-out">▼ {sector.exitedCount} Out</span>
+                        </span>
+                      ) : (
+                        <span className="metric-val font-mono text-muted sector-rebalance-pill">
+                          Stable Roster
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -250,11 +289,61 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                           </tr>
                         </thead>
                         <tbody>
-                          {filteredTop10.map((stock, idx) => (
+                          {innerGroup.length > 0 && (
+                            <tr className="group-divider-row inner-group-divider">
+                              <td colSpan={9}>
+                                <div className="group-divider-content">
+                                  <div className="group-divider-left">
+                                    <ShieldCheck size={15} className="group-icon-svg text-amber" />
+                                    <span className="group-badge inner-badge font-mono">
+                                      ⭐ TOP 5 INNER GROUP &bull; {currentQuarter?.label || 'CURRENT QUARTER'}
+                                    </span>
+                                    <span className="group-desc">
+                                      Core sector pillars dominating market weight (Ranks #1 &ndash; #5)
+                                    </span>
+                                  </div>
+                                  <div className="group-divider-right font-mono">
+                                    <span>5 Core Holdings</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          )}
+                          {innerGroup.map((stock, idx) => (
                             <StockRow
                               key={stock.symbol}
                               stock={stock}
                               index={idx}
+                              onSelectStock={onSelectStock}
+                              sectorColor={sector.color}
+                            />
+                          ))}
+
+                          {outerContenders.length > 0 && (
+                            <tr className="group-divider-row outer-group-divider">
+                              <td colSpan={9}>
+                                <div className="group-divider-content">
+                                  <div className="group-divider-left">
+                                    <Target size={15} className="group-icon-svg text-cyan" />
+                                    <span className="group-badge outer-badge font-mono">
+                                      🎯 CONTENDERS &amp; CHALLENGERS
+                                    </span>
+                                    <span className="group-desc">
+                                      Next-in-line equities competing for Top 5 entry (Ranks #6 &ndash; #10)
+                                    </span>
+                                  </div>
+                                  <div className="group-divider-right font-mono">
+                                    <span>5 Challengers</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          )}
+                          {outerContenders.map((stock, idx) => (
+                            <StockRow
+                              key={stock.symbol}
+                              stock={stock}
+                              index={innerGroup.length + idx}
                               onSelectStock={onSelectStock}
                               sectorColor={sector.color}
                             />
@@ -264,16 +353,58 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                     </div>
                   ) : (
                     /* Cards Grid View */
-                    <div className="stocks-cards-grid">
-                      {filteredTop10.map((stock, idx) => (
-                        <StockCard
-                          key={stock.symbol}
-                          stock={stock}
-                          index={idx}
-                          onSelectStock={onSelectStock}
-                          sectorColor={sector.color}
-                        />
-                      ))}
+                    <div className="grouped-cards-container">
+                      {innerGroup.length > 0 && (
+                        <div className="cards-tier-section inner-tier">
+                          <div className="tier-header">
+                            <div className="tier-header-left">
+                              <span className="tier-badge inner-tier-badge font-mono">
+                                ⭐ TOP 5 INNER GROUP
+                              </span>
+                              <span className="tier-title">{sector.name} Core Pillars</span>
+                            </div>
+                            <span className="tier-meta font-mono">
+                              Ranks #1 &ndash; #5 &bull; {currentQuarter?.label || 'Active Cycle'}
+                            </span>
+                          </div>
+                          <div className="stocks-cards-grid">
+                            {innerGroup.map((stock, idx) => (
+                              <StockCard
+                                key={stock.symbol}
+                                stock={stock}
+                                index={idx}
+                                onSelectStock={onSelectStock}
+                                sectorColor={sector.color}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {outerContenders.length > 0 && (
+                        <div className="cards-tier-section outer-tier">
+                          <div className="tier-header">
+                            <div className="tier-header-left">
+                              <span className="tier-badge outer-tier-badge font-mono">
+                                🎯 CONTENDERS &amp; CHALLENGERS
+                              </span>
+                              <span className="tier-title">Top 5 Watchlist</span>
+                            </div>
+                            <span className="tier-meta font-mono">Ranks #6 &ndash; #10</span>
+                          </div>
+                          <div className="stocks-cards-grid">
+                            {outerContenders.map((stock, idx) => (
+                              <StockCard
+                                key={stock.symbol}
+                                stock={stock}
+                                index={innerGroup.length + idx}
+                                onSelectStock={onSelectStock}
+                                sectorColor={sector.color}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

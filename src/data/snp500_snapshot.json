@@ -20,7 +20,8 @@
       "perfW": -2.59,
       "perf1M": -7.49,
       "perfYTD": 11.13,
-      "perfY": 16.93
+      "perfY": 16.93,
+      "perf3M": 1.69
     },
     {
       "symbol": "AAPL",
@@ -40,7 +41,8 @@
       "perfW": 0.47,
       "perf1M": 1.95,
       "perfYTD": 27.72,
-      "perfY": 33.77
+      "perfY": 33.77,
+      "perf3M": 8.06
     },
     {
       "symbol": "GOOG",
@@ -60,7 +62,8 @@
       "perfW": -7.85,
       "perf1M": -8.38,
       "perfYTD": -0.1,
-      "perfY": 25.06
+      "perfY": 25.06,
+      "perf3M": -0.32
     },
     {
       "symbol": "GOOGL",
@@ -80,7 +83,8 @@
       "perfW": -8.06,
       "perf1M": -8.47,
       "perfYTD": 1.04,
-      "perfY": 26.58
+      "perfY": 26.58,
+      "perf3M": 0.56
     },
     {
       "symbol": "MSFT",
@@ -100,7 +104,8 @@
       "perfW": -3.1,
       "perf1M": 4.74,
       "perfYTD": 8.28,
-      "perfY": 0.39
+      "perfY": 0.39,
+      "perf3M": 35.51
     },
     {
       "symbol": "AMZN",
@@ -120,7 +125,8 @@
       "perfW": -2.78,
       "perf1M": -1.98,
       "perfYTD": 7.2,
-      "perfY": 13.24
+      "perfY": 13.24,
+      "perf3M": 5.81
     },
     {
       "symbol": "META",
@@ -140,7 +146,8 @@
       "perfW": -12.77,
       "perf1M": -14.04,
       "perfYTD": -3.03,
-      "perfY": -12.53
+      "perfY": -12.53,
+      "perf3M": 6.17
     },
     {
       "symbol": "AVGO",
@@ -160,7 +167,8 @@
       "perfW": -4.96,
       "perf1M": -11.19,
       "perfYTD": -8.81,
-      "perfY": -5.5
+      "perfY": -5.5,
+      "perf3M": -17.02
     },
     {
       "symbol": "TSLA",
@@ -180,7 +188,8 @@
       "perfW": 0.83,
       "perf1M": -2.07,
       "perfYTD": -18.69,
-      "perfY": -11.38
+      "perfY": -11.38,
+      "perf3M": 16.06
     },
     {
       "symbol": "LLY",
@@ -200,7 +209,8 @@
       "perfW": 1.39,
       "perf1M": 8.41,
       "perfYTD": 18.31,
-      "perfY": 57.92
+      "perfY": 57.92,
+      "perf3M": 6.62
     },
     {
       "symbol": "BRK.B",
@@ -220,7 +230,8 @@
       "perfW": 2.38,
       "perf1M": 7.61,
       "perfYTD": 8.23,
-      "perfY": 10.16
+      "perfY": 10.16,
+      "perf3M": 10.33
     },
     {
       "symbol": "MU",
@@ -240,7 +251,8 @@
       "perfW": -3.09,
       "perf1M": -20.23,
       "perfYTD": 197.35,
-      "perfY": 346.14
+      "perfY": 346.14,
+      "perf3M": -8.5
     },
     {
       "symbol": "WMT",
@@ -260,7 +272,8 @@
       "perfW": 1.54,
       "perf1M": 8.78,
       "perfYTD": 7.6,
-      "perfY": 11.68
+      "perfY": 11.68,
+      "perf3M": 10.89
     },
     {
       "symbol": "JPM",
@@ -280,7 +293,8 @@
       "perfW": -2.32,
       "perf1M": -1.79,
       "perfYTD": 2.82,
-      "perfY": 12.64
+      "perfY": 12.64,
+      "perf3M": -5.44
     },
     {
       "symbol": "AMD",
@@ -300,7 +314,8 @@
       "perfW": -5.62,
       "perf1M": -16.85,
       "perfYTD": 136.08,
-      "perfY": 124.54
+      "perfY": 124.54,
+      "perf3M": -5.51
     },
     {
       "symbol": "V",
@@ -320,7 +335,8 @@
       "perfW": 1.35,
       "perf1M": 12.92,
       "perfYTD": 16.59,
-      "perfY": 17.83
+      "perfY": 17.83,
+      "perf3M": 15.4
     },
     {
       "symbol": "XOM",
@@ -340,7 +356,8 @@
       "perfW": 3.81,
       "perf1M": 14.78,
       "perfYTD": 52.56,
-      "perfY": 57.09
+      "perfY": 57.09,
+      "perf3M": 16.7
     },
     {
       "symbol": "JNJ",
@@ -360,7 +377,8 @@
       "perfW": 3.24,
       "perf1M": -2.1,
       "perfYTD": 27.56,
-      "perfY": 37.0
+      "perfY": 37.0,
+      "perf3M": 0.91
     },
     {
       "symbol": "MA",
@@ -380,7 +398,8 @@
       "perfW": 0.68,
       "perf1M": 12.2,
       "perfYTD": 9.27,
-      "perfY": 8.57
+      "perfY": 8.57,
+      "perf3M": 17.34
     },
     {
       "symbol": "ABBV",
@@ -400,7 +419,8 @@
       "perfW": 0.72,
       "perf1M": 7.38,
       "perfYTD": 24.88,
-      "perfY": 24.74
+      "perfY": 24.74,
+      "perf3M": 10.48
     },
     {
       "symbol": "PLTR",
@@ -420,7 +440,8 @@
       "perfW": -2.5,
       "perf1M": 5.61,
       "perfYTD": 8.52,
-      "perfY": 12.14
+      "perfY": 12.14,
+      "perf3M": 57.19
     },
     {
       "symbol": "CVX",
@@ -440,7 +461,8 @@
       "perfW": 5.12,
       "perf1M": 14.06,
       "perfYTD": 53.26,
-      "perfY": 47.41
+      "perfY": 47.41,
+      "perf3M": 19.93
     },
     {
       "symbol": "INTC",
@@ -460,7 +482,8 @@
       "perfW": -6.97,
       "perf1M": -29.79,
       "perfYTD": 130.24,
-      "perfY": 137.6
+      "perfY": 137.6,
+      "perf3M": -13.35
     },
     {
       "symbol": "COST",
@@ -480,7 +503,8 @@
       "perfW": 2.12,
       "perf1M": 11.32,
       "perfYTD": 16.51,
-      "perfY": 6.12
+      "perfY": 6.12,
+      "perf3M": 8.47
     },
     {
       "symbol": "CSCO",
@@ -500,7 +524,8 @@
       "perfW": -3.15,
       "perf1M": 0.26,
       "perfYTD": 38.95,
-      "perfY": 50.85
+      "perfY": 50.85,
+      "perf3M": -5.22
     },
     {
       "symbol": "KO",
@@ -520,7 +545,8 @@
       "perfW": -0.3,
       "perf1M": 4.23,
       "perfYTD": 32.73,
-      "perfY": 30.93
+      "perfY": 30.93,
+      "perf3M": 13.66
     },
     {
       "symbol": "ORCL",
@@ -540,7 +566,8 @@
       "perfW": -5.49,
       "perf1M": -14.93,
       "perfYTD": -36.11,
-      "perfY": -53.78
+      "perfY": -53.78,
+      "perf3M": 3.01
     },
     {
       "symbol": "UNH",
@@ -560,7 +587,8 @@
       "perfW": 1.89,
       "perf1M": 12.73,
       "perfYTD": 26.35,
-      "perfY": 17.58
+      "perfY": 17.58,
+      "perf3M": -1.68
     },
     {
       "symbol": "PG",
@@ -580,7 +608,8 @@
       "perfW": 2.07,
       "perf1M": 8.89,
       "perfYTD": 12.51,
-      "perfY": 5.69
+      "perfY": 5.69,
+      "perf3M": 9.95
     },
     {
       "symbol": "MRK",
@@ -600,7 +629,8 @@
       "perfW": -1.15,
       "perf1M": -3.99,
       "perfYTD": 37.66,
-      "perfY": 65.91
+      "perfY": 65.91,
+      "perf3M": 10.52
     },
     {
       "symbol": "BAC",
@@ -620,7 +650,8 @@
       "perfW": -3.03,
       "perf1M": -9.59,
       "perfYTD": -8.12,
-      "perfY": -1.79
+      "perfY": -1.79,
+      "perf3M": -17.83
     },
     {
       "symbol": "HD",
@@ -640,7 +671,8 @@
       "perfW": 3.28,
       "perf1M": 5.4,
       "perfYTD": -6.87,
-      "perfY": -17.38
+      "perfY": -17.38,
+      "perf3M": -1.61
     },
     {
       "symbol": "CAT",
@@ -660,7 +692,8 @@
       "perfW": -6.45,
       "perf1M": -14.55,
       "perfYTD": 18.94,
-      "perfY": 32.54
+      "perfY": 32.54,
+      "perf3M": -22.59
     },
     {
       "symbol": "PANW",
@@ -680,7 +713,8 @@
       "perfW": 1.88,
       "perf1M": 0.2,
       "perfYTD": 105.91,
-      "perfY": 79.46
+      "perfY": 79.46,
+      "perf3M": 15.99
     },
     {
       "symbol": "PM",
@@ -700,7 +734,8 @@
       "perfW": -1.73,
       "perf1M": 4.96,
       "perfYTD": 24.47,
-      "perfY": 26.29
+      "perfY": 26.29,
+      "perf3M": 3.57
     },
     {
       "symbol": "AMAT",
@@ -720,7 +755,8 @@
       "perfW": -10.24,
       "perf1M": -19.95,
       "perfYTD": 41.25,
-      "perfY": 72.74
+      "perfY": 72.74,
+      "perf3M": -32.18
     },
     {
       "symbol": "GE",
@@ -740,7 +776,8 @@
       "perfW": -9.26,
       "perf1M": -10.29,
       "perfYTD": -7.78,
-      "perfY": -4.52
+      "perfY": -4.52,
+      "perf3M": -18.44
     },
     {
       "symbol": "DELL",
@@ -760,7 +797,8 @@
       "perfW": -3.58,
       "perf1M": -18.35,
       "perfYTD": 255.48,
-      "perfY": 204.29
+      "perfY": 204.29,
+      "perf3M": 3.99
     },
     {
       "symbol": "LRCX",
@@ -780,7 +818,8 @@
       "perfW": -15.23,
       "perf1M": -25.17,
       "perfYTD": 29.38,
-      "perfY": 66.74
+      "perfY": 66.74,
+      "perf3M": -26.4
     },
     {
       "symbol": "MS",
@@ -800,7 +839,8 @@
       "perfW": -1.75,
       "perf1M": -9.58,
       "perfYTD": 0.55,
-      "perfY": 12.96
+      "perfY": 12.96,
+      "perf3M": -17.05
     },
     {
       "symbol": "NFLX",
@@ -820,7 +860,8 @@
       "perfW": -5.75,
       "perf1M": -8.64,
       "perfYTD": -30.04,
-      "perfY": -41.57
+      "perfY": -41.57,
+      "perf3M": -4.96
     },
     {
       "symbol": "CRWD",
@@ -840,7 +881,8 @@
       "perfW": 4.29,
       "perf1M": 2.21,
       "perfYTD": 117.36,
-      "perfY": 106.06
+      "perfY": 106.06,
+      "perf3M": 39.23
     },
     {
       "symbol": "TXN",
@@ -860,7 +902,8 @@
       "perfW": 3.24,
       "perf1M": 4.86,
       "perfYTD": 62.71,
-      "perfY": 67.46
+      "perfY": 67.46,
+      "perf3M": 1.27
     },
     {
       "symbol": "RTX",
@@ -880,7 +923,8 @@
       "perfW": 1.19,
       "perf1M": -0.45,
       "perfYTD": 4.09,
-      "perfY": 7.55
+      "perfY": 7.55,
+      "perf3M": -9.4
     },
     {
       "symbol": "GS",
@@ -900,7 +944,8 @@
       "perfW": -2.26,
       "perf1M": -6.91,
       "perfYTD": -0.94,
-      "perfY": 16.86
+      "perfY": 16.86,
+      "perf3M": -18.54
     },
     {
       "symbol": "TMO",
@@ -920,7 +965,8 @@
       "perfW": -2.66,
       "perf1M": 2.46,
       "perfYTD": 16.28,
-      "perfY": 18.65
+      "perfY": 18.65,
+      "perf3M": 18.21
     },
     {
       "symbol": "WFC",
@@ -940,7 +986,8 @@
       "perfW": -1.47,
       "perf1M": -0.43,
       "perfYTD": -11.69,
-      "perfY": -2.28
+      "perfY": -2.28,
+      "perf3M": -4.14
     },
     {
       "symbol": "IBM",
@@ -960,7 +1007,8 @@
       "perfW": 7.42,
       "perf1M": 8.6,
       "perfYTD": -14.79,
-      "perfY": -4.3
+      "perfY": -4.3,
+      "perf3M": 21.16
     },
     {
       "symbol": "AMGN",
@@ -980,7 +1028,8 @@
       "perfW": 0.31,
       "perf1M": 7.11,
       "perfYTD": 33.61,
-      "perfY": 48.39
+      "perfY": 48.39,
+      "perf3M": 17.85
     },
     {
       "symbol": "LIN",
@@ -1000,7 +1049,8 @@
       "perfW": 3.27,
       "perf1M": 9.7,
       "perfYTD": 19.37,
-      "perfY": 12.43
+      "perfY": 12.43,
+      "perf3M": 0.67
     },
     {
       "symbol": "ANET",
@@ -1020,7 +1070,8 @@
       "perfW": -6.34,
       "perf1M": -16.1,
       "perfYTD": 28.59,
-      "perfY": 17.43
+      "perfY": 17.43,
+      "perf3M": -0.94
     },
     {
       "symbol": "GEV",
@@ -1040,7 +1091,8 @@
       "perfW": -11.11,
       "perf1M": -14.21,
       "perfYTD": 23.26,
-      "perfY": 40.52
+      "perfY": 40.52,
+      "perf3M": -20.32
     },
     {
       "symbol": "AXP",
@@ -1060,7 +1112,8 @@
       "perfW": -0.96,
       "perf1M": 2.73,
       "perfYTD": -15.23,
-      "perfY": -11.2
+      "perfY": -11.2,
+      "perf3M": -3.96
     },
     {
       "symbol": "CRM",
@@ -1080,7 +1133,8 @@
       "perfW": -0.77,
       "perf1M": 6.04,
       "perfYTD": -6.2,
-      "perfY": -3.51
+      "perfY": -3.51,
+      "perf3M": 54.99
     },
     {
       "symbol": "C",
@@ -1100,7 +1154,8 @@
       "perfW": -2.73,
       "perf1M": -8.06,
       "perfYTD": 2.91,
-      "perfY": 24.59
+      "perfY": 24.59,
+      "perf3M": -8.79
     },
     {
       "symbol": "MRVL",
@@ -1120,7 +1175,8 @@
       "perfW": -2.83,
       "perf1M": -12.9,
       "perfYTD": 163.44,
-      "perfY": 182.11
+      "perfY": 182.11,
+      "perf3M": 12.62
     },
     {
       "symbol": "DIS",
@@ -1140,7 +1196,8 @@
       "perfW": 0.93,
       "perf1M": 8.97,
       "perfYTD": -0.81,
-      "perfY": -0.57
+      "perfY": -0.57,
+      "perf3M": 20.65
     },
     {
       "symbol": "GILD",
@@ -1160,7 +1217,8 @@
       "perfW": -0.81,
       "perf1M": 1.59,
       "perfYTD": 27.39,
-      "perfY": 28.16
+      "perfY": 28.16,
+      "perf3M": 19.18
     },
     {
       "symbol": "KLAC",
@@ -1180,7 +1238,8 @@
       "perfW": -14.23,
       "perf1M": -21.82,
       "perfYTD": 15.59,
-      "perfY": 31.58
+      "perfY": 31.58,
+      "perf3M": -32.12
     },
     {
       "symbol": "ADI",
@@ -1200,7 +1259,8 @@
       "perfW": -2.27,
       "perf1M": 0.55,
       "perfYTD": 42.17,
-      "perfY": 64.8
+      "perfY": 64.8,
+      "perf3M": 4.39
     },
     {
       "symbol": "QCOM",
@@ -1220,7 +1280,8 @@
       "perfW": 0.51,
       "perf1M": -11.87,
       "perfYTD": 1.22,
-      "perfY": 4.5
+      "perfY": 4.5,
+      "perf3M": 3.67
     },
     {
       "symbol": "VZ",
@@ -1240,7 +1301,8 @@
       "perfW": -0.38,
       "perf1M": -4.16,
       "perfYTD": 9.54,
-      "perfY": 12.25
+      "perfY": 12.25,
+      "perf3M": 1.33
     },
     {
       "symbol": "PEP",
@@ -1260,7 +1322,8 @@
       "perfW": 4.82,
       "perf1M": 3.57,
       "perfYTD": -5.2,
-      "perfY": -11.36
+      "perfY": -11.36,
+      "perf3M": 0.18
     },
     {
       "symbol": "APH",
@@ -1280,7 +1343,8 @@
       "perfW": -9.11,
       "perf1M": -11.14,
       "perfYTD": 8.07,
-      "perfY": 14.34
+      "perfY": 14.34,
+      "perf3M": -5.2
     },
     {
       "symbol": "BLK",
@@ -1300,7 +1364,8 @@
       "perfW": -0.86,
       "perf1M": 5.9,
       "perfYTD": 4.37,
-      "perfY": -1.17
+      "perfY": -1.17,
+      "perf3M": 7.62
     },
     {
       "symbol": "COP",
@@ -1320,7 +1385,8 @@
       "perfW": 5.68,
       "perf1M": 19.49,
       "perfYTD": 61.09,
-      "perfY": 68.1
+      "perfY": 68.1,
+      "perf3M": 25.38
     },
     {
       "symbol": "ABT",
@@ -1340,7 +1406,8 @@
       "perfW": -1.85,
       "perf1M": -0.5,
       "perfYTD": -16.84,
-      "perfY": -19.14
+      "perfY": -19.14,
+      "perf3M": 2.17
     },
     {
       "symbol": "SNDK",
@@ -1360,7 +1427,8 @@
       "perfW": -8.21,
       "perf1M": -34.68,
       "perfYTD": 406.66,
-      "perfY": 742.23
+      "perfY": 742.23,
+      "perf3M": -20.19
     },
     {
       "symbol": "MCD",
@@ -1380,7 +1448,8 @@
       "perfW": 1.7,
       "perf1M": -0.73,
       "perfYTD": -18.62,
-      "perfY": -20.36
+      "perfY": -20.36,
+      "perf3M": -5.81
     },
     {
       "symbol": "DE",
@@ -1400,7 +1469,8 @@
       "perfW": -0.99,
       "perf1M": -7.96,
       "perfYTD": 38.66,
-      "perfY": 38.79
+      "perfY": 38.79,
+      "perf3M": 5.54
     },
     {
       "symbol": "UNP",
@@ -1420,7 +1490,8 @@
       "perfW": 1.49,
       "perf1M": 6.91,
       "perfYTD": 26.59,
-      "perfY": 31.17
+      "perfY": 31.17,
+      "perf3M": -3.82
     },
     {
       "symbol": "NEE",
@@ -1440,7 +1511,8 @@
       "perfW": 3.15,
       "perf1M": 3.87,
       "perfYTD": 2.05,
-      "perfY": -2.13
+      "perfY": -2.13,
+      "perf3M": -9.69
     },
     {
       "symbol": "PFE",
@@ -1460,7 +1532,8 @@
       "perfW": 1.04,
       "perf1M": 7.4,
       "perfYTD": 20.22,
-      "perfY": 21.28
+      "perfY": 21.28,
+      "perf3M": 21.97
     },
     {
       "symbol": "WELL",
@@ -1480,7 +1553,8 @@
       "perfW": 0.04,
       "perf1M": 3.63,
       "perfYTD": 27.86,
-      "perfY": 34.5
+      "perfY": 34.5,
+      "perf3M": -4.49
     },
     {
       "symbol": "NOW",
@@ -1500,7 +1574,8 @@
       "perfW": 4.63,
       "perf1M": 15.84,
       "perfYTD": 3.84,
-      "perfY": -14.65
+      "perfY": -14.65,
+      "perf3M": 67.47
     },
     {
       "symbol": "DHR",
@@ -1520,7 +1595,8 @@
       "perfW": null,
       "perf1M": 4.17,
       "perfYTD": 0.74,
-      "perfY": 5.93
+      "perfY": 5.93,
+      "perf3M": 19.38
     },
     {
       "symbol": "TJX",
@@ -1540,7 +1616,8 @@
       "perfW": -0.63,
       "perf1M": 11.56,
       "perfYTD": -5.34,
-      "perfY": 1.4
+      "perfY": 1.4,
+      "perf3M": -5.11
     },
     {
       "symbol": "TMUS",
@@ -1560,7 +1637,8 @@
       "perfW": -7.83,
       "perf1M": -9.95,
       "perfYTD": -27.55,
-      "perfY": -35.09
+      "perfY": -35.09,
+      "perf3M": -14.88
     },
     {
       "symbol": "ISRG",
@@ -1580,7 +1658,8 @@
       "perfW": 5.57,
       "perf1M": 12.82,
       "perfYTD": -20.2,
-      "perfY": -13.91
+      "perfY": -13.91,
+      "perf3M": 35.17
     },
     {
       "symbol": "SCHW",
@@ -1600,7 +1679,8 @@
       "perfW": -3.16,
       "perf1M": -9.42,
       "perfYTD": -9.21,
-      "perfY": -4.46
+      "perfY": -4.46,
+      "perf3M": -10.86
     },
     {
       "symbol": "BA",
@@ -1620,7 +1700,8 @@
       "perfW": -0.93,
       "perf1M": -4.86,
       "perfYTD": -13.66,
-      "perfY": -12.96
+      "perfY": -12.96,
+      "perf3M": -10.35
     },
     {
       "symbol": "ACN",
@@ -1640,7 +1721,8 @@
       "perfW": 9.08,
       "perf1M": 34.43,
       "perfYTD": -7.22,
-      "perfY": 1.35
+      "perfY": 1.35,
+      "perf3M": 75.0
     },
     {
       "symbol": "BX",
@@ -1660,7 +1742,8 @@
       "perfW": 6.88,
       "perf1M": -3.16,
       "perfYTD": -23.96,
-      "perfY": -27.09
+      "perfY": -27.09,
+      "perf3M": -5.77
     },
     {
       "symbol": "STX",
@@ -1680,7 +1763,8 @@
       "perfW": -6.89,
       "perf1M": -30.96,
       "perfYTD": 123.6,
-      "perfY": 188.88
+      "perfY": 188.88,
+      "perf3M": -28.29
     },
     {
       "symbol": "ETN",
@@ -1700,7 +1784,8 @@
       "perfW": -8.27,
       "perf1M": -17.27,
       "perfYTD": 13.27,
-      "perfY": 1.31
+      "perfY": 1.31,
+      "perf3M": -10.67
     },
     {
       "symbol": "T",
@@ -1720,7 +1805,8 @@
       "perfW": -11.5,
       "perf1M": -16.71,
       "perfYTD": -15.57,
-      "perfY": -18.5
+      "perfY": -18.5,
+      "perf3M": -9.0
     },
     {
       "symbol": "LMT",
@@ -1740,7 +1826,8 @@
       "perfW": 12.07,
       "perf1M": 15.18,
       "perfYTD": 25.02,
-      "perfY": 23.78
+      "perfY": 23.78,
+      "perf3M": 6.26
     },
     {
       "symbol": "CB",
@@ -1760,7 +1847,8 @@
       "perfW": 0.58,
       "perf1M": 5.69,
       "perfYTD": 14.38,
-      "perfY": 27.82
+      "perfY": 27.82,
+      "perf3M": -0.15
     },
     {
       "symbol": "IBKR",
@@ -1780,7 +1868,8 @@
       "perfW": -6.93,
       "perf1M": -12.13,
       "perfYTD": 22.73,
-      "perfY": 23.46
+      "perfY": 23.46,
+      "perf3M": -12.55
     },
     {
       "symbol": "UBER",
@@ -1800,7 +1889,8 @@
       "perfW": -6.06,
       "perf1M": -4.11,
       "perfYTD": -18.7,
-      "perfY": -27.89
+      "perfY": -27.89,
+      "perf3M": -3.88
     },
     {
       "symbol": "VRTX",
@@ -1820,7 +1910,8 @@
       "perfW": 2.52,
       "perf1M": 1.62,
       "perfYTD": 15.32,
-      "perfY": 22.46
+      "perfY": 22.46,
+      "perf3M": 10.06
     },
     {
       "symbol": "SPGI",
@@ -1840,7 +1931,8 @@
       "perfW": 4.89,
       "perf1M": 11.71,
       "perfYTD": -8.76,
-      "perfY": -1.26
+      "perfY": -1.26,
+      "perf3M": 6.08
     },
     {
       "symbol": "PGR",
@@ -1860,7 +1952,8 @@
       "perfW": 6.58,
       "perf1M": 10.7,
       "perfYTD": 6.41,
-      "perfY": 1.7
+      "perfY": 1.7,
+      "perf3M": 8.29
     },
     {
       "symbol": "FTNT",
@@ -1880,7 +1973,8 @@
       "perfW": -1.29,
       "perf1M": 1.99,
       "perfYTD": 125.07,
-      "perfY": 112.6
+      "perfY": 112.6,
+      "perf3M": 17.87
     },
     {
       "symbol": "WDC",
@@ -1900,7 +1994,8 @@
       "perfW": -1.16,
       "perf1M": -25.76,
       "perfYTD": 93.94,
-      "perfY": 181.81
+      "perfY": 181.81,
+      "perf3M": -36.18
     },
     {
       "symbol": "MPC",
@@ -1920,7 +2015,8 @@
       "perfW": -4.87,
       "perf1M": 16.33,
       "perfYTD": 180.76,
-      "perfY": 140.53
+      "perfY": 140.53,
+      "perf3M": 46.69
     },
     {
       "symbol": "BMY",
@@ -1940,7 +2036,8 @@
       "perfW": 0.62,
       "perf1M": -1.33,
       "perfYTD": 15.54,
-      "perfY": 38.62
+      "perfY": 38.62,
+      "perf3M": -0.74
     },
     {
       "symbol": "MO",
@@ -1960,7 +2057,8 @@
       "perfW": -0.26,
       "perf1M": 8.36,
       "perfYTD": 28.88,
-      "perfY": 14.92
+      "perfY": 14.92,
+      "perf3M": 2.79
     },
     {
       "symbol": "COF",
@@ -1980,7 +2078,8 @@
       "perfW": 0.37,
       "perf1M": 1.12,
       "perfYTD": -17.6,
-      "perfY": -9.31
+      "perfY": -9.31,
+      "perf3M": 1.43
     },
     {
       "symbol": "PLD",
@@ -2000,7 +2099,8 @@
       "perfW": -1.26,
       "perf1M": -6.16,
       "perfYTD": -1.01,
-      "perfY": 0.42
+      "perfY": 0.42,
+      "perf3M": -12.85
     },
     {
       "symbol": "MDT",
@@ -2020,7 +2120,8 @@
       "perfW": -0.44,
       "perf1M": 5.39,
       "perfYTD": -0.66,
-      "perfY": -0.77
+      "perfY": -0.77,
+      "perf3M": 15.13
     },
     {
       "symbol": "VLO",
@@ -2040,7 +2141,8 @@
       "perfW": -6.27,
       "perf1M": 10.21,
       "perfYTD": 156.83,
-      "perfY": 156.05
+      "perfY": 156.05,
+      "perf3M": 37.75
     },
     {
       "symbol": "ADP",
@@ -2060,7 +2162,8 @@
       "perfW": 5.64,
       "perf1M": 13.26,
       "perfYTD": 18.34,
-      "perfY": 7.59
+      "perfY": 7.59,
+      "perf3M": 24.37
     },
     {
       "symbol": "CVS",
@@ -2080,7 +2183,8 @@
       "perfW": 0.25,
       "perf1M": 7.81,
       "perfYTD": 17.9,
-      "perfY": 15.05
+      "perfY": 15.05,
+      "perf3M": -13.17
     },
     {
       "symbol": "SYK",
@@ -2100,7 +2204,8 @@
       "perfW": 3.81,
       "perf1M": 11.91,
       "perfYTD": -12.56,
-      "perfY": -20.63
+      "perfY": -20.63,
+      "perf3M": -5.52
     },
     {
       "symbol": "BKNG",
@@ -2120,7 +2225,8 @@
       "perfW": -6.81,
       "perf1M": -4.25,
       "perfYTD": -27.27,
-      "perfY": -25.91
+      "perfY": -25.91,
+      "perf3M": -10.75
     },
     {
       "symbol": "MCK",
@@ -2140,7 +2246,8 @@
       "perfW": -1.13,
       "perf1M": 12.47,
       "perfYTD": 22.34,
-      "perfY": 25.59
+      "perfY": 25.59,
+      "perf3M": 20.58
     },
     {
       "symbol": "SBUX",
@@ -2160,7 +2267,8 @@
       "perfW": 3.53,
       "perf1M": 6.08,
       "perfYTD": 19.69,
-      "perfY": 17.92
+      "perfY": 17.92,
+      "perf3M": -2.97
     },
     {
       "symbol": "NEM",
@@ -2180,7 +2288,8 @@
       "perfW": -5.6,
       "perf1M": -12.08,
       "perfYTD": 7.8,
-      "perfY": 22.12
+      "perfY": 22.12,
+      "perf3M": 16.14
     },
     {
       "symbol": "PSX",
@@ -2200,7 +2309,8 @@
       "perfW": -3.0,
       "perf1M": 9.27,
       "perfYTD": 119.52,
-      "perfY": 114.11
+      "perfY": 114.11,
+      "perf3M": 37.33
     },
     {
       "symbol": "LOW",
@@ -2220,7 +2330,8 @@
       "perfW": 0.82,
       "perf1M": 2.33,
       "perfYTD": -17.73,
-      "perfY": -17.94
+      "perfY": -17.94,
+      "perf3M": -1.93
     },
     {
       "symbol": "PH",
@@ -2240,7 +2351,8 @@
       "perfW": -8.8,
       "perf1M": -8.37,
       "perfYTD": -0.12,
-      "perfY": 18.11
+      "perfY": 18.11,
+      "perf3M": -10.98
     },
     {
       "symbol": "CME",
@@ -2260,7 +2372,8 @@
       "perfW": 4.81,
       "perf1M": 14.28,
       "perfYTD": 12.29,
-      "perfY": 12.07
+      "perfY": 12.07,
+      "perf3M": 20.26
     },
     {
       "symbol": "SO",
@@ -2280,7 +2393,8 @@
       "perfW": 3.52,
       "perf1M": 9.59,
       "perfYTD": 6.56,
-      "perfY": -5.09
+      "perfY": -5.09,
+      "perf3M": -4.25
     },
     {
       "symbol": "GLW",
@@ -2300,7 +2414,8 @@
       "perfW": -9.45,
       "perf1M": -22.77,
       "perfYTD": 39.12,
-      "perfY": 47.25
+      "perfY": 47.25,
+      "perf3M": -20.08
     },
     {
       "symbol": "ABNB",
@@ -2320,7 +2435,8 @@
       "perfW": -1.95,
       "perf1M": 7.83,
       "perfYTD": 26.53,
-      "perfY": 34.88
+      "perfY": 34.88,
+      "perf3M": 24.43
     },
     {
       "symbol": "ADBE",
@@ -2340,7 +2456,8 @@
       "perfW": 3.73,
       "perf1M": 10.16,
       "perfYTD": -24.77,
-      "perfY": -25.16
+      "perfY": -25.16,
+      "perf3M": 21.86
     },
     {
       "symbol": "MAR",
@@ -2360,7 +2477,8 @@
       "perfW": 0.51,
       "perf1M": 12.82,
       "perfYTD": 25.81,
-      "perfY": 43.58
+      "perfY": 43.58,
+      "perf3M": 6.87
     },
     {
       "symbol": "HCA",
@@ -2380,7 +2498,8 @@
       "perfW": -0.66,
       "perf1M": 6.25,
       "perfYTD": 0.69,
-      "perfY": 6.84
+      "perfY": 6.84,
+      "perf3M": 22.93
     },
     {
       "symbol": "BNY",
@@ -2400,7 +2519,8 @@
       "perfW": 1.42,
       "perf1M": -2.84,
       "perfYTD": 25.22,
-      "perfY": 35.3
+      "perfY": 35.3,
+      "perf3M": -8.55
     },
     {
       "symbol": "TT",
@@ -2420,7 +2540,8 @@
       "perfW": -2.42,
       "perf1M": 2.15,
       "perfYTD": 13.82,
-      "perfY": 8.38
+      "perfY": 8.38,
+      "perf3M": -6.78
     },
     {
       "symbol": "DUK",
@@ -2440,7 +2561,8 @@
       "perfW": 4.81,
       "perf1M": 7.74,
       "perfYTD": 6.66,
-      "perfY": -3.76
+      "perfY": -3.76,
+      "perf3M": -3.37
     },
     {
       "symbol": "DDOG",
@@ -2460,7 +2582,8 @@
       "perfW": 1.6,
       "perf1M": 7.17,
       "perfYTD": 96.47,
-      "perfY": 74.82
+      "perfY": 74.82,
+      "perf3M": 8.54
     },
     {
       "symbol": "WM",
@@ -2480,7 +2603,8 @@
       "perfW": 6.5,
       "perf1M": 15.09,
       "perfYTD": 9.14,
-      "perfY": 9.87
+      "perfY": 9.87,
+      "perf3M": 0.78
     },
     {
       "symbol": "ELV",
@@ -2500,7 +2624,8 @@
       "perfW": 1.53,
       "perf1M": 9.76,
       "perfYTD": 25.43,
-      "perfY": 29.91
+      "perfY": 29.91,
+      "perf3M": 15.61
     },
     {
       "symbol": "GD",
@@ -2520,7 +2645,8 @@
       "perfW": 2.75,
       "perf1M": 1.5,
       "perfYTD": 3.81,
-      "perfY": 2.89
+      "perfY": 2.89,
+      "perf3M": -9.01
     },
     {
       "symbol": "EQIX",
@@ -2540,7 +2666,8 @@
       "perfW": -4.43,
       "perf1M": -9.65,
       "perfYTD": 24.65,
-      "perfY": 15.06
+      "perfY": 15.06,
+      "perf3M": -9.85
     },
     {
       "symbol": "MRSH",
@@ -2560,7 +2687,8 @@
       "perfW": 5.27,
       "perf1M": 16.54,
       "perfYTD": 7.09,
-      "perfY": 4.3
+      "perfY": 4.3,
+      "perf3M": 11.91
     },
     {
       "symbol": "CSX",
@@ -2580,7 +2708,8 @@
       "perfW": 3.78,
       "perf1M": 8.89,
       "perfYTD": 39.55,
-      "perfY": 41.59
+      "perfY": 41.59,
+      "perf3M": -3.75
     },
     {
       "symbol": "FCX",
@@ -2600,7 +2729,8 @@
       "perfW": -7.01,
       "perf1M": -10.63,
       "perfYTD": 26.01,
-      "perfY": 57.25
+      "perfY": 57.25,
+      "perf3M": 4.19
     },
     {
       "symbol": "USB",
@@ -2620,7 +2750,8 @@
       "perfW": 2.56,
       "perf1M": 0.98,
       "perfYTD": 11.72,
-      "perfY": 25.01
+      "perfY": 25.01,
+      "perf3M": -6.0
     },
     {
       "symbol": "INTU",
@@ -2640,7 +2771,8 @@
       "perfW": 2.6,
       "perf1M": 17.72,
       "perfYTD": -48.02,
-      "perfY": -48.86
+      "perfY": -48.86,
+      "perf3M": 19.8
     },
     {
       "symbol": "ICE",
@@ -2660,7 +2792,8 @@
       "perfW": 2.13,
       "perf1M": 6.86,
       "perfYTD": 0.87,
-      "perfY": 3.0
+      "perfY": 3.0,
+      "perf3M": 13.23
     },
     {
       "symbol": "MNST",
@@ -2680,7 +2813,8 @@
       "perfW": 0.59,
       "perf1M": 4.6,
       "perfYTD": 20.49,
-      "perfY": 32.75
+      "perfY": 32.75,
+      "perf3M": -1.16
     },
     {
       "symbol": "EMR",
@@ -2700,7 +2834,8 @@
       "perfW": 0.12,
       "perf1M": 5.62,
       "perfYTD": 21.29,
-      "perfY": 23.85
+      "perfY": 23.85,
+      "perf3M": 11.52
     },
     {
       "symbol": "CEG",
@@ -2720,7 +2855,8 @@
       "perfW": -7.79,
       "perf1M": -3.23,
       "perfYTD": -29.2,
-      "perfY": -28.4
+      "perfY": -28.4,
+      "perf3M": -8.17
     },
     {
       "symbol": "MMM",
@@ -2740,7 +2876,8 @@
       "perfW": 4.72,
       "perf1M": 2.97,
       "perfYTD": 8.34,
-      "perfY": 3.73
+      "perfY": 3.73,
+      "perf3M": 1.85
     },
     {
       "symbol": "PNC",
@@ -2760,7 +2897,8 @@
       "perfW": 3.64,
       "perf1M": -0.87,
       "perfYTD": 7.54,
-      "perfY": 23.28
+      "perfY": 23.28,
+      "perf3M": -10.04
     },
     {
       "symbol": "CTAS",
@@ -2780,7 +2918,8 @@
       "perfW": 4.27,
       "perf1M": 13.88,
       "perfYTD": 19.47,
-      "perfY": 15.52
+      "perfY": 15.52,
+      "perf3M": 10.79
     },
     {
       "symbol": "AMT",
@@ -2800,7 +2939,8 @@
       "perfW": 4.13,
       "perf1M": 8.25,
       "perfYTD": 7.82,
-      "perfY": -1.2
+      "perfY": -1.2,
+      "perf3M": 13.48
     },
     {
       "symbol": "WMB",
@@ -2820,7 +2960,8 @@
       "perfW": 3.14,
       "perf1M": 0.55,
       "perfYTD": 19.28,
-      "perfY": 16.26
+      "perfY": 16.26,
+      "perf3M": -4.91
     },
     {
       "symbol": "JCI",
@@ -2840,7 +2981,8 @@
       "perfW": -2.33,
       "perf1M": -1.42,
       "perfYTD": 19.51,
-      "perfY": 32.32
+      "perfY": 32.32,
+      "perf3M": 1.05
     },
     {
       "symbol": "CDNS",
@@ -2860,7 +3002,8 @@
       "perfW": -2.31,
       "perf1M": 3.55,
       "perfYTD": 0.25,
-      "perfY": -3.89
+      "perfY": -3.89,
+      "perf3M": -5.59
     },
     {
       "symbol": "APP",
@@ -2880,7 +3023,8 @@
       "perfW": -7.01,
       "perf1M": -17.62,
       "perfYTD": -61.92,
-      "perfY": -53.6
+      "perfY": -53.6,
+      "perf3M": -34.46
     },
     {
       "symbol": "UPS",
@@ -2900,7 +3044,8 @@
       "perfW": 2.62,
       "perf1M": 5.66,
       "perfYTD": 1.77,
-      "perfY": 15.46
+      "perfY": 15.46,
+      "perf3M": -11.86
     },
     {
       "symbol": "EOG",
@@ -2920,7 +3065,8 @@
       "perfW": 6.56,
       "perf1M": 15.52,
       "perfYTD": 55.27,
-      "perfY": 50.26
+      "perfY": 50.26,
+      "perf3M": 13.22
     },
     {
       "symbol": "HOOD",
@@ -2940,7 +3086,8 @@
       "perfW": -7.43,
       "perf1M": -22.57,
       "perfYTD": -17.67,
-      "perfY": -25.89
+      "perfY": -25.89,
+      "perf3M": -5.0
     },
     {
       "symbol": "MCO",
@@ -2960,7 +3107,8 @@
       "perfW": -0.72,
       "perf1M": 3.3,
       "perfYTD": -5.15,
-      "perfY": 1.67
+      "perfY": 1.67,
+      "perf3M": 1.58
     },
     {
       "symbol": "REGN",
@@ -2980,7 +3128,8 @@
       "perfW": 0.25,
       "perf1M": -0.03,
       "perfYTD": 3.97,
-      "perfY": 38.87
+      "perfY": 38.87,
+      "perf3M": 22.29
     },
     {
       "symbol": "SNPS",
@@ -3000,7 +3149,8 @@
       "perfW": -7.35,
       "perf1M": 5.06,
       "perfYTD": -10.19,
-      "perfY": -4.84
+      "perfY": -4.84,
+      "perf3M": 13.79
     },
     {
       "symbol": "PWR",
@@ -3020,7 +3170,8 @@
       "perfW": -14.54,
       "perf1M": -15.08,
       "perfYTD": 28.59,
-      "perfY": 32.31
+      "perfY": 32.31,
+      "perf3M": -15.98
     },
     {
       "symbol": "KKR",
@@ -3040,7 +3191,8 @@
       "perfW": 2.56,
       "perf1M": -6.28,
       "perfYTD": -29.13,
-      "perfY": -26.11
+      "perfY": -26.11,
+      "perf3M": -4.88
     },
     {
       "symbol": "SHW",
@@ -3060,7 +3212,8 @@
       "perfW": -0.3,
       "perf1M": 3.57,
       "perfYTD": 4.27,
-      "perfY": 1.01
+      "perfY": 1.01,
+      "perf3M": 7.6
     },
     {
       "symbol": "TRV",
@@ -3080,7 +3233,8 @@
       "perfW": 7.64,
       "perf1M": 10.26,
       "perfYTD": 38.0,
-      "perfY": 47.75
+      "perfY": 47.75,
+      "perf3M": 5.22
     },
     {
       "symbol": "MDLZ",
@@ -3100,7 +3254,8 @@
       "perfW": 0.5,
       "perf1M": 4.45,
       "perfYTD": 18.28,
-      "perfY": 3.19
+      "perfY": 3.19,
+      "perf3M": 6.26
     },
     {
       "symbol": "CI",
@@ -3120,7 +3275,8 @@
       "perfW": 1.98,
       "perf1M": 12.33,
       "perfYTD": 10.95,
-      "perfY": 0.31
+      "perfY": 0.31,
+      "perf3M": 6.55
     },
     {
       "symbol": "ECL",
@@ -3140,7 +3296,8 @@
       "perfW": -1.28,
       "perf1M": 4.77,
       "perfYTD": 10.46,
-      "perfY": 4.39
+      "perfY": 4.39,
+      "perf3M": 9.4
     },
     {
       "symbol": "CMCSA",
@@ -3160,7 +3317,8 @@
       "perfW": 3.56,
       "perf1M": 1.48,
       "perfYTD": -18.96,
-      "perfY": -18.22
+      "perfY": -18.22,
+      "perf3M": 6.53
     },
     {
       "symbol": "MRNA",
@@ -3180,7 +3338,8 @@
       "perfW": -14.85,
       "perf1M": 9.1,
       "perfYTD": 570.8,
-      "perfY": 674.98
+      "perfY": 674.98,
+      "perf3M": 249.49
     },
     {
       "symbol": "MSI",
@@ -3200,7 +3359,8 @@
       "perfW": 4.81,
       "perf1M": 5.17,
       "perfYTD": 25.7,
-      "perfY": 7.91
+      "perfY": 7.91,
+      "perf3M": 18.47
     },
     {
       "symbol": "SLB",
@@ -3220,7 +3380,8 @@
       "perfW": 8.26,
       "perf1M": -0.28,
       "perfYTD": 38.14,
-      "perfY": 48.84
+      "perfY": 48.84,
+      "perf3M": 5.97
     },
     {
       "symbol": "HLT",
@@ -3240,7 +3401,8 @@
       "perfW": 1.27,
       "perf1M": 13.79,
       "perfYTD": 21.88,
-      "perfY": 27.55
+      "perfY": 27.55,
+      "perf3M": 9.09
     },
     {
       "symbol": "ITW",
@@ -3260,7 +3422,8 @@
       "perfW": 0.92,
       "perf1M": 2.27,
       "perfYTD": 11.8,
-      "perfY": 8.32
+      "perfY": 8.32,
+      "perf3M": -0.82
     },
     {
       "symbol": "NOC",
@@ -3280,7 +3443,8 @@
       "perfW": 8.99,
       "perf1M": 8.03,
       "perfYTD": -3.19,
-      "perfY": -8.05
+      "perfY": -8.05,
+      "perf3M": 2.98
     },
     {
       "symbol": "DASH",
@@ -3300,7 +3464,8 @@
       "perfW": -7.45,
       "perf1M": -5.9,
       "perfYTD": -21.92,
-      "perfY": -28.53
+      "perfY": -28.53,
+      "perf3M": 4.9
     },
     {
       "symbol": "KMI",
@@ -3320,7 +3485,8 @@
       "perfW": 4.27,
       "perf1M": 9.79,
       "perfYTD": 25.25,
-      "perfY": 22.96
+      "perfY": 22.96,
+      "perf3M": 4.59
     },
     {
       "symbol": "HPE",
@@ -3340,7 +3506,8 @@
       "perfW": -1.67,
       "perf1M": -8.9,
       "perfYTD": 133.48,
-      "perfY": 144.99
+      "perfY": 144.99,
+      "perf3M": 18.1
     },
     {
       "symbol": "CL",
@@ -3360,7 +3527,8 @@
       "perfW": 0.58,
       "perf1M": 8.38,
       "perfYTD": 19.14,
-      "perfY": 17.92
+      "perfY": 17.92,
+      "perf3M": 4.49
     },
     {
       "symbol": "VRT",
@@ -3380,7 +3548,8 @@
       "perfW": -7.91,
       "perf1M": -23.4,
       "perfYTD": 14.67,
-      "perfY": 11.34
+      "perfY": 11.34,
+      "perf3M": -35.33
     },
     {
       "symbol": "HWM",
@@ -3400,7 +3569,8 @@
       "perfW": -15.8,
       "perf1M": -17.74,
       "perfYTD": -9.53,
-      "perfY": -2.97
+      "perfY": -2.97,
+      "perf3M": -35.3
     },
     {
       "symbol": "NSC",
@@ -3420,7 +3590,8 @@
       "perfW": 1.36,
       "perf1M": 5.43,
       "perfYTD": 14.23,
-      "perfY": 14.33
+      "perfY": 14.33,
+      "perf3M": -6.14
     },
     {
       "symbol": "RCL",
@@ -3440,7 +3611,8 @@
       "perfW": -2.18,
       "perf1M": 17.08,
       "perfYTD": -0.73,
-      "perfY": -12.63
+      "perfY": -12.63,
+      "perf3M": -3.26
     },
     {
       "symbol": "RSG",
@@ -3460,7 +3632,8 @@
       "perfW": 4.24,
       "perf1M": 12.64,
       "perfYTD": 14.2,
-      "perfY": 7.5
+      "perfY": 7.5,
+      "perf3M": 10.39
     },
     {
       "symbol": "ROST",
@@ -3480,7 +3653,8 @@
       "perfW": -3.52,
       "perf1M": -1.83,
       "perfYTD": 26.97,
-      "perfY": 47.75
+      "perfY": 47.75,
+      "perf3M": -1.46
     },
     {
       "symbol": "ORLY",
@@ -3500,7 +3674,8 @@
       "perfW": 0.74,
       "perf1M": 5.52,
       "perfYTD": -0.9,
-      "perfY": -9.63
+      "perfY": -9.63,
+      "perf3M": 4.38
     },
     {
       "symbol": "CMI",
@@ -3520,7 +3695,8 @@
       "perfW": -2.37,
       "perf1M": -0.65,
       "perfYTD": 1.36,
-      "perfY": 25.91
+      "perfY": 25.91,
+      "perf3M": -22.2
     },
     {
       "symbol": "FDX",
@@ -3540,7 +3716,8 @@
       "perfW": 0.74,
       "perf1M": 1.26,
       "perfYTD": 28.39,
-      "perfY": 54.46
+      "perfY": 54.46,
+      "perf3M": -5.48
     },
     {
       "symbol": "AEP",
@@ -3560,7 +3737,8 @@
       "perfW": 3.66,
       "perf1M": 8.18,
       "perfYTD": 12.34,
-      "perfY": 10.25
+      "perfY": 10.25,
+      "perf3M": -4.24
     },
     {
       "symbol": "HON",
@@ -3580,7 +3758,8 @@
       "perfW": 4.6,
       "perf1M": 5.81,
       "perfYTD": 7.81,
-      "perfY": 4.15
+      "perfY": 4.15,
+      "perf3M": -10.43
     },
     {
       "symbol": "TGT",
@@ -3600,7 +3779,8 @@
       "perfW": -3.18,
       "perf1M": -3.95,
       "perfYTD": 56.02,
-      "perfY": 62.39
+      "perfY": 62.39,
+      "perf3M": 13.57
     },
     {
       "symbol": "AJG",
@@ -3620,7 +3800,8 @@
       "perfW": 6.36,
       "perf1M": 17.2,
       "perfYTD": 4.25,
-      "perfY": -5.3
+      "perfY": -5.3,
+      "perf3M": 10.34
     },
     {
       "symbol": "LITE",
@@ -3640,7 +3821,8 @@
       "perfW": -11.4,
       "perf1M": -20.11,
       "perfYTD": 99.32,
-      "perfY": 376.15
+      "perfY": 376.15,
+      "perf3M": -6.7
     },
     {
       "symbol": "SPG",
@@ -3660,7 +3842,8 @@
       "perfW": 3.51,
       "perf1M": 3.16,
       "perfYTD": 14.72,
-      "perfY": 17.64
+      "perfY": 17.64,
+      "perf3M": -6.55
     },
     {
       "symbol": "APD",
@@ -3680,7 +3863,8 @@
       "perfW": 3.56,
       "perf1M": 6.89,
       "perfYTD": 25.22,
-      "perfY": 20.67
+      "perfY": 20.67,
+      "perf3M": 4.2
     },
     {
       "symbol": "URI",
@@ -3700,7 +3884,8 @@
       "perfW": 5.44,
       "perf1M": 5.47,
       "perfYTD": 35.57,
-      "perfY": 15.67
+      "perfY": 15.67,
+      "perf3M": -2.91
     },
     {
       "symbol": "APO",
@@ -3720,7 +3905,8 @@
       "perfW": -0.01,
       "perf1M": -9.01,
       "perfYTD": -22.19,
-      "perfY": -11.26
+      "perfY": -11.26,
+      "perf3M": -5.06
     },
     {
       "symbol": "BSX",
@@ -3740,7 +3926,8 @@
       "perfW": 2.79,
       "perf1M": 1.53,
       "perfYTD": -52.27,
-      "perfY": -56.19
+      "perfY": -56.19,
+      "perf3M": 3.91
     },
     {
       "symbol": "TRGP",
@@ -3760,7 +3947,8 @@
       "perfW": 5.78,
       "perf1M": 6.26,
       "perfYTD": 64.48,
-      "perfY": 91.83
+      "perfY": 91.83,
+      "perf3M": 5.72
     },
     {
       "symbol": "AON",
@@ -3780,7 +3968,8 @@
       "perfW": 5.1,
       "perf1M": 6.62,
       "perfYTD": -13.56,
-      "perfY": -11.51
+      "perfY": -11.51,
+      "perf3M": -14.72
     },
     {
       "symbol": "OXY",
@@ -3800,7 +3989,8 @@
       "perfW": 4.96,
       "perf1M": 12.64,
       "perfYTD": 55.6,
-      "perfY": 48.75
+      "perfY": 48.75,
+      "perf3M": 11.99
     },
     {
       "symbol": "GM",
@@ -3820,7 +4010,8 @@
       "perfW": -10.43,
       "perf1M": -8.59,
       "perfYTD": -6.74,
-      "perfY": 11.7
+      "perfY": 11.7,
+      "perf3M": -5.74
     },
     {
       "symbol": "ALL",
@@ -3840,7 +4031,8 @@
       "perfW": 5.01,
       "perf1M": 10.73,
       "perfYTD": 22.29,
-      "perfY": 29.11
+      "perfY": 29.11,
+      "perf3M": -0.47
     },
     {
       "symbol": "DLR",
@@ -3860,7 +4052,8 @@
       "perfW": -1.63,
       "perf1M": -6.47,
       "perfYTD": 11.47,
-      "perfY": -1.11
+      "perfY": -1.11,
+      "perf3M": -9.28
     },
     {
       "symbol": "CVNA",
@@ -3880,7 +4073,8 @@
       "perfW": -5.0,
       "perf1M": -10.94,
       "perfYTD": -31.45,
-      "perfY": -8.24
+      "perfY": -8.24,
+      "perf3M": -4.44
     },
     {
       "symbol": "GWW",
@@ -3900,7 +4094,8 @@
       "perfW": 0.74,
       "perf1M": 6.58,
       "perfYTD": 34.01,
-      "perfY": 38.64
+      "perfY": 38.64,
+      "perf3M": -0.03
     },
     {
       "symbol": "COR",
@@ -3920,7 +4115,8 @@
       "perfW": -3.59,
       "perf1M": 4.91,
       "perfYTD": -1.83,
-      "perfY": 0.21
+      "perfY": 0.21,
+      "perf3M": 7.85
     },
     {
       "symbol": "MET",
@@ -3940,7 +4136,8 @@
       "perfW": -2.16,
       "perf1M": 3.8,
       "perfYTD": 25.18,
-      "perfY": 25.23
+      "perfY": 25.23,
+      "perf3M": 7.23
     },
     {
       "symbol": "TDG",
@@ -3960,7 +4157,8 @@
       "perfW": -3.43,
       "perf1M": -0.52,
       "perfYTD": -16.87,
-      "perfY": -15.93
+      "perfY": -15.93,
+      "perf3M": -9.23
     },
     {
       "symbol": "AFL",
@@ -3980,7 +4178,8 @@
       "perfW": 1.79,
       "perf1M": 5.65,
       "perfYTD": 9.42,
-      "perfY": 11.27
+      "perfY": 11.27,
+      "perf3M": -3.04
     },
     {
       "symbol": "OKE",
@@ -4000,7 +4199,8 @@
       "perfW": 4.86,
       "perf1M": 5.6,
       "perfYTD": 30.45,
-      "perfY": 34.78
+      "perfY": 34.78,
+      "perf3M": 2.52
     },
     {
       "symbol": "TEL",
@@ -4020,7 +4220,8 @@
       "perfW": -1.53,
       "perf1M": -2.87,
       "perfYTD": -9.7,
-      "perfY": -9.58
+      "perfY": -9.58,
+      "perf3M": 4.6
     },
     {
       "symbol": "FAST",
@@ -4040,7 +4241,8 @@
       "perfW": 2.25,
       "perf1M": 3.57,
       "perfYTD": 28.94,
-      "perfY": 21.2
+      "perfY": 21.2,
+      "perf3M": 12.63
     },
     {
       "symbol": "NXPI",
@@ -4060,7 +4262,8 @@
       "perfW": 2.87,
       "perf1M": -0.67,
       "perfYTD": 6.49,
-      "perfY": 10.29
+      "perfY": 10.29,
+      "perf3M": -14.18
     },
     {
       "symbol": "TFC",
@@ -4080,7 +4283,8 @@
       "perfW": 2.45,
       "perf1M": 1.59,
       "perfYTD": -1.65,
-      "perfY": 11.05
+      "perfY": 11.05,
+      "perf3M": -5.78
     },
     {
       "symbol": "NUE",
@@ -4100,7 +4304,8 @@
       "perfW": 0.37,
       "perf1M": 5.6,
       "perfYTD": 56.26,
-      "perfY": 88.88
+      "perfY": 88.88,
+      "perf3M": 6.51
     },
     {
       "symbol": "PSA",
@@ -4120,7 +4325,8 @@
       "perfW": 4.51,
       "perf1M": 7.75,
       "perfYTD": 19.6,
-      "perfY": -0.36
+      "perfY": -0.36,
+      "perf3M": -2.31
     },
     {
       "symbol": "CAH",
@@ -4140,7 +4346,8 @@
       "perfW": -2.06,
       "perf1M": 12.53,
       "perfYTD": 22.0,
-      "perfY": 56.13
+      "perfY": 56.13,
+      "perf3M": 9.52
     },
     {
       "symbol": "FANG",
@@ -4160,7 +4367,8 @@
       "perfW": 4.44,
       "perf1M": 10.76,
       "perfYTD": 36.17,
-      "perfY": 39.38
+      "perfY": 39.38,
+      "perf3M": -0.04
     },
     {
       "symbol": "D",
@@ -4180,7 +4388,8 @@
       "perfW": 3.33,
       "perf1M": 4.81,
       "perfYTD": 10.68,
-      "perfY": 6.22
+      "perfY": 6.22,
+      "perf3M": -9.03
     },
     {
       "symbol": "BE",
@@ -4200,7 +4409,8 @@
       "perfW": -16.42,
       "perf1M": -30.21,
       "perfYTD": 113.43,
-      "perfY": 105.11
+      "perfY": 105.11,
+      "perf3M": -9.75
     },
     {
       "symbol": "NDAQ",
@@ -4220,7 +4430,8 @@
       "perfW": 8.83,
       "perf1M": 8.53,
       "perfYTD": 5.46,
-      "perfY": 16.88
+      "perfY": 16.88,
+      "perf3M": 12.11
     },
     {
       "symbol": "GRMN",
@@ -4240,7 +4451,8 @@
       "perfW": 2.23,
       "perf1M": 3.51,
       "perfYTD": 44.22,
-      "perfY": 18.0
+      "perfY": 18.0,
+      "perf3M": 21.8
     },
     {
       "symbol": "DVN",
@@ -4260,7 +4472,8 @@
       "perfW": 3.82,
       "perf1M": 8.46,
       "perfYTD": 40.1,
-      "perfY": 53.72
+      "perfY": 53.72,
+      "perf3M": 13.64
     },
     {
       "symbol": "CRH",
@@ -4280,7 +4493,8 @@
       "perfW": 1.79,
       "perf1M": -1.96,
       "perfYTD": -32.36,
-      "perfY": -26.92
+      "perfY": -26.92,
+      "perf3M": -14.12
     },
     {
       "symbol": "PCAR",
@@ -4300,7 +4514,8 @@
       "perfW": -4.17,
       "perf1M": -5.55,
       "perfYTD": -2.58,
-      "perfY": 6.46
+      "perfY": 6.46,
+      "perf3M": -18.18
     },
     {
       "symbol": "MPWR",
@@ -4320,7 +4535,8 @@
       "perfW": -6.8,
       "perf1M": -16.6,
       "perfYTD": 22.91,
-      "perfY": 9.1
+      "perfY": 9.1,
+      "perf3M": -17.01
     },
     {
       "symbol": "BKR",
@@ -4340,7 +4556,8 @@
       "perfW": 2.03,
       "perf1M": -2.44,
       "perfYTD": 22.18,
-      "perfY": 15.95
+      "perfY": 15.95,
+      "perf3M": -2.02
     },
     {
       "symbol": "NKE",
@@ -4360,7 +4577,8 @@
       "perfW": -0.98,
       "perf1M": 2.42,
       "perfYTD": -41.72,
-      "perfY": -46.01
+      "perfY": -46.01,
+      "perf3M": -9.44
     },
     {
       "symbol": "AME",
@@ -4380,7 +4598,8 @@
       "perfW": -3.37,
       "perf1M": -1.52,
       "perfYTD": 16.52,
-      "perfY": 29.33
+      "perfY": 29.33,
+      "perf3M": -0.83
     },
     {
       "symbol": "SRE",
@@ -4400,7 +4619,8 @@
       "perfW": 2.18,
       "perf1M": 4.4,
       "perfYTD": -5.25,
-      "perfY": -9.25
+      "perfY": -9.25,
+      "perf3M": -10.41
     },
     {
       "symbol": "BDX",
@@ -4420,7 +4640,8 @@
       "perfW": 2.31,
       "perf1M": 9.23,
       "perfYTD": 30.28,
-      "perfY": 34.22
+      "perfY": 34.22,
+      "perf3M": 28.76
     },
     {
       "symbol": "EBAY",
@@ -4440,7 +4661,8 @@
       "perfW": -2.04,
       "perf1M": 10.99,
       "perfYTD": 39.55,
-      "perfY": 27.54
+      "perfY": 27.54,
+      "perf3M": 13.7
     },
     {
       "symbol": "O",
@@ -4460,7 +4682,8 @@
       "perfW": 1.86,
       "perf1M": 1.55,
       "perfYTD": 0.96,
-      "perfY": -5.98
+      "perfY": -5.98,
+      "perf3M": -12.34
     },
     {
       "symbol": "KEYS",
@@ -4480,7 +4703,8 @@
       "perfW": -7.14,
       "perf1M": -9.34,
       "perfYTD": 53.31,
-      "perfY": 91.31
+      "perfY": 91.31,
+      "perf3M": -2.74
     },
     {
       "symbol": "ADSK",
@@ -4500,7 +4724,8 @@
       "perfW": 1.69,
       "perf1M": 14.63,
       "perfYTD": -14.8,
-      "perfY": -17.04
+      "perfY": -17.04,
+      "perf3M": 20.81
     },
     {
       "symbol": "VEEV",
@@ -4520,7 +4745,8 @@
       "perfW": 0.97,
       "perf1M": 22.71,
       "perfYTD": 44.6,
-      "perfY": 12.27
+      "perfY": 12.27,
+      "perf3M": 77.22
     },
     {
       "symbol": "AZO",
@@ -4540,7 +4766,8 @@
       "perfW": 3.55,
       "perf1M": 10.81,
       "perfYTD": -5.17,
-      "perfY": -19.7
+      "perfY": -19.7,
+      "perf3M": 9.5
     },
     {
       "symbol": "HONA",
@@ -4560,7 +4787,8 @@
       "perfW": -0.57,
       "perf1M": -2.03,
       "perfYTD": -18.34,
-      "perfY": -18.34
+      "perfY": -18.34,
+      "perf3M": -17.64
     },
     {
       "symbol": "EW",
@@ -4580,7 +4808,8 @@
       "perfW": 0.97,
       "perf1M": 0.42,
       "perfYTD": 4.22,
-      "perfY": 16.39
+      "perfY": 16.39,
+      "perf3M": 1.22
     },
     {
       "symbol": "ETR",
@@ -4600,7 +4829,8 @@
       "perfW": 2.57,
       "perf1M": 6.67,
       "perfYTD": 15.96,
-      "perfY": 11.57
+      "perfY": 11.57,
+      "perf3M": -7.76
     },
     {
       "symbol": "HUM",
@@ -4620,7 +4850,8 @@
       "perfW": -2.39,
       "perf1M": 14.07,
       "perfYTD": 64.85,
-      "perfY": 48.94
+      "perfY": 48.94,
+      "perf3M": 6.72
     },
     {
       "symbol": "WDAY",
@@ -4640,7 +4871,8 @@
       "perfW": 6.68,
       "perf1M": 10.8,
       "perfYTD": -2.42,
-      "perfY": -13.52
+      "perfY": -13.52,
+      "perf3M": 60.92
     },
     {
       "symbol": "DAL",
@@ -4660,7 +4892,8 @@
       "perfW": -1.9,
       "perf1M": -7.16,
       "perfYTD": 9.92,
-      "perfY": 26.91
+      "perfY": 26.91,
+      "perf3M": -7.11
     },
     {
       "symbol": "VYLR",
@@ -4680,7 +4913,8 @@
       "perfW": 0.59,
       "perf1M": 13.02,
       "perfYTD": 13.02,
-      "perfY": 13.02
+      "perfY": 13.02,
+      "perf3M": 13.02
     },
     {
       "symbol": "A",
@@ -4700,7 +4934,8 @@
       "perfW": -1.13,
       "perf1M": 3.92,
       "perfYTD": 27.03,
-      "perfY": 18.3
+      "perfY": 18.3,
+      "perf3M": 23.22
     },
     {
       "symbol": "PYPL",
@@ -4720,7 +4955,8 @@
       "perfW": -0.59,
       "perf1M": 8.01,
       "perfYTD": -2.81,
-      "perfY": -16.23
+      "perfY": -16.23,
+      "perf3M": 1.26
     },
     {
       "symbol": "VMRK",
@@ -4740,7 +4976,8 @@
       "perfW": 2.69,
       "perf1M": 0.99,
       "perfYTD": 1.14,
-      "perfY": -1.35
+      "perfY": -1.35,
+      "perf3M": -7.9
     },
     {
       "symbol": "XEL",
@@ -4760,7 +4997,8 @@
       "perfW": 3.56,
       "perf1M": 8.79,
       "perfYTD": 5.73,
-      "perfY": -3.96
+      "perfY": -3.96,
+      "perf3M": -3.94
     },
     {
       "symbol": "TER",
@@ -4780,7 +5018,8 @@
       "perfW": -8.93,
       "perf1M": -22.4,
       "perfYTD": 54.98,
-      "perfY": 122.88
+      "perfY": 122.88,
+      "perf3M": -15.38
     },
     {
       "symbol": "FITB",
@@ -4800,7 +5039,8 @@
       "perfW": 4.37,
       "perf1M": 0.95,
       "perfYTD": 13.08,
-      "perfY": 26.56
+      "perfY": 26.56,
+      "perf3M": -7.52
     },
     {
       "symbol": "ROK",
@@ -4820,7 +5060,8 @@
       "perfW": 0.69,
       "perf1M": 0.36,
       "perfYTD": 8.7,
-      "perfY": 21.53
+      "perfY": 21.53,
+      "perf3M": -7.97
     },
     {
       "symbol": "LHX",
@@ -4840,7 +5081,8 @@
       "perfW": 4.28,
       "perf1M": 5.83,
       "perfYTD": -13.62,
-      "perfY": -12.47
+      "perfY": -12.47,
+      "perf3M": -15.58
     },
     {
       "symbol": "KDP",
@@ -4860,7 +5102,8 @@
       "perfW": 0.78,
       "perf1M": 9.71,
       "perfYTD": 24.66,
-      "perfY": 26.06
+      "perfY": 26.06,
+      "perf3M": 16.89
     },
     {
       "symbol": "VST",
@@ -4880,7 +5123,8 @@
       "perfW": -8.12,
       "perf1M": 0.42,
       "perfYTD": -14.48,
-      "perfY": -24.53
+      "perfY": -24.53,
+      "perf3M": -16.92
     },
     {
       "symbol": "CARR",
@@ -4900,7 +5144,8 @@
       "perfW": 2.74,
       "perf1M": 2.61,
       "perfYTD": 5.89,
-      "perfY": -1.32
+      "perfY": -1.32,
+      "perf3M": -18.2
     },
     {
       "symbol": "F",
@@ -4920,7 +5165,8 @@
       "perfW": -7.59,
       "perf1M": -10.56,
       "perfYTD": -11.99,
-      "perfY": -6.98
+      "perfY": -6.98,
+      "perf3M": -18.14
     },
     {
       "symbol": "IQV",
@@ -4940,7 +5186,8 @@
       "perfW": 2.74,
       "perf1M": 3.21,
       "perfYTD": 23.93,
-      "perfY": 25.84
+      "perfY": 25.84,
+      "perf3M": 34.22
     },
     {
       "symbol": "XYZ",
@@ -4960,7 +5207,8 @@
       "perfW": -4.94,
       "perf1M": -0.27,
       "perfYTD": 16.34,
-      "perfY": 0.43
+      "perfY": 0.43,
+      "perf3M": -0.7
     },
     {
       "symbol": "EXC",
@@ -4980,7 +5228,8 @@
       "perfW": 4.14,
       "perf1M": 6.88,
       "perfYTD": 2.0,
-      "perfY": -7.97
+      "perfY": -7.97,
+      "perf3M": -6.09
     },
     {
       "symbol": "STT",
@@ -5000,7 +5249,8 @@
       "perfW": -0.39,
       "perf1M": -6.29,
       "perfYTD": 30.52,
-      "perfY": 47.71
+      "perfY": 47.71,
+      "perf3M": -9.05
     },
     {
       "symbol": "WAB",
@@ -5020,7 +5270,8 @@
       "perfW": -5.62,
       "perf1M": -5.54,
       "perfYTD": 27.49,
-      "perfY": 40.32
+      "perfY": 40.32,
+      "perf3M": -8.85
     },
     {
       "symbol": "VTR",
@@ -5040,7 +5291,8 @@
       "perfW": 2.0,
       "perf1M": 0.52,
       "perfYTD": 12.19,
-      "perfY": 23.16
+      "perfY": 23.16,
+      "perf3M": -11.85
     },
     {
       "symbol": "CIEN",
@@ -5060,7 +5312,8 @@
       "perfW": -8.74,
       "perf1M": -13.12,
       "perfYTD": 32.89,
-      "perfY": 94.71
+      "perfY": 94.71,
+      "perf3M": -20.3
     },
     {
       "symbol": "WAT",
@@ -5080,7 +5333,8 @@
       "perfW": 2.07,
       "perf1M": 5.96,
       "perfYTD": 19.65,
-      "perfY": 30.83
+      "perfY": 30.83,
+      "perf3M": 18.77
     },
     {
       "symbol": "IDXX",
@@ -5100,7 +5354,8 @@
       "perfW": 1.22,
       "perf1M": 8.35,
       "perfYTD": -17.17,
-      "perfY": -11.23
+      "perfY": -11.23,
+      "perf3M": 3.88
     },
     {
       "symbol": "MSCI",
@@ -5120,7 +5375,8 @@
       "perfW": 7.25,
       "perf1M": 12.32,
       "perfYTD": 7.71,
-      "perfY": 14.73
+      "perfY": 14.73,
+      "perf3M": 10.03
     },
     {
       "symbol": "FERG",
@@ -5140,7 +5396,8 @@
       "perfW": -1.31,
       "perf1M": 2.81,
       "perfYTD": 1.66,
-      "perfY": -5.75
+      "perfY": -5.75,
+      "perf3M": -0.5
     },
     {
       "symbol": "AMP",
@@ -5160,7 +5417,8 @@
       "perfW": -2.41,
       "perf1M": -3.27,
       "perfYTD": 0.45,
-      "perfY": 3.27
+      "perfY": 3.27,
+      "perf3M": -5.24
     },
     {
       "symbol": "COIN",
@@ -5180,7 +5438,8 @@
       "perfW": -9.16,
       "perf1M": -16.94,
       "perfYTD": -28.68,
-      "perfY": -49.09
+      "perfY": -49.09,
+      "perf3M": 2.1
     },
     {
       "symbol": "ROP",
@@ -5200,7 +5459,8 @@
       "perfW": 13.16,
       "perf1M": 20.04,
       "perfYTD": -1.48,
-      "perfY": -6.19
+      "perfY": -6.19,
+      "perf3M": 20.88
     },
     {
       "symbol": "ED",
@@ -5220,7 +5480,8 @@
       "perfW": 4.61,
       "perf1M": 11.87,
       "perfYTD": 16.17,
-      "perfY": 12.74
+      "perfY": 12.74,
+      "perf3M": 2.24
     },
     {
       "symbol": "AIG",
@@ -5240,7 +5501,8 @@
       "perfW": 2.42,
       "perf1M": 8.33,
       "perfYTD": -4.66,
-      "perfY": 2.5
+      "perfY": 2.5,
+      "perf3M": 4.05
     },
     {
       "symbol": "NTAP",
@@ -5260,7 +5522,8 @@
       "perfW": 0.55,
       "perf1M": 11.82,
       "perfYTD": 100.17,
-      "perfY": 83.95
+      "perfY": 83.95,
+      "perf3M": 31.84
     },
     {
       "symbol": "PAYX",
@@ -5280,7 +5543,8 @@
       "perfW": 5.52,
       "perf1M": 7.63,
       "perfYTD": 5.28,
-      "perfY": -6.59
+      "perfY": -6.59,
+      "perf3M": 1.61
     },
     {
       "symbol": "DHI",
@@ -5300,7 +5564,8 @@
       "perfW": 5.44,
       "perf1M": 3.89,
       "perfYTD": 2.18,
-      "perfY": -6.53
+      "perfY": -6.53,
+      "perf3M": 3.73
     },
     {
       "symbol": "COHR",
@@ -5320,7 +5585,8 @@
       "perfW": -15.47,
       "perf1M": -32.95,
       "perfYTD": 11.32,
-      "perfY": 81.75
+      "perfY": 81.75,
+      "perf3M": -31.6
     },
     {
       "symbol": "P",
@@ -5340,7 +5606,8 @@
       "perfW": -6.57,
       "perf1M": 10.97,
       "perfYTD": 80.23,
-      "perfY": 37.65
+      "perfY": 37.65,
+      "perf3M": 63.92
     },
     {
       "symbol": "LYV",
@@ -5360,7 +5627,8 @@
       "perfW": -0.13,
       "perf1M": 2.67,
       "perfYTD": 21.77,
-      "perfY": 10.67
+      "perfY": 10.67,
+      "perf3M": -2.18
     },
     {
       "symbol": "YUM",
@@ -5380,7 +5648,8 @@
       "perfW": -1.5,
       "perf1M": 7.19,
       "perfYTD": -1.21,
-      "perfY": 1.54
+      "perfY": 1.54,
+      "perf3M": 1.08
     },
     {
       "symbol": "ILMN",
@@ -5400,7 +5669,8 @@
       "perfW": 0.72,
       "perf1M": 8.29,
       "perfYTD": 105.15,
-      "perfY": 177.1
+      "perfY": 177.1,
+      "perf3M": 36.07
     },
     {
       "symbol": "FIX",
@@ -5420,7 +5690,8 @@
       "perfW": -21.4,
       "perf1M": -28.64,
       "perfYTD": 23.71,
-      "perfY": 46.69
+      "perfY": 46.69,
+      "perf3M": -36.26
     },
     {
       "symbol": "MCHP",
@@ -5440,7 +5711,8 @@
       "perfW": 1.25,
       "perf1M": -1.33,
       "perfYTD": 13.47,
-      "perfY": 17.67
+      "perfY": 17.67,
+      "perf3M": -7.77
     },
     {
       "symbol": "TWLO",
@@ -5460,7 +5732,8 @@
       "perfW": -5.35,
       "perf1M": -8.14,
       "perfYTD": 83.26,
-      "perfY": 140.44
+      "perfY": 140.44,
+      "perf3M": 39.18
     },
     {
       "symbol": "SYY",
@@ -5480,7 +5753,8 @@
       "perfW": -1.27,
       "perf1M": 3.52,
       "perfYTD": 11.57,
-      "perfY": 3.75
+      "perfY": 3.75,
+      "perf3M": -1.01
     },
     {
       "symbol": "PRU",
@@ -5500,7 +5774,8 @@
       "perfW": -0.5,
       "perf1M": -1.79,
       "perfYTD": 1.88,
-      "perfY": 12.07
+      "perfY": 12.07,
+      "perf3M": -2.01
     },
     {
       "symbol": "KR",
@@ -5520,7 +5795,8 @@
       "perfW": 5.0,
       "perf1M": 14.02,
       "perfYTD": 7.07,
-      "perfY": -2.78
+      "perfY": -2.78,
+      "perf3M": 20.05
     },
     {
       "symbol": "EL",
@@ -5540,7 +5816,8 @@
       "perfW": 1.09,
       "perf1M": 8.6,
       "perfYTD": 2.89,
-      "perfY": 9.61
+      "perfY": 9.61,
+      "perf3M": 35.48
     },
     {
       "symbol": "ADM",
@@ -5560,7 +5837,8 @@
       "perfW": -3.89,
       "perf1M": -2.66,
       "perfYTD": 39.52,
-      "perfY": 28.22
+      "perfY": 28.22,
+      "perf3M": -7.47
     },
     {
       "symbol": "TTWO",
@@ -5580,7 +5858,8 @@
       "perfW": -3.25,
       "perf1M": -1.25,
       "perfYTD": -20.96,
-      "perfY": -20.23
+      "perfY": -20.23,
+      "perf3M": -12.09
     },
     {
       "symbol": "ODFL",
@@ -5600,7 +5879,8 @@
       "perfW": -3.53,
       "perf1M": 2.97,
       "perfYTD": 15.82,
-      "perfY": 29.99
+      "perfY": 29.99,
+      "perf3M": -20.7
     },
     {
       "symbol": "KVUE",
@@ -5620,7 +5900,8 @@
       "perfW": 4.43,
       "perf1M": 9.7,
       "perfYTD": 13.32,
-      "perfY": 29.09
+      "perfY": 29.09,
+      "perf3M": 3.65
     },
     {
       "symbol": "HIG",
@@ -5640,7 +5921,8 @@
       "perfW": 2.98,
       "perf1M": 6.79,
       "perfYTD": -0.31,
-      "perfY": 8.6
+      "perfY": 8.6,
+      "perf3M": -0.12
     },
     {
       "symbol": "BIIB",
@@ -5660,7 +5942,8 @@
       "perfW": 6.34,
       "perf1M": 10.47,
       "perfYTD": 42.95,
-      "perfY": 68.26
+      "perfY": 68.26,
+      "perf3M": 23.96
     },
     {
       "symbol": "KMB",
@@ -5680,7 +5963,8 @@
       "perfW": 5.2,
       "perf1M": 11.54,
       "perfYTD": 8.85,
-      "perfY": -8.48
+      "perfY": -8.48,
+      "perf3M": 2.21
     },
     {
       "symbol": "CCI",
@@ -5700,7 +5984,8 @@
       "perfW": 7.36,
       "perf1M": 19.65,
       "perfYTD": -3.24,
-      "perfY": -14.03
+      "perfY": -14.03,
+      "perf3M": 13.76
     },
     {
       "symbol": "WEC",
@@ -5720,7 +6005,8 @@
       "perfW": 4.29,
       "perf1M": 8.49,
       "perfYTD": 5.13,
-      "perfY": -5.57
+      "perfY": -5.57,
+      "perf3M": -3.8
     },
     {
       "symbol": "MLM",
@@ -5740,7 +6026,8 @@
       "perfW": 0.27,
       "perf1M": 2.78,
       "perfYTD": -18.1,
-      "perfY": -18.33
+      "perfY": -18.33,
+      "perf3M": -7.73
     },
     {
       "symbol": "PEG",
@@ -5760,7 +6047,8 @@
       "perfW": 2.19,
       "perf1M": 4.53,
       "perfYTD": -10.86,
-      "perfY": -14.49
+      "perfY": -14.49,
+      "perf3M": -10.2
     },
     {
       "symbol": "RMD",
@@ -5780,7 +6068,8 @@
       "perfW": 4.69,
       "perf1M": 13.5,
       "perfYTD": 4.6,
-      "perfY": -5.11
+      "perfY": -5.11,
+      "perf3M": 30.16
     },
     {
       "symbol": "CBOE",
@@ -5800,7 +6089,8 @@
       "perfW": 9.81,
       "perf1M": 28.34,
       "perfYTD": 35.65,
-      "perfY": 44.32
+      "perfY": 44.32,
+      "perf3M": 19.41
     },
     {
       "symbol": "CBRE",
@@ -5820,7 +6110,8 @@
       "perfW": -9.35,
       "perf1M": -11.61,
       "perfYTD": -23.09,
-      "perfY": -24.72
+      "perfY": -24.72,
+      "perf3M": -9.86
     },
     {
       "symbol": "CCL",
@@ -5840,7 +6131,8 @@
       "perfW": -2.54,
       "perf1M": 18.28,
       "perfYTD": -14.92,
-      "perfY": -12.26
+      "perfY": -12.26,
+      "perf3M": 1.79
     },
     {
       "symbol": "CMG",
@@ -5860,7 +6152,8 @@
       "perfW": -10.21,
       "perf1M": -15.32,
       "perfYTD": -26.12,
-      "perfY": -33.92
+      "perfY": -33.92,
+      "perf3M": -15.19
     },
     {
       "symbol": "EQT",
@@ -5880,7 +6173,8 @@
       "perfW": 5.54,
       "perf1M": 8.72,
       "perfYTD": 4.27,
-      "perfY": 2.36
+      "perfY": 2.36,
+      "perf3M": 3.69
     },
     {
       "symbol": "ACGL",
@@ -5900,7 +6194,8 @@
       "perfW": 1.9,
       "perf1M": 7.89,
       "perfYTD": 6.18,
-      "perfY": 15.32
+      "perfY": 15.32,
+      "perf3M": 1.29
     },
     {
       "symbol": "EXPE",
@@ -5920,7 +6215,8 @@
       "perfW": -1.92,
       "perf1M": 3.96,
       "perfYTD": 2.12,
-      "perfY": 28.31
+      "perfY": 28.31,
+      "perf3M": 11.36
     },
     {
       "symbol": "CNC",
@@ -5940,7 +6236,8 @@
       "perfW": -1.43,
       "perf1M": 10.87,
       "perfYTD": 70.4,
-      "perfY": 109.96
+      "perfY": 109.96,
+      "perf3M": 9.32
     },
     {
       "symbol": "STLD",
@@ -5960,7 +6257,8 @@
       "perfW": -0.87,
       "perf1M": 4.11,
       "perfYTD": 40.73,
-      "perfY": 62.55
+      "perfY": 62.55,
+      "perf3M": 0.24
     },
     {
       "symbol": "AXON",
@@ -5980,7 +6278,8 @@
       "perfW": -0.5,
       "perf1M": -8.53,
       "perfYTD": -26.68,
-      "perfY": -40.32
+      "perfY": -40.32,
+      "perf3M": -15.88
     },
     {
       "symbol": "HSY",
@@ -6000,7 +6299,8 @@
       "perfW": -0.46,
       "perf1M": 0.54,
       "perfYTD": -6.78,
-      "perfY": -7.93
+      "perfY": -7.93,
+      "perf3M": -1.94
     },
     {
       "symbol": "VMC",
@@ -6020,7 +6320,8 @@
       "perfW": 2.46,
       "perf1M": 6.72,
       "perfYTD": -8.2,
-      "perfY": -10.51
+      "perfY": -10.51,
+      "perf3M": -5.04
     },
     {
       "symbol": "ZTS",
@@ -6040,7 +6341,8 @@
       "perfW": 3.5,
       "perf1M": 11.38,
       "perfYTD": -35.89,
-      "perfY": -44.5
+      "perfY": -44.5,
+      "perf3M": 7.87
     },
     {
       "symbol": "MTD",
@@ -6060,7 +6362,8 @@
       "perfW": 2.19,
       "perf1M": 12.51,
       "perfYTD": 19.4,
-      "perfY": 21.0
+      "perfY": 21.0,
+      "perf3M": 25.17
     },
     {
       "symbol": "TKO",
@@ -6080,7 +6383,8 @@
       "perfW": -2.21,
       "perf1M": -7.84,
       "perfYTD": -17.56,
-      "perfY": -7.6
+      "perfY": -7.6,
+      "perf3M": -3.58
     },
     {
       "symbol": "IRM",
@@ -6100,7 +6404,8 @@
       "perfW": -2.65,
       "perf1M": -5.0,
       "perfYTD": 32.48,
-      "perfY": 5.77
+      "perfY": 5.77,
+      "perf3M": -13.43
     },
     {
       "symbol": "GEHC",
@@ -6120,7 +6425,8 @@
       "perfW": 0.49,
       "perf1M": 8.0,
       "perfYTD": -13.48,
-      "perfY": -6.38
+      "perfY": -6.38,
+      "perf3M": 14.37
     },
     {
       "symbol": "MTB",
@@ -6140,7 +6446,8 @@
       "perfW": 0.08,
       "perf1M": 0.02,
       "perfYTD": 10.3,
-      "perfY": 21.23
+      "perfY": 21.23,
+      "perf3M": -10.16
     },
     {
       "symbol": "UAL",
@@ -6160,7 +6467,8 @@
       "perfW": -3.36,
       "perf1M": -14.03,
       "perfYTD": -13.03,
-      "perfY": 1.22
+      "perfY": 1.22,
+      "perf3M": -15.85
     },
     {
       "symbol": "HBAN",
@@ -6180,7 +6488,8 @@
       "perfW": 2.01,
       "perf1M": 1.09,
       "perfYTD": -9.49,
-      "perfY": -1.19
+      "perfY": -1.19,
+      "perf3M": -8.44
     },
     {
       "symbol": "CTSH",
@@ -6200,7 +6509,8 @@
       "perfW": 5.46,
       "perf1M": 19.46,
       "perfYTD": -15.0,
-      "perfY": 3.24
+      "perfY": 3.24,
+      "perf3M": 62.5
     },
     {
       "symbol": "NTRS",
@@ -6220,7 +6530,8 @@
       "perfW": 0.91,
       "perf1M": -2.42,
       "perfYTD": 22.78,
-      "perfY": 33.11
+      "perfY": 33.11,
+      "perf3M": -5.95
     },
     {
       "symbol": "HPQ",
@@ -6240,7 +6551,8 @@
       "perfW": 8.31,
       "perf1M": 4.04,
       "perfYTD": 49.25,
-      "perfY": 21.09
+      "perfY": 21.09,
+      "perf3M": 35.81
     },
     {
       "symbol": "RJF",
@@ -6260,7 +6572,8 @@
       "perfW": -0.15,
       "perf1M": -0.52,
       "perfYTD": -1.58,
-      "perfY": -8.57
+      "perfY": -8.57,
+      "perf3M": -5.49
     },
     {
       "symbol": "EXR",
@@ -6280,7 +6593,8 @@
       "perfW": 3.92,
       "perf1M": 7.19,
       "perfYTD": 10.26,
-      "perfY": -6.13
+      "perfY": -6.13,
+      "perf3M": -2.22
     },
     {
       "symbol": "WTW",
@@ -6300,7 +6614,8 @@
       "perfW": 3.82,
       "perf1M": 8.1,
       "perfYTD": -0.75,
-      "perfY": -3.19
+      "perfY": -3.19,
+      "perf3M": 12.37
     },
     {
       "symbol": "AEE",
@@ -6320,7 +6635,8 @@
       "perfW": 3.54,
       "perf1M": 6.83,
       "perfYTD": 8.32,
-      "perfY": 2.0
+      "perfY": 2.0,
+      "perf3M": -5.18
     },
     {
       "symbol": "WSM",
@@ -6340,7 +6656,8 @@
       "perfW": 0.18,
       "perf1M": 9.09,
       "perfYTD": 38.2,
-      "perfY": 34.75
+      "perfY": 34.75,
+      "perf3M": 15.99
     },
     {
       "symbol": "DXCM",
@@ -6360,7 +6677,8 @@
       "perfW": -11.36,
       "perf1M": -12.92,
       "perfYTD": 16.97,
-      "perfY": 10.24
+      "perfY": 10.24,
+      "perf3M": 9.7
     },
     {
       "symbol": "KHC",
@@ -6380,7 +6698,8 @@
       "perfW": 5.85,
       "perf1M": 3.29,
       "perfYTD": 2.1,
-      "perfY": -3.2
+      "perfY": -3.2,
+      "perf3M": -2.25
     },
     {
       "symbol": "DG",
@@ -6400,7 +6719,8 @@
       "perfW": -2.42,
       "perf1M": 8.32,
       "perfYTD": -0.07,
-      "perfY": 28.23
+      "perfY": 28.23,
+      "perf3M": 14.66
     },
     {
       "symbol": "ATO",
@@ -6420,7 +6740,8 @@
       "perfW": 4.45,
       "perf1M": 10.02,
       "perfYTD": 3.03,
-      "perfY": -3.25
+      "perfY": -3.25,
+      "perf3M": -3.84
     },
     {
       "symbol": "HAL",
@@ -6440,7 +6761,8 @@
       "perfW": 4.8,
       "perf1M": 5.75,
       "perfYTD": 23.22,
-      "perfY": 30.3
+      "perfY": 30.3,
+      "perf3M": 5.85
     },
     {
       "symbol": "TDY",
@@ -6460,7 +6782,8 @@
       "perfW": 0.84,
       "perf1M": 2.14,
       "perfYTD": 21.91,
-      "perfY": 14.94
+      "perfY": 14.94,
+      "perf3M": -4.33
     },
     {
       "symbol": "JBL",
@@ -6480,7 +6803,8 @@
       "perfW": -3.72,
       "perf1M": -10.65,
       "perfYTD": 18.45,
-      "perfY": 36.72
+      "perfY": 36.72,
+      "perf3M": -14.14
     },
     {
       "symbol": "OTIS",
@@ -6500,7 +6824,8 @@
       "perfW": 6.34,
       "perf1M": 10.58,
       "perfYTD": -13.84,
-      "perfY": -18.01
+      "perfY": -18.01,
+      "perf3M": 5.56
     },
     {
       "symbol": "EME",
@@ -6520,7 +6845,8 @@
       "perfW": -11.31,
       "perf1M": -14.41,
       "perfYTD": 5.06,
-      "perfY": -2.75
+      "perfY": -2.75,
+      "perf3M": -15.25
     },
     {
       "symbol": "IR",
@@ -6540,7 +6866,8 @@
       "perfW": -6.3,
       "perf1M": 0.14,
       "perfYTD": -7.95,
-      "perfY": -6.89
+      "perfY": -6.89,
+      "perf3M": -12.6
     },
     {
       "symbol": "AWK",
@@ -6560,7 +6887,8 @@
       "perfW": 6.9,
       "perf1M": 7.11,
       "perfYTD": 9.61,
-      "perfY": -1.03
+      "perfY": -1.03,
+      "perf3M": 5.51
     },
     {
       "symbol": "FLEX",
@@ -6580,7 +6908,8 @@
       "perfW": -21.2,
       "perf1M": -32.89,
       "perfYTD": 24.59,
-      "perfY": 24.03
+      "perfY": 24.03,
+      "perf3M": -39.37
     },
     {
       "symbol": "ON",
@@ -6600,7 +6929,8 @@
       "perfW": -0.63,
       "perf1M": -2.06,
       "perfYTD": 30.77,
-      "perfY": 43.48
+      "perfY": 43.48,
+      "perf3M": -18.35
     },
     {
       "symbol": "PCG",
@@ -6620,7 +6950,8 @@
       "perfW": -3.07,
       "perf1M": 0.24,
       "perfYTD": -21.99,
-      "perfY": -24.73
+      "perfY": -24.73,
+      "perf3M": -28.48
     },
     {
       "symbol": "RDDT",
@@ -6640,7 +6971,8 @@
       "perfW": -9.84,
       "perf1M": -6.34,
       "perfYTD": -37.87,
-      "perfY": -28.23
+      "perfY": -28.23,
+      "perf3M": -14.9
     },
     {
       "symbol": "WST",
@@ -6660,7 +6992,8 @@
       "perfW": 2.46,
       "perf1M": 5.72,
       "perfYTD": 42.47,
-      "perfY": 30.26
+      "perfY": 30.26,
+      "perf3M": 11.47
     },
     {
       "symbol": "DTE",
@@ -6680,7 +7013,8 @@
       "perfW": 2.5,
       "perf1M": 5.51,
       "perfYTD": 1.97,
-      "perfY": -8.04
+      "perfY": -8.04,
+      "perf3M": -11.12
     },
     {
       "symbol": "CFG",
@@ -6700,7 +7034,8 @@
       "perfW": 0.99,
       "perf1M": 0.22,
       "perfYTD": 11.43,
-      "perfY": 28.48
+      "perfY": 28.48,
+      "perf3M": -9.4
     },
     {
       "symbol": "ARES",
@@ -6720,7 +7055,8 @@
       "perfW": 6.51,
       "perf1M": -1.05,
       "perfYTD": -24.96,
-      "perfY": -18.75
+      "perfY": -18.75,
+      "perf3M": 0.49
     },
     {
       "symbol": "WRB",
@@ -6740,7 +7076,8 @@
       "perfW": -0.66,
       "perf1M": 7.85,
       "perfYTD": 5.1,
-      "perfY": -2.82
+      "perfY": -2.82,
+      "perf3M": -0.26
     },
     {
       "symbol": "CINF",
@@ -6760,7 +7097,8 @@
       "perfW": 4.95,
       "perf1M": 7.58,
       "perfYTD": 7.95,
-      "perfY": 13.26
+      "perfY": 13.26,
+      "perf3M": -1.97
     },
     {
       "symbol": "CNP",
@@ -6780,7 +7118,8 @@
       "perfW": 2.75,
       "perf1M": 8.91,
       "perfYTD": 7.15,
-      "perfY": 1.43
+      "perfY": 1.43,
+      "perf3M": -7.89
     },
     {
       "symbol": "VRSN",
@@ -6800,7 +7139,8 @@
       "perfW": -2.37,
       "perf1M": -0.08,
       "perfYTD": 23.55,
-      "perfY": 18.8
+      "perfY": 18.8,
+      "perf3M": 13.84
     },
     {
       "symbol": "CPRT",
@@ -6820,7 +7160,8 @@
       "perfW": 3.72,
       "perf1M": 0.83,
       "perfYTD": -25.92,
-      "perfY": -35.53
+      "perfY": -35.53,
+      "perf3M": 6.23
     },
     {
       "symbol": "CPAY",
@@ -6840,7 +7181,8 @@
       "perfW": -0.41,
       "perf1M": 4.46,
       "perfYTD": 35.41,
-      "perfY": 43.42
+      "perfY": 43.42,
+      "perf3M": 10.95
     },
     {
       "symbol": "FE",
@@ -6860,7 +7202,8 @@
       "perfW": 0.68,
       "perf1M": 3.59,
       "perfYTD": 2.88,
-      "perfY": -3.11
+      "perfY": -3.11,
+      "perf3M": -7.29
     },
     {
       "symbol": "ULTA",
@@ -6880,7 +7223,8 @@
       "perfW": 2.2,
       "perf1M": 10.9,
       "perfYTD": 3.03,
-      "perfY": 20.08
+      "perfY": 20.08,
+      "perf3M": 31.14
     },
     {
       "symbol": "DGX",
@@ -6900,7 +7244,8 @@
       "perfW": 0.93,
       "perf1M": 2.88,
       "perfYTD": 39.57,
-      "perfY": 32.94
+      "perfY": 32.94,
+      "perf3M": 6.09
     },
     {
       "symbol": "LH",
@@ -6920,7 +7265,8 @@
       "perfW": 0.89,
       "perf1M": 5.46,
       "perfYTD": 30.89,
-      "perfY": 15.71
+      "perfY": 15.71,
+      "perf3M": 12.61
     },
     {
       "symbol": "FISV",
@@ -6940,7 +7286,8 @@
       "perfW": 4.75,
       "perf1M": 7.85,
       "perfYTD": -26.17,
-      "perfY": -60.2
+      "perfY": -60.2,
+      "perf3M": -0.74
     },
     {
       "symbol": "FOXA",
@@ -6960,7 +7307,8 @@
       "perfW": 0.95,
       "perf1M": 3.88,
       "perfYTD": -8.93,
-      "perfY": 13.15
+      "perfY": 13.15,
+      "perf3M": 20.54
     },
     {
       "symbol": "FOX",
@@ -6980,7 +7328,8 @@
       "perfW": 0.75,
       "perf1M": 3.77,
       "perfYTD": -8.45,
-      "perfY": 12.63
+      "perfY": 12.63,
+      "perf3M": 21.08
     },
     {
       "symbol": "DOV",
@@ -7000,7 +7349,8 @@
       "perfW": 2.3,
       "perf1M": 7.35,
       "perfYTD": 2.06,
-      "perfY": 15.46
+      "perfY": 15.46,
+      "perf3M": -0.77
     },
     {
       "symbol": "PPL",
@@ -7020,7 +7370,8 @@
       "perfW": 0.81,
       "perf1M": 6.97,
       "perfYTD": -0.06,
-      "perfY": -7.95
+      "perfY": -7.95,
+      "perf3M": -3.93
     },
     {
       "symbol": "VICI",
@@ -7040,7 +7391,8 @@
       "perfW": 0.72,
       "perf1M": -0.38,
       "perfYTD": -15.62,
-      "perfY": -24.28
+      "perfY": -24.28,
+      "perf3M": -10.17
     },
     {
       "symbol": "ECHO",
@@ -7060,7 +7412,8 @@
       "perfW": 1.51,
       "perf1M": -6.22,
       "perfYTD": -18.03,
-      "perfY": 23.86
+      "perfY": 23.86,
+      "perf3M": -1.96
     },
     {
       "symbol": "CASY",
@@ -7080,7 +7433,8 @@
       "perfW": 2.74,
       "perf1M": 19.57,
       "perfYTD": 26.72,
-      "perfY": 28.34
+      "perfY": 28.34,
+      "perf3M": -20.54
     },
     {
       "symbol": "FFIV",
@@ -7100,7 +7454,8 @@
       "perfW": -0.54,
       "perf1M": 0.33,
       "perfYTD": 78.02,
-      "perfY": 53.02
+      "perfY": 53.02,
+      "perf3M": 15.66
     },
     {
       "symbol": "EXPD",
@@ -7120,7 +7475,8 @@
       "perfW": -1.78,
       "perf1M": 4.41,
       "perfYTD": 31.56,
-      "perfY": 66.68
+      "perfY": 66.68,
+      "perf3M": 11.72
     },
     {
       "symbol": "VRSK",
@@ -7140,7 +7496,8 @@
       "perfW": 3.22,
       "perf1M": 14.1,
       "perfYTD": -11.74,
-      "perfY": -17.42
+      "perfY": -17.42,
+      "perf3M": 0.45
     },
     {
       "symbol": "VLTO",
@@ -7160,7 +7517,8 @@
       "perfW": 2.83,
       "perf1M": 9.39,
       "perfYTD": 5.15,
-      "perfY": 0.6
+      "perfY": 0.6,
+      "perf3M": 13.77
     },
     {
       "symbol": "ES",
@@ -7180,7 +7538,8 @@
       "perfW": 1.87,
       "perf1M": 2.17,
       "perfYTD": -0.49,
-      "perfY": -8.13
+      "perfY": -8.13,
+      "perf3M": -10.08
     },
     {
       "symbol": "XYL",
@@ -7200,7 +7559,8 @@
       "perfW": 4.58,
       "perf1M": 1.63,
       "perfYTD": -20.21,
-      "perfY": -25.53
+      "perfY": -25.53,
+      "perf3M": -7.28
     },
     {
       "symbol": "CHD",
@@ -7220,7 +7580,8 @@
       "perfW": 2.05,
       "perf1M": 9.44,
       "perfYTD": 25.95,
-      "perfY": 19.45
+      "perfY": 19.45,
+      "perf3M": 9.06
     },
     {
       "symbol": "PPG",
@@ -7240,7 +7601,8 @@
       "perfW": 2.27,
       "perf1M": 4.04,
       "perfYTD": 7.36,
-      "perfY": 7.52
+      "perfY": 7.52,
+      "perf3M": -2.71
     },
     {
       "symbol": "BRO",
@@ -7260,7 +7622,8 @@
       "perfW": 6.14,
       "perf1M": 18.82,
       "perfYTD": -8.52,
-      "perfY": -19.02
+      "perfY": -19.02,
+      "perf3M": 11.49
     },
     {
       "symbol": "RF",
@@ -7280,7 +7643,8 @@
       "perfW": 2.08,
       "perf1M": 2.59,
       "perfYTD": 5.09,
-      "perfY": 17.84
+      "perfY": 17.84,
+      "perf3M": -7.32
     },
     {
       "symbol": "DRI",
@@ -7300,7 +7664,8 @@
       "perfW": -1.47,
       "perf1M": -1.26,
       "perfYTD": 15.1,
-      "perfY": 13.53
+      "perfY": 13.53,
+      "perf3M": 9.53
     },
     {
       "symbol": "IFF",
@@ -7320,7 +7685,8 @@
       "perfW": 3.19,
       "perf1M": 10.54,
       "perfYTD": 39.42,
-      "perfY": 44.91
+      "perfY": 44.91,
+      "perf3M": 27.47
     },
     {
       "symbol": "HUBB",
@@ -7340,7 +7706,8 @@
       "perfW": -3.79,
       "perf1M": -1.48,
       "perfYTD": 0.08,
-      "perfY": 5.26
+      "perfY": 5.26,
+      "perf3M": -8.03
     },
     {
       "symbol": "DOW",
@@ -7360,7 +7727,8 @@
       "perfW": 8.95,
       "perf1M": 14.66,
       "perfYTD": 38.47,
-      "perfY": 39.0
+      "perfY": 39.0,
+      "perf3M": 6.53
     },
     {
       "symbol": "DLTR",
@@ -7380,7 +7748,8 @@
       "perfW": 0.47,
       "perf1M": 9.21,
       "perfYTD": 2.13,
-      "perfY": 25.1
+      "perfY": 25.1,
+      "perf3M": 5.95
     },
     {
       "symbol": "STZ",
@@ -7400,7 +7769,8 @@
       "perfW": 5.99,
       "perf1M": 18.43,
       "perfYTD": 0.2,
-      "perfY": -1.15
+      "perfY": -1.15,
+      "perf3M": 7.27
     },
     {
       "symbol": "INCY",
@@ -7420,7 +7790,8 @@
       "perfW": 1.52,
       "perf1M": -9.25,
       "perfYTD": 17.77,
-      "perfY": 32.01
+      "perfY": 32.01,
+      "perf3M": -1.7
     },
     {
       "symbol": "TPL",
@@ -7440,7 +7811,8 @@
       "perfW": -2.93,
       "perf1M": -5.51,
       "perfYTD": 18.27,
-      "perfY": 6.0
+      "perfY": 6.0,
+      "perf3M": -20.22
     },
     {
       "symbol": "PFG",
@@ -7460,7 +7832,8 @@
       "perfW": -0.61,
       "perf1M": -3.53,
       "perfYTD": 22.94,
-      "perfY": 36.15
+      "perfY": 36.15,
+      "perf3M": 0.93
     },
     {
       "symbol": "LVS",
@@ -7480,7 +7853,8 @@
       "perfW": -7.25,
       "perf1M": -10.26,
       "perfYTD": -45.28,
-      "perfY": -34.6
+      "perfY": -34.6,
+      "perf3M": -23.43
     },
     {
       "symbol": "Q",
@@ -7500,7 +7874,8 @@
       "perfW": -6.52,
       "perf1M": -11.79,
       "perfYTD": 34.45,
-      "perfY": 55.79
+      "perfY": 55.79,
+      "perf3M": -20.12
     },
     {
       "symbol": "SYF",
@@ -7520,7 +7895,8 @@
       "perfW": -1.5,
       "perf1M": 2.15,
       "perfYTD": -12.03,
-      "perfY": 0.44
+      "perfY": 0.44,
+      "perf3M": 3.44
     },
     {
       "symbol": "L",
@@ -7540,7 +7916,8 @@
       "perfW": 4.1,
       "perf1M": 6.25,
       "perfYTD": 6.68,
-      "perfY": 11.53
+      "perfY": 11.53,
+      "perf3M": -2.14
     },
     {
       "symbol": "OMC",
@@ -7560,7 +7937,8 @@
       "perfW": 1.08,
       "perf1M": 9.99,
       "perfYTD": 2.39,
-      "perfY": 1.44
+      "perfY": 1.44,
+      "perf3M": 4.87
     },
     {
       "symbol": "STE",
@@ -7580,7 +7958,8 @@
       "perfW": 3.01,
       "perf1M": 11.39,
       "perfYTD": -8.4,
-      "perfY": -4.27
+      "perfY": -4.27,
+      "perf3M": 9.07
     },
     {
       "symbol": "KEY",
@@ -7600,7 +7979,8 @@
       "perfW": 4.62,
       "perf1M": 2.93,
       "perfYTD": 2.18,
-      "perfY": 19.84
+      "perfY": 19.84,
+      "perf3M": -7.14
     },
     {
       "symbol": "RL",
@@ -7620,7 +8000,8 @@
       "perfW": -3.73,
       "perf1M": 9.21,
       "perfYTD": 6.31,
-      "perfY": 12.96
+      "perfY": 12.96,
+      "perf3M": 2.37
     },
     {
       "symbol": "PHM",
@@ -7640,7 +8021,8 @@
       "perfW": 6.74,
       "perf1M": 0.76,
       "perfYTD": 2.31,
-      "perfY": 0.52
+      "perfY": 0.52,
+      "perf3M": -3.92
     },
     {
       "symbol": "TROW",
@@ -7660,7 +8042,8 @@
       "perfW": 2.2,
       "perf1M": 0.56,
       "perfYTD": 1.69,
-      "perfY": 1.32
+      "perfY": 1.32,
+      "perf3M": -9.78
     },
     {
       "symbol": "EIX",
@@ -7680,7 +8063,8 @@
       "perfW": 2.5,
       "perf1M": 4.69,
       "perfYTD": -5.0,
-      "perfY": -2.33
+      "perfY": -2.33,
+      "perf3M": -28.28
     },
     {
       "symbol": "PKG",
@@ -7700,7 +8084,8 @@
       "perfW": 5.36,
       "perf1M": 3.15,
       "perfYTD": 20.07,
-      "perfY": 24.05
+      "perfY": 24.05,
+      "perf3M": 5.78
     },
     {
       "symbol": "GPN",
@@ -7720,7 +8105,8 @@
       "perfW": -2.56,
       "perf1M": -1.94,
       "perfYTD": 6.73,
-      "perfY": -4.62
+      "perfY": -4.62,
+      "perf3M": 5.42
     },
     {
       "symbol": "TPR",
@@ -7740,7 +8126,8 @@
       "perfW": -8.53,
       "perf1M": -1.33,
       "perfYTD": -14.59,
-      "perfY": -3.84
+      "perfY": -3.84,
+      "perf3M": -20.75
     },
     {
       "symbol": "SW",
@@ -7760,7 +8147,8 @@
       "perfW": 0.55,
       "perf1M": -10.75,
       "perfYTD": 7.75,
-      "perfY": -1.55
+      "perfY": -1.55,
+      "perf3M": -3.9
     },
     {
       "symbol": "CMS",
@@ -7780,7 +8168,8 @@
       "perfW": 3.43,
       "perf1M": 8.65,
       "perfYTD": -0.47,
-      "perfY": -7.77
+      "perfY": -7.77,
+      "perf3M": -6.63
     },
     {
       "symbol": "SMCI",
@@ -7800,7 +8189,8 @@
       "perfW": -4.45,
       "perf1M": -22.07,
       "perfYTD": 9.95,
-      "perfY": -36.32
+      "perfY": -36.32,
+      "perf3M": 7.58
     },
     {
       "symbol": "EXE",
@@ -7820,7 +8210,8 @@
       "perfW": 2.68,
       "perf1M": 6.06,
       "perfYTD": -15.23,
-      "perfY": -12.25
+      "perfY": -12.25,
+      "perf3M": 0.99
     },
     {
       "symbol": "LYB",
@@ -7840,7 +8231,8 @@
       "perfW": 5.08,
       "perf1M": 11.66,
       "perfYTD": 52.48,
-      "perfY": 40.58
+      "perfY": 40.58,
+      "perf3M": 7.79
     },
     {
       "symbol": "EFX",
@@ -7860,7 +8252,8 @@
       "perfW": 12.73,
       "perf1M": 14.25,
       "perfYTD": -15.78,
-      "perfY": -21.57
+      "perfY": -21.57,
+      "perf3M": 10.15
     },
     {
       "symbol": "AMCR",
@@ -7880,7 +8273,8 @@
       "perfW": 4.63,
       "perf1M": 6.79,
       "perfYTD": 10.44,
-      "perfY": 12.88
+      "perfY": 12.88,
+      "perf3M": 7.13
     },
     {
       "symbol": "JBHT",
@@ -7900,7 +8294,8 @@
       "perfW": -0.86,
       "perf1M": -4.43,
       "perfYTD": 16.25,
-      "perfY": 32.45
+      "perfY": 32.45,
+      "perf3M": -21.89
     },
     {
       "symbol": "PTC",
@@ -7920,7 +8315,8 @@
       "perfW": -0.1,
       "perf1M": 37.63,
       "perfYTD": 11.16,
-      "perfY": -5.05
+      "perfY": -5.05,
+      "perf3M": 68.26
     },
     {
       "symbol": "BBY",
@@ -7940,7 +8336,8 @@
       "perfW": 5.08,
       "perf1M": 4.83,
       "perfYTD": 48.13,
-      "perfY": 23.13
+      "perfY": 23.13,
+      "perf3M": 19.11
     },
     {
       "symbol": "NI",
@@ -7960,7 +8357,8 @@
       "perfW": 3.44,
       "perf1M": 9.05,
       "perfYTD": 3.64,
-      "perfY": -2.46
+      "perfY": -2.46,
+      "perf3M": -7.88
     },
     {
       "symbol": "BR",
@@ -7980,7 +8378,8 @@
       "perfW": 4.73,
       "perf1M": 12.7,
       "perfYTD": -17.87,
-      "perfY": -21.73
+      "perfY": -21.73,
+      "perf3M": 25.53
     },
     {
       "symbol": "VTRS",
@@ -8000,7 +8399,8 @@
       "perfW": -1.1,
       "perf1M": 4.32,
       "perfYTD": 44,
-      "perfY": 73.24
+      "perfY": 73.24,
+      "perf3M": 4.17
     },
     {
       "symbol": "CDW",
@@ -8020,7 +8420,8 @@
       "perfW": 5.84,
       "perf1M": 11.13,
       "perfYTD": 20.34,
-      "perfY": 5.62
+      "perfY": 5.62,
+      "perf3M": 26.75
     },
     {
       "symbol": "LUV",
@@ -8040,7 +8441,8 @@
       "perfW": 2.05,
       "perf1M": 0.48,
       "perfYTD": 0.58,
-      "perfY": 27.21
+      "perfY": 27.21,
+      "perf3M": -6.6
     },
     {
       "symbol": "LEN",
@@ -8060,7 +8462,8 @@
       "perfW": 9.03,
       "perf1M": 3.56,
       "perfYTD": -17.56,
-      "perfY": -33.05
+      "perfY": -33.05,
+      "perf3M": 2.97
     },
     {
       "symbol": "BG",
@@ -8080,7 +8483,8 @@
       "perfW": -4.43,
       "perf1M": -7.14,
       "perfYTD": 15.72,
-      "perfY": 6.96
+      "perfY": 6.96,
+      "perf3M": -16.31
     },
     {
       "symbol": "SWKS",
@@ -8100,7 +8504,8 @@
       "perfW": 5.57,
       "perf1M": -7.52,
       "perfYTD": 30.01,
-      "perfY": 13.49
+      "perfY": 13.49,
+      "perf3M": 38.52
     },
     {
       "symbol": "SBAC",
@@ -8120,7 +8525,8 @@
       "perfW": 0.06,
       "perf1M": 5.86,
       "perfYTD": -3.87,
-      "perfY": -6.69
+      "perfY": -6.69,
+      "perf3M": 4.85
     },
     {
       "symbol": "TSN",
@@ -8140,7 +8546,8 @@
       "perfW": 4.0,
       "perf1M": 9.35,
       "perfYTD": -3.19,
-      "perfY": 8.0
+      "perfY": 8.0,
+      "perf3M": -0.56
     },
     {
       "symbol": "EVRG",
@@ -8160,7 +8567,8 @@
       "perfW": 2.69,
       "perf1M": 6.93,
       "perfYTD": 16.73,
-      "perfY": 7.04
+      "perfY": 7.04,
+      "perf3M": -3.03
     },
     {
       "symbol": "NRG",
@@ -8180,7 +8588,8 @@
       "perfW": -10.81,
       "perf1M": -9.5,
       "perfYTD": -42.87,
-      "perfY": -42.9
+      "perfY": -42.9,
+      "perf3M": -35.34
     },
     {
       "symbol": "FIS",
@@ -8200,7 +8609,8 @@
       "perfW": 3.05,
       "perf1M": 7.2,
       "perfYTD": -43.56,
-      "perfY": -44.4
+      "perfY": -44.4,
+      "perf3M": -7.06
     },
     {
       "symbol": "CHTR",
@@ -8220,7 +8630,8 @@
       "perfW": -1.52,
       "perf1M": -6.97,
       "perfYTD": -48.15,
-      "perfY": -55.87
+      "perfY": -55.87,
+      "perf3M": -2.85
     },
     {
       "symbol": "ZBH",
@@ -8240,7 +8651,8 @@
       "perfW": 3.75,
       "perf1M": 6.44,
       "perfYTD": 9.55,
-      "perfY": -4.47
+      "perfY": -4.47,
+      "perf3M": 8.28
     },
     {
       "symbol": "FSLR",
@@ -8260,7 +8672,8 @@
       "perfW": -3.49,
       "perf1M": -14.17,
       "perfYTD": -35.31,
-      "perfY": -22.81
+      "perfY": -22.81,
+      "perf3M": -16.48
     },
     {
       "symbol": "DD",
@@ -8280,7 +8693,8 @@
       "perfW": 3.34,
       "perf1M": 4.37,
       "perfYTD": 12.55,
-      "perfY": 35.28
+      "perfY": 35.28,
+      "perf3M": -0.91
     },
     {
       "symbol": "SNA",
@@ -8300,7 +8714,8 @@
       "perfW": -2.67,
       "perf1M": -3.61,
       "perfYTD": 3.62,
-      "perfY": 3.56
+      "perfY": 3.56,
+      "perf3M": -10.53
     },
     {
       "symbol": "GIS",
@@ -8320,7 +8735,8 @@
       "perfW": 3.49,
       "perf1M": -3.78,
       "perfYTD": -26.01,
-      "perfY": -29.97
+      "perfY": -29.97,
+      "perf3M": -3.94
     },
     {
       "symbol": "ZBRA",
@@ -8340,7 +8756,8 @@
       "perfW": 2.21,
       "perf1M": 6.46,
       "perfYTD": 56.88,
-      "perfY": 27.64
+      "perfY": 27.64,
+      "perf3M": 49.52
     },
     {
       "symbol": "CF",
@@ -8360,7 +8777,8 @@
       "perfW": 0.52,
       "perf1M": -0.84,
       "perfYTD": 55.76,
-      "perfY": 38.94
+      "perfY": 38.94,
+      "perf3M": -4.59
     },
     {
       "symbol": "FTV",
@@ -8380,7 +8798,8 @@
       "perfW": 3.93,
       "perf1M": 8.21,
       "perfYTD": 8.89,
-      "perfY": 22.51
+      "perfY": 22.51,
+      "perf3M": -1.03
     },
     {
       "symbol": "APA",
@@ -8400,7 +8819,8 @@
       "perfW": 8.46,
       "perf1M": 21.15,
       "perfYTD": 111.15,
-      "perfY": 116.25
+      "perfY": 116.25,
+      "perf3M": 42.78
     },
     {
       "symbol": "LNT",
@@ -8420,7 +8840,8 @@
       "perfW": 3.21,
       "perf1M": 7.74,
       "perfYTD": 7.15,
-      "perfY": 1.13
+      "perfY": 1.13,
+      "perf3M": -6.83
     },
     {
       "symbol": "ESS",
@@ -8440,7 +8861,8 @@
       "perfW": 2.95,
       "perf1M": 1.42,
       "perfYTD": 7.46,
-      "perfY": 4.8
+      "perfY": 4.8,
+      "perf3M": -5.35
     },
     {
       "symbol": "NDSN",
@@ -8460,7 +8882,8 @@
       "perfW": -3.16,
       "perf1M": 0.14,
       "perfYTD": 32.2,
-      "perfY": 36.06
+      "perfY": 36.06,
+      "perf3M": 8.29
     },
     {
       "symbol": "RVTY",
@@ -8480,7 +8903,8 @@
       "perfW": 2.8,
       "perf1M": 11.5,
       "perfYTD": 63.34,
-      "perfY": 65.73
+      "perfY": 65.73,
+      "perf3M": 40.33
     },
     {
       "symbol": "FICO",
@@ -8500,7 +8924,8 @@
       "perfW": 4.73,
       "perf1M": -10.41,
       "perfYTD": -51.79,
-      "perfY": -48.23
+      "perfY": -48.23,
+      "perf3M": -33.17
     },
     {
       "symbol": "IP",
@@ -8520,7 +8945,8 @@
       "perfW": -3.12,
       "perf1M": -7.26,
       "perfYTD": -16.02,
-      "perfY": -29.43
+      "perfY": -29.43,
+      "perf3M": -12.08
     },
     {
       "symbol": "TSCO",
@@ -8540,7 +8966,8 @@
       "perfW": -0.62,
       "perf1M": 1.74,
       "perfYTD": -33.12,
-      "perfY": -37.18
+      "perfY": -37.18,
+      "perf3M": 9.7
     },
     {
       "symbol": "NWS",
@@ -8560,7 +8987,8 @@
       "perfW": 1.44,
       "perf1M": 5.5,
       "perfYTD": 13.93,
-      "perfY": 13.44
+      "perfY": 13.44,
+      "perf3M": 13.74
     },
     {
       "symbol": "NWSA",
@@ -8580,7 +9008,8 @@
       "perfW": 0.87,
       "perf1M": 5.95,
       "perfYTD": 17.58,
-      "perfY": 17.09
+      "perfY": 17.09,
+      "perf3M": 16.64
     },
     {
       "symbol": "BALL",
@@ -8600,7 +9029,8 @@
       "perfW": 2.21,
       "perf1M": 8.46,
       "perfYTD": 22.05,
-      "perfY": 29.88
+      "perfY": 29.88,
+      "perf3M": 4.18
     },
     {
       "symbol": "LDOS",
@@ -8620,7 +9050,8 @@
       "perfW": 8.82,
       "perf1M": 9.82,
       "perfYTD": -24.23,
-      "perfY": -28.03
+      "perfY": -28.03,
+      "perf3M": 21.49
     },
     {
       "symbol": "J",
@@ -8640,7 +9071,8 @@
       "perfW": 2.0,
       "perf1M": 1.34,
       "perfYTD": 9.35,
-      "perfY": -8.5
+      "perfY": -8.5,
+      "perf3M": 9.37
     },
     {
       "symbol": "GPC",
@@ -8660,7 +9092,8 @@
       "perfW": -8.32,
       "perf1M": -4.52,
       "perfYTD": -0.08,
-      "perfY": -7.5
+      "perfY": -7.5,
+      "perf3M": 2.5
     },
     {
       "symbol": "HST",
@@ -8680,7 +9113,8 @@
       "perfW": 3.17,
       "perf1M": 11.8,
       "perfYTD": 39.27,
-      "perfY": 47.32
+      "perfY": 47.32,
+      "perf3M": 2.74
     },
     {
       "symbol": "IEX",
@@ -8700,7 +9134,8 @@
       "perfW": -3.31,
       "perf1M": 2.03,
       "perfYTD": 28.66,
-      "perfY": 37.6
+      "perfY": 37.6,
+      "perf3M": 2.75
     },
     {
       "symbol": "ROL",
@@ -8720,7 +9155,8 @@
       "perfW": 2.34,
       "perf1M": 6.42,
       "perfYTD": -41.72,
-      "perfY": -39.19
+      "perfY": -39.19,
+      "perf3M": -10.26
     },
     {
       "symbol": "HAS",
@@ -8740,7 +9176,8 @@
       "perfW": 19.19,
       "perf1M": 36.05,
       "perfYTD": 43.22,
-      "perfY": 65.41
+      "perfY": 65.41,
+      "perf3M": 34.32
     },
     {
       "symbol": "CRL",
@@ -8760,7 +9197,8 @@
       "perfW": 12.83,
       "perf1M": 21.67,
       "perfYTD": 72.57,
-      "perfY": 80.82
+      "perfY": 80.82,
+      "perf3M": 50.01
     },
     {
       "symbol": "FDXF",
@@ -8780,7 +9218,8 @@
       "perfW": -0.82,
       "perf1M": -7.09,
       "perfYTD": -18.48,
-      "perfY": -18.48
+      "perfY": -18.48,
+      "perf3M": -29.07
     },
     {
       "symbol": "CHRW",
@@ -8800,7 +9239,8 @@
       "perfW": -2.3,
       "perf1M": -5.77,
       "perfYTD": -12.52,
-      "perfY": 11.2
+      "perfY": 11.2,
+      "perf3M": -26.4
     },
     {
       "symbol": "INVH",
@@ -8820,7 +9260,8 @@
       "perfW": 2.42,
       "perf1M": 1.7,
       "perfYTD": -0.47,
-      "perfY": -4.87
+      "perfY": -4.87,
+      "perf3M": -7.09
     },
     {
       "symbol": "TYL",
@@ -8840,7 +9281,8 @@
       "perfW": 6.08,
       "perf1M": 17.29,
       "perfYTD": -13.42,
-      "perfY": -24.0
+      "perfY": -24.0,
+      "perf3M": 32.74
     },
     {
       "symbol": "NVR",
@@ -8860,7 +9302,8 @@
       "perfW": -0.2,
       "perf1M": -4.79,
       "perfYTD": -17.89,
-      "perfY": -21.76
+      "perfY": -21.76,
+      "perf3M": -2.75
     },
     {
       "symbol": "KIM",
@@ -8880,7 +9323,8 @@
       "perfW": 3.55,
       "perf1M": 5.26,
       "perfYTD": 16.76,
-      "perfY": 5.54
+      "perfY": 5.54,
+      "perf3M": -8.73
     },
     {
       "symbol": "BEN",
@@ -8900,7 +9344,8 @@
       "perfW": -1.68,
       "perf1M": -5.59,
       "perfYTD": 29.52,
-      "perfY": 37.25
+      "perfY": 37.25,
+      "perf3M": -4.34
     },
     {
       "symbol": "EG",
@@ -8920,7 +9365,8 @@
       "perfW": 4.78,
       "perf1M": 7.32,
       "perfYTD": 17.87,
-      "perfY": 14.03
+      "perfY": 14.03,
+      "perf3M": 5.79
     },
     {
       "symbol": "ALLE",
@@ -8940,7 +9386,8 @@
       "perfW": 14.83,
       "perf1M": 16.97,
       "perfYTD": 12.4,
-      "perfY": 4.24
+      "perfY": 4.24,
+      "perf3M": 17.56
     },
     {
       "symbol": "MAS",
@@ -8960,7 +9407,8 @@
       "perfW": 4.48,
       "perf1M": 8.08,
       "perfYTD": 19.4,
-      "perfY": 10.03
+      "perfY": 10.03,
+      "perf3M": -1.99
     },
     {
       "symbol": "SWK",
@@ -8980,7 +9428,8 @@
       "perfW": 6.81,
       "perf1M": 8.88,
       "perfYTD": 32.66,
-      "perfY": 43.35
+      "perfY": 43.35,
+      "perf3M": 11.78
     },
     {
       "symbol": "GEN",
@@ -9000,7 +9449,8 @@
       "perfW": 0.04,
       "perf1M": -8.9,
       "perfYTD": -8.63,
-      "perfY": -8.83
+      "perfY": -8.83,
+      "perf3M": -2.32
     },
     {
       "symbol": "TRMB",
@@ -9020,7 +9470,8 @@
       "perfW": 3.74,
       "perf1M": 7.07,
       "perfYTD": -19.49,
-      "perfY": -19.86
+      "perfY": -19.86,
+      "perf3M": 24.98
     },
     {
       "symbol": "IT",
@@ -9040,7 +9491,8 @@
       "perfW": 10.18,
       "perf1M": 29.37,
       "perfYTD": -8.03,
-      "perfY": -7.9
+      "perfY": -7.9,
+      "perf3M": 68.89
     },
     {
       "symbol": "SOLV",
@@ -9060,7 +9512,8 @@
       "perfW": -3.4,
       "perf1M": -3.14,
       "perfYTD": 7.79,
-      "perfY": 17.55
+      "perfY": 17.55,
+      "perf3M": 9.5
     },
     {
       "symbol": "GDDY",
@@ -9080,7 +9533,8 @@
       "perfW": 4.09,
       "perf1M": 14.9,
       "perfYTD": -8.75,
-      "perfY": -14.48
+      "perfY": -14.48,
+      "perf3M": 26.7
     },
     {
       "symbol": "WY",
@@ -9100,7 +9554,8 @@
       "perfW": null,
       "perf1M": -8.84,
       "perfYTD": -17.87,
-      "perfY": -17.24
+      "perfY": -17.24,
+      "perf3M": -17.66
     },
     {
       "symbol": "AIZ",
@@ -9120,7 +9575,8 @@
       "perfW": 0.99,
       "perf1M": 5.39,
       "perfYTD": 18.83,
-      "perfY": 34.48
+      "perfY": 34.48,
+      "perf3M": 3.92
     },
     {
       "symbol": "MAA",
@@ -9140,7 +9596,8 @@
       "perfW": 2.66,
       "perf1M": 0.54,
       "perfYTD": -13.52,
-      "perfY": -10.94
+      "perfY": -10.94,
+      "perf3M": -10.38
     },
     {
       "symbol": "SJM",
@@ -9160,7 +9617,8 @@
       "perfW": 2.61,
       "perf1M": 7.03,
       "perfYTD": 32.69,
-      "perfY": 24.62
+      "perfY": 24.62,
+      "perf3M": 11.97
     },
     {
       "symbol": "CPT",
@@ -9180,7 +9638,8 @@
       "perfW": 3.37,
       "perf1M": 3.31,
       "perfYTD": -6.95,
-      "perfY": -2.35
+      "perfY": -2.35,
+      "perf3M": -10.23
     },
     {
       "symbol": "AVY",
@@ -9200,7 +9659,8 @@
       "perfW": 2.74,
       "perf1M": 6.53,
       "perfYTD": 0.07,
-      "perfY": -0.92
+      "perfY": -0.92,
+      "perf3M": 16.79
     },
     {
       "symbol": "CSGP",
@@ -9220,7 +9680,8 @@
       "perfW": 4.72,
       "perf1M": 18.25,
       "perfYTD": -49.46,
-      "perfY": -56.03
+      "perfY": -56.03,
+      "perf3M": 24.34
     },
     {
       "symbol": "BF.B",
@@ -9240,7 +9701,8 @@
       "perfW": 1.76,
       "perf1M": 10.98,
       "perfYTD": 12.55,
-      "perfY": 4.48
+      "perfY": 4.48,
+      "perf3M": 13.95
     },
     {
       "symbol": "DOC",
@@ -9260,7 +9722,8 @@
       "perfW": 0.94,
       "perf1M": -5.82,
       "perfYTD": 20.01,
-      "perfY": 3.05
+      "perfY": 3.05,
+      "perf3M": -13.21
     },
     {
       "symbol": "REG",
@@ -9280,7 +9743,8 @@
       "perfW": 0.76,
       "perf1M": 1.01,
       "perfYTD": 7.73,
-      "perfY": 1.72
+      "perfY": 1.72,
+      "perf3M": -8.89
     },
     {
       "symbol": "AKAM",
@@ -9300,7 +9764,8 @@
       "perfW": 1.78,
       "perf1M": -20.28,
       "perfYTD": 7.14,
-      "perfY": 25.06
+      "perfY": 25.06,
+      "perf3M": -20.42
     },
     {
       "symbol": "TXT",
@@ -9320,7 +9785,8 @@
       "perfW": 1.47,
       "perf1M": -0.85,
       "perfYTD": -12.2,
-      "perfY": -7.52
+      "perfY": -7.52,
+      "perf3M": -17.86
     },
     {
       "symbol": "BAX",
@@ -9340,7 +9806,8 @@
       "perfW": -2.5,
       "perf1M": 7.25,
       "perfYTD": 31.09,
-      "perfY": 10.14
+      "perfY": 10.14,
+      "perf3M": 15.26
     },
     {
       "symbol": "LII",
@@ -9360,7 +9827,8 @@
       "perfW": 5.21,
       "perf1M": 2.11,
       "perfYTD": -22.98,
-      "perfY": -23.31
+      "perfY": -23.31,
+      "perf3M": -29.78
     },
     {
       "symbol": "MKC",
@@ -9380,7 +9848,8 @@
       "perfW": 3.95,
       "perf1M": -2.75,
       "perfYTD": -29.48,
-      "perfY": -29.61
+      "perfY": -29.61,
+      "perf3M": -4.56
     },
     {
       "symbol": "PNW",
@@ -9400,7 +9869,8 @@
       "perfW": 3.52,
       "perf1M": 14.24,
       "perfYTD": 19.37,
-      "perfY": 13.73
+      "perfY": 13.73,
+      "perf3M": 0.04
     },
     {
       "symbol": "IVZ",
@@ -9420,7 +9890,8 @@
       "perfW": -3.04,
       "perf1M": -7.7,
       "perfYTD": 6.17,
-      "perfY": 22.32
+      "perfY": 22.32,
+      "perf3M": -6.65
     },
     {
       "symbol": "GL",
@@ -9440,7 +9911,8 @@
       "perfW": -8.04,
       "perf1M": -8.05,
       "perfYTD": 10.86,
-      "perfY": 15.73
+      "perfY": 15.73,
+      "perf3M": -9.56
     },
     {
       "symbol": "ERIE",
@@ -9460,7 +9932,8 @@
       "perfW": 5.44,
       "perf1M": 8.29,
       "perfYTD": -11.05,
-      "perfY": -22.11
+      "perfY": -22.11,
+      "perf3M": 16.81
     },
     {
       "symbol": "DVA",
@@ -9480,7 +9953,8 @@
       "perfW": -2.98,
       "perf1M": -0.21,
       "perfYTD": 61.54,
-      "perfY": 43.23
+      "perfY": 43.23,
+      "perf3M": -21.86
     },
     {
       "symbol": "FDS",
@@ -9500,7 +9974,8 @@
       "perfW": 8.2,
       "perf1M": 19.72,
       "perfYTD": 14.82,
-      "perfY": 14.28
+      "perfY": 14.28,
+      "perf3M": 33.86
     },
     {
       "symbol": "COO",
@@ -9520,7 +9995,8 @@
       "perfW": 5.53,
       "perf1M": 11.03,
       "perfYTD": -25.44,
-      "perfY": -17.73
+      "perfY": -17.73,
+      "perf3M": -13.31
     },
     {
       "symbol": "HRL",
@@ -9540,7 +10016,8 @@
       "perfW": 3.34,
       "perf1M": 3.59,
       "perfYTD": -11.51,
-      "perfY": -12.72
+      "perfY": -12.72,
+      "perf3M": -15.52
     },
     {
       "symbol": "UDR",
@@ -9560,7 +10037,8 @@
       "perfW": 4.25,
       "perf1M": 5.57,
       "perfYTD": -2.0,
-      "perfY": -2.02
+      "perfY": -2.02,
+      "perf3M": -8.71
     },
     {
       "symbol": "LULU",
@@ -9580,7 +10058,8 @@
       "perfW": -0.87,
       "perf1M": -4.48,
       "perfYTD": -52.68,
-      "perfY": -44.55
+      "perfY": -44.55,
+      "perf3M": -11.04
     },
     {
       "symbol": "JKHY",
@@ -9600,7 +10079,8 @@
       "perfW": 2.9,
       "perf1M": 9.58,
       "perfYTD": -10.65,
-      "perfY": 3.63
+      "perfY": 3.63,
+      "perf3M": 8.67
     },
     {
       "symbol": "TECH",
@@ -9620,7 +10100,8 @@
       "perfW": -0.06,
       "perf1M": 0.07,
       "perfYTD": 23.36,
-      "perfY": 13.71
+      "perfY": 13.71,
+      "perf3M": 0.9
     },
     {
       "symbol": "ALB",
@@ -9640,7 +10121,8 @@
       "perfW": -3.53,
       "perf1M": -17.96,
       "perfYTD": -34.85,
-      "perfY": -0.88
+      "perfY": -0.88,
+      "perf3M": -19.68
     },
     {
       "symbol": "DECK",
@@ -9660,7 +10142,8 @@
       "perfW": -7.05,
       "perf1M": 2.31,
       "perfYTD": -22.26,
-      "perfY": -19.92
+      "perfY": -19.92,
+      "perf3M": -13.74
     },
     {
       "symbol": "GNRC",
@@ -9680,7 +10163,8 @@
       "perfW": -4.19,
       "perf1M": -8.55,
       "perfYTD": 35.47,
-      "perfY": 2.09
+      "perfY": 2.09,
+      "perf3M": -10.73
     },
     {
       "symbol": "UHS",
@@ -9700,7 +10184,8 @@
       "perfW": -0.89,
       "perf1M": 4.11,
       "perfYTD": -14.2,
-      "perfY": -10.19
+      "perfY": -10.19,
+      "perf3M": 17.56
     },
     {
       "symbol": "ALGN",
@@ -9720,7 +10205,8 @@
       "perfW": 2.75,
       "perf1M": 1.32,
       "perfYTD": -2.04,
-      "perfY": 13.52
+      "perfY": 13.52,
+      "perf3M": -8.3
     },
     {
       "symbol": "HII",
@@ -9740,7 +10226,8 @@
       "perfW": 1.53,
       "perf1M": 1.51,
       "perfYTD": -19.4,
-      "perfY": -3.35
+      "perfY": -3.35,
+      "perf3M": -5.3
     },
     {
       "symbol": "AES",
@@ -9760,7 +10247,8 @@
       "perfW": 0.2,
       "perf1M": 1.21,
       "perfYTD": 3.38,
-      "perfY": 3.95
+      "perfY": 3.95,
+      "perf3M": 1.01
     },
     {
       "symbol": "CLX",
@@ -9780,7 +10268,8 @@
       "perfW": -0.33,
       "perf1M": -0.48,
       "perfYTD": -14.54,
-      "perfY": -26.78
+      "perfY": -26.78,
+      "perf3M": -8.29
     },
     {
       "symbol": "PODD",
@@ -9800,7 +10289,8 @@
       "perfW": 6.09,
       "perf1M": 7.15,
       "perfYTD": -47.8,
-      "perfY": -54.56
+      "perfY": -54.56,
+      "perf3M": -6.41
     },
     {
       "symbol": "DPZ",
@@ -9820,7 +10310,8 @@
       "perfW": 2.7,
       "perf1M": 5.5,
       "perfYTD": -24.74,
-      "perfY": -25.88
+      "perfY": -25.88,
+      "perf3M": -2.68
     },
     {
       "symbol": "BXP",
@@ -9840,7 +10331,8 @@
       "perfW": 3.6,
       "perf1M": -3.07,
       "perfYTD": -8.1,
-      "perfY": -15.37
+      "perfY": -15.37,
+      "perf3M": -9.17
     },
     {
       "symbol": "FRT",
@@ -9860,7 +10352,8 @@
       "perfW": 2.38,
       "perf1M": -1.3,
       "perfYTD": 9.43,
-      "perfY": 7.88
+      "perfY": 7.88,
+      "perf3M": -13.36
     },
     {
       "symbol": "HSIC",
@@ -9880,7 +10373,8 @@
       "perfW": -2.77,
       "perf1M": -2.22,
       "perfYTD": 12.31,
-      "perfY": 34.28
+      "perfY": 34.28,
+      "perf3M": 0.51
     },
     {
       "symbol": "APTV",
@@ -9900,7 +10394,8 @@
       "perfW": -6.2,
       "perf1M": -3.48,
       "perfYTD": -34.41,
-      "perfY": -40.37
+      "perfY": -40.37,
+      "perf3M": -24.12
     },
     {
       "symbol": "PNR",
@@ -9920,7 +10415,8 @@
       "perfW": 2.94,
       "perf1M": -0.02,
       "perfYTD": -46.94,
-      "perfY": -49.74
+      "perfY": -49.74,
+      "perf3M": -10.56
     },
     {
       "symbol": "SKYD",
@@ -9940,7 +10436,8 @@
       "perfW": 8.82,
       "perf1M": -21.43,
       "perfYTD": -40.78,
-      "perfY": -52.11
+      "perfY": -52.11,
+      "perf3M": -6.64
     },
     {
       "symbol": "AOS",
@@ -9960,7 +10457,8 @@
       "perfW": 3.18,
       "perf1M": 6.79,
       "perfYTD": -8.07,
-      "perfY": -9.55
+      "perfY": -9.55,
+      "perf3M": 3.72
     },
     {
       "symbol": "ARE",
@@ -9980,7 +10478,8 @@
       "perfW": 1.01,
       "perf1M": -19.5,
       "perfYTD": -11.83,
-      "perfY": -44.65
+      "perfY": -44.65,
+      "perf3M": -14.78
     },
     {
       "symbol": "WYNN",
@@ -10000,7 +10499,8 @@
       "perfW": -5.78,
       "perf1M": -11.75,
       "perfYTD": -39.43,
-      "perfY": -41.35
+      "perfY": -41.35,
+      "perf3M": -25.24
     },
     {
       "symbol": "MGM",
@@ -10020,7 +10520,8 @@
       "perfW": -5.46,
       "perf1M": -27.19,
       "perfYTD": -23.4,
-      "perfY": -15.38
+      "perfY": -15.38,
+      "perf3M": -37.82
     },
     {
       "symbol": "NCLH",
@@ -10040,7 +10541,8 @@
       "perfW": -2.39,
       "perf1M": 6.79,
       "perfYTD": -32.95,
-      "perfY": -35.99
+      "perfY": -35.99,
+      "perf3M": -20.44
     },
     {
       "symbol": "MOS",
@@ -10060,7 +10562,8 @@
       "perfW": -6.2,
       "perf1M": -27.18,
       "perfYTD": -25.98,
-      "perfY": -41.08
+      "perfY": -41.08,
+      "perf3M": -19.82
     }
   ]
 }

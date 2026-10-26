@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Stock } from '../types';
 import { formatMarketCap, formatPrice, formatPercent } from '../utils/formatters';
-import { TrendingUp, TrendingDown, ArrowUpRight } from 'lucide-react';
+import { TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import { StockLogo } from './StockLogo';
 
 interface StockCardProps {
@@ -23,7 +23,7 @@ export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStoc
 
   return (
     <div
-      className="stock-grid-card glass-panel"
+      className={`stock-grid-card glass-panel ${stock.top5QuarterStatus === 'entered' ? 'card-entered-top5' : ''} ${stock.top5QuarterStatus === 'exited' ? 'card-exited-top5' : ''}`}
       onClick={() => onSelectStock(stock)}
       tabIndex={0}
       role="button"
@@ -50,16 +50,47 @@ export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStoc
           </div>
         </div>
 
-        <span
-          className={`card-rank-badge font-mono ${index < 3 ? 'top-three' : ''}`}
-          style={index === 0 && sectorColor ? { borderColor: sectorColor, color: sectorColor } : undefined}
-        >
-          #{stock.rankInSector || index + 1}
-        </span>
+        <div className="card-rank-group">
+          <span
+            className={`card-rank-badge font-mono ${index < 3 ? 'top-three' : ''}`}
+            style={index === 0 && sectorColor ? { borderColor: sectorColor, color: sectorColor } : undefined}
+          >
+            #{stock.rankInSector || index + 1}
+          </span>
+          {stock.quarterlyRankDelta !== undefined && stock.quarterlyRankDelta !== 0 && (
+            <span
+              className={`rank-delta-pill font-mono ${stock.quarterlyRankDelta > 0 ? 'up' : 'down'}`}
+              title={`Quarterly movement: ${stock.quarterlyRankDelta > 0 ? '+' : ''}${stock.quarterlyRankDelta} rank vs prior quarter`}
+            >
+              {stock.quarterlyRankDelta > 0 ? `▲+${stock.quarterlyRankDelta}` : `▼${stock.quarterlyRankDelta}`}
+            </span>
+          )}
+        </div>
       </div>
 
-      <div className="card-industry-tag">
+      <div className="card-meta-row">
         <span className="industry-pill">{stock.industry}</span>
+
+        {stock.top5QuarterStatus === 'entered' && (
+          <span className="quarter-badge entered font-mono" title={`Entered Top 5 this quarter (was #${stock.prevQuarterRankInSector} in prior quarter)`}>
+            <ArrowUpRight size={11} /> Entered Top 5
+          </span>
+        )}
+        {stock.top5QuarterStatus === 'exited' && (
+          <span className="quarter-badge exited font-mono" title={`Exited Top 5 this quarter (was #${stock.prevQuarterRankInSector} in prior quarter)`}>
+            <ArrowDownRight size={11} /> Exited Top 5
+          </span>
+        )}
+        {stock.top5QuarterStatus === 'retained' && (
+          <span className="quarter-badge core font-mono" title={`Core Top 5 constituent`}>
+            Top 5 Core
+          </span>
+        )}
+        {stock.top5QuarterStatus === 'contender' && (
+          <span className="quarter-badge contender font-mono" title={`Contender ranked #${stock.rankInSector}`}>
+            Contender
+          </span>
+        )}
       </div>
 
       <div className="card-price-row">

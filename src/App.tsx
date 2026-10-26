@@ -99,6 +99,7 @@ export const App: React.FC = () => {
         liveError={liveError}
         theme={theme}
         onToggleTheme={toggleTheme}
+        currentQuarter={processed.currentQuarter}
       />
 
       <main className="main-content">
@@ -108,6 +109,7 @@ export const App: React.FC = () => {
             top5Sectors={processed.top5Sectors}
             onSelectStock={setSelectedStock}
             searchQuery={searchQuery}
+            currentQuarter={processed.currentQuarter}
           />
         )}
 
