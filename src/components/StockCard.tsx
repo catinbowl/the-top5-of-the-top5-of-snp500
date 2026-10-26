@@ -21,6 +21,8 @@ export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStoc
   const span = high52 - low52;
   const pct = span > 0 ? Math.max(0, Math.min(100, ((stock.price - low52) / span) * 100)) : 50;
 
+  const isTop5 = (stock.rankInSector ?? index + 1) <= 5;
+
   return (
     <div
       className={`stock-grid-card glass-panel ${stock.top5QuarterStatus === 'entered' ? 'card-entered-top5' : ''} ${stock.top5QuarterStatus === 'exited' ? 'card-exited-top5' : ''}`}
@@ -52,7 +54,16 @@ export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStoc
 
         <div className="card-rank-group">
           <span
-            className={`card-rank-badge font-mono ${(stock.rankInSector ?? index + 1) <= 5 ? 'top-five' : ''}`}
+            className={`card-rank-badge font-mono ${isTop5 ? 'top-five' : ''}`}
+            style={
+              isTop5 && sectorColor
+                ? {
+                    borderColor: sectorColor,
+                    color: sectorColor,
+                    backgroundColor: sectorColor.startsWith('#') ? `${sectorColor}18` : undefined,
+                  }
+                : undefined
+            }
           >
             #{stock.rankInSector || index + 1}
           </span>

@@ -886,9 +886,9 @@
 
 .rank-badge.top-five,
 .rank-badge.top-three {
-  border-color: rgba(6, 182, 212, 0.4);
-  color: var(--cyan-accent);
-  background: rgba(6, 182, 212, 0.08);
+  border-color: var(--sector-color, rgba(6, 182, 212, 0.4));
+  color: var(--sector-color, var(--cyan-accent));
+  background: var(--sector-accent, rgba(6, 182, 212, 0.08));
 }
 
 .symbol-cell-content {
@@ -1155,9 +1155,9 @@
 
 .card-rank-badge.top-five,
 .card-rank-badge.top-three {
-  color: var(--cyan-accent);
-  border-color: rgba(6, 182, 212, 0.4);
-  background: rgba(6, 182, 212, 0.08);
+  border-color: var(--sector-color, rgba(6, 182, 212, 0.4));
+  color: var(--sector-color, var(--cyan-accent));
+  background: var(--sector-accent, rgba(6, 182, 212, 0.08));
 }
 
 .card-industry-tag {
