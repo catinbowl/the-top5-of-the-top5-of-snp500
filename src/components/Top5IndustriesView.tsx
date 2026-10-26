@@ -176,21 +176,6 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                         {formatPercent(sector.avgChange)}
                       </span>
                     </div>
-
-                    <div className="sector-metric-item">
-                      <span className="metric-label">Quarterly Move</span>
-                      {sector.enteredCount > 0 || sector.exitedCount > 0 ? (
-                        <span className="metric-val font-mono text-cyan sector-rebalance-pill">
-                          <span className="rebalance-in">▲ {sector.enteredCount} In</span>
-                          <span className="rebalance-divider">&bull;</span>
-                          <span className="rebalance-out">▼ {sector.exitedCount} Out</span>
-                        </span>
-                      ) : (
-                        <span className="metric-val font-mono text-muted sector-rebalance-pill">
-                          Stable Roster
-                        </span>
-                      )}
-                    </div>
                   </div>
 
                   {/* Layout switch button (Table vs Cards) */}
