@@ -138,8 +138,17 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.15); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
 }
 
 .market-time {
@@ -183,7 +192,9 @@
 }
 
 @keyframes spin-kf {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-auto-toggle {
@@ -581,16 +592,6 @@
   font-size: 0.82rem;
   color: var(--text-muted);
   margin-top: 0.2rem;
-}
-
-.section-badge-info {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  background: var(--bg-badge);
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
 }
 
 .sectors-stack {
@@ -1314,11 +1315,27 @@
   color: #fff;
 }
 
-.bg-rose-deep { background: #e11d48; }
-.bg-rose-mid { background: #fb7185; color: #000; }
-.bg-neutral { background: #64748b; }
-.bg-green-mid { background: #34d399; color: #000; }
-.bg-green-deep { background: #059669; }
+.bg-rose-deep {
+  background: #e11d48;
+}
+
+.bg-rose-mid {
+  background: #fb7185;
+  color: #000;
+}
+
+.bg-neutral {
+  background: #64748b;
+}
+
+.bg-green-mid {
+  background: #34d399;
+  color: #000;
+}
+
+.bg-green-deep {
+  background: #059669;
+}
 
 .treemap-body {
   display: flex;
@@ -1638,8 +1655,13 @@
 }
 
 @keyframes modal-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-content {
@@ -1658,8 +1680,15 @@
 }
 
 @keyframes modal-slide-up {
-  from { transform: translateY(20px) scale(0.97); opacity: 0; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
+  from {
+    transform: translateY(20px) scale(0.97);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 .modal-header {
@@ -2205,10 +2234,12 @@
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
   }
+
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);

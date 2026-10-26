@@ -93,10 +93,6 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
             <Sparkles size={18} className="title-icon text-cyan" />
             Top 5 S&amp;P 500 Industries &bull; Top 10 Stocks in Each
           </h2>
-          <p className="section-subtitle">
-            Ranked by aggregate Market Capitalization based on the 19 core economic sectors classified by TradingView (FactSet).
-            Rankings and Top 5 membership reflect the <strong>{currentQuarter?.label ?? 'Q4 2026'}</strong> quarter benchmarked against <strong>{currentQuarter?.prevQuarterLabel ?? 'Q3 2026'}</strong>.
-          </p>
         </div>
       </div>
 
