@@ -17,8 +17,6 @@ import {
   ShoppingBag,
   Layers,
   Calendar,
-  ShieldCheck,
-  Target,
 } from 'lucide-react';
 
 interface Top5IndustriesViewProps {
@@ -274,61 +272,11 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                           </tr>
                         </thead>
                         <tbody>
-                          {innerGroup.length > 0 && (
-                            <tr className="group-divider-row inner-group-divider">
-                              <td colSpan={9}>
-                                <div className="group-divider-content">
-                                  <div className="group-divider-left">
-                                    <ShieldCheck size={15} className="group-icon-svg text-amber" />
-                                    <span className="group-badge inner-badge font-mono">
-                                      ⭐ TOP 5 INNER GROUP &bull; {currentQuarter?.label || 'CURRENT QUARTER'}
-                                    </span>
-                                    <span className="group-desc">
-                                      Core sector pillars dominating market weight (Ranks #1 &ndash; #5)
-                                    </span>
-                                  </div>
-                                  <div className="group-divider-right font-mono">
-                                    <span>5 Core Holdings</span>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          )}
-                          {innerGroup.map((stock, idx) => (
+                          {filteredTop10.map((stock, idx) => (
                             <StockRow
                               key={stock.symbol}
                               stock={stock}
                               index={idx}
-                              onSelectStock={onSelectStock}
-                              sectorColor={sector.color}
-                            />
-                          ))}
-
-                          {outerContenders.length > 0 && (
-                            <tr className="group-divider-row outer-group-divider">
-                              <td colSpan={9}>
-                                <div className="group-divider-content">
-                                  <div className="group-divider-left">
-                                    <Target size={15} className="group-icon-svg text-cyan" />
-                                    <span className="group-badge outer-badge font-mono">
-                                      🎯 CONTENDERS &amp; CHALLENGERS
-                                    </span>
-                                    <span className="group-desc">
-                                      Next-in-line equities competing for Top 5 entry (Ranks #6 &ndash; #10)
-                                    </span>
-                                  </div>
-                                  <div className="group-divider-right font-mono">
-                                    <span>5 Challengers</span>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          )}
-                          {outerContenders.map((stock, idx) => (
-                            <StockRow
-                              key={stock.symbol}
-                              stock={stock}
-                              index={innerGroup.length + idx}
                               onSelectStock={onSelectStock}
                               sectorColor={sector.color}
                             />
