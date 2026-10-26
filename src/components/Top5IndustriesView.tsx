@@ -170,9 +170,10 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                     </div>
 
                     <div className="sector-metric-item">
-                      <span className="metric-label">Top 5 Avg 1M</span>
+                      <span className="metric-label" title="Market-Cap Weighted 1-Month Move">Top 5 1M Move</span>
                       <span
                         className={`metric-val font-mono ${isTop5Positive ? 'text-green' : 'text-rose'}`}
+                        title="Market-Cap Weighted 1-Month Move of Top 5 stocks"
                       >
                         {isTop5Positive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
                         {formatPercent(sector.avgChangeTop5)}
@@ -180,9 +181,10 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                     </div>
 
                     <div className="sector-metric-item">
-                      <span className="metric-label">Top 10 Avg 1M</span>
+                      <span className="metric-label" title="Market-Cap Weighted 1-Month Move">Top 10 1M Move</span>
                       <span
                         className={`metric-val font-mono ${isTop10Positive ? 'text-green' : 'text-rose'}`}
+                        title="Market-Cap Weighted 1-Month Move of Top 10 stocks"
                       >
                         {isTop10Positive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
                         {formatPercent(sector.avgChangeTop10)}

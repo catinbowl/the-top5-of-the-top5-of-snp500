@@ -119,14 +119,27 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
 
     const totalSectorMarketCap = stocksInSector.reduce((sum, s) => sum + s.marketCap, 0);
 
-    const calcAvgMove = (list: Stock[]): number => {
+    // Market-cap-weighted 1-month performance calculation
+    const calcWeightedMove = (list: Stock[]): number => {
       if (list.length === 0) return 0;
-      const sum = list.reduce((acc, s) => acc + (s.perf1M ?? s.change), 0);
-      return Number((sum / list.length).toFixed(2));
+      let totalCurrentCap = 0;
+      let totalPrevCap = 0;
+
+      for (const s of list) {
+        const move = s.perf1M ?? s.change;
+        const currentCap = s.marketCap;
+        // Previous cap before the 1M move: currentCap / (1 + move / 100)
+        const prevCap = move > -99.99 ? currentCap / (1 + move / 100) : currentCap;
+        totalCurrentCap += currentCap;
+        totalPrevCap += prevCap;
+      }
+
+      if (totalPrevCap <= 0) return 0;
+      return Number((((totalCurrentCap - totalPrevCap) / totalPrevCap) * 100).toFixed(2));
     };
 
-    const avgChangeTop5 = calcAvgMove(stocksInSector.slice(0, 5));
-    const avgChangeTop10 = calcAvgMove(stocksInSector.slice(0, 10));
+    const avgChangeTop5 = calcWeightedMove(stocksInSector.slice(0, 5));
+    const avgChangeTop10 = calcWeightedMove(stocksInSector.slice(0, 10));
     const avgChange = avgChangeTop5;
 
     // Sub-industries breakdown
