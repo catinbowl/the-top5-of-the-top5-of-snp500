@@ -81,7 +81,7 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
             </span>
             <span className="quarter-dates-sub font-mono">({currentQuarter.dateRange})</span>
             <span className="quarter-rebalance-tag font-mono">
-              Next Rebalance: <strong>{currentQuarter.daysRemaining}d</strong>
+              Next Quarter Begins: <strong>{currentQuarter.nextQuarterStartDate}</strong>
             </span>
           </div>
         </div>

@@ -3,9 +3,11 @@ export type Top5QuarterStatus = 'entered' | 'exited' | 'retained' | 'contender';
 export interface QuarterInfo {
   quarter: 'Q1' | 'Q2' | 'Q3' | 'Q4';
   year: number;
-  label: string;             // e.g. "Q4 2026"
-  prevQuarterLabel: string; // e.g. "Q3 2026"
-  dateRange: string;        // e.g. "Oct 1 – Dec 31, 2026"
+  label: string;                 // e.g. "Q4 2026"
+  prevQuarterLabel: string;     // e.g. "Q3 2026"
+  nextQuarterLabel: string;     // e.g. "Q1 2027"
+  nextQuarterStartDate: string; // e.g. "Jan 1, 2027"
+  dateRange: string;            // e.g. "Oct 1 – Dec 31, 2026"
   daysRemaining: number;
 }
 
