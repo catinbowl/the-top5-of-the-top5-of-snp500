@@ -53,7 +53,6 @@ export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStoc
         <div className="card-rank-group">
           <span
             className={`card-rank-badge font-mono ${(stock.rankInSector ?? index + 1) <= 5 ? 'top-five' : ''}`}
-            style={index === 0 && sectorColor ? { borderColor: sectorColor, color: sectorColor } : undefined}
           >
             #{stock.rankInSector || index + 1}
           </span>
