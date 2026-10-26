@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Stock } from '../types';
-import { formatMarketCap, formatPrice, formatPercent, getLogoUrl } from '../utils/formatters';
+import { formatMarketCap, formatPrice, formatPercent } from '../utils/formatters';
 import { TrendingUp, TrendingDown, ArrowUpRight } from 'lucide-react';
+import { StockLogo } from './StockLogo';
 
 interface StockCardProps {
   stock: Stock;
@@ -12,7 +13,6 @@ interface StockCardProps {
 
 export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStock, sectorColor }) => {
   const isPositive = stock.change >= 0;
-  const logoUrl = getLogoUrl(stock.logoId);
 
   // 52-week position
   const low52 = stock.low52 || stock.price * 0.7;
@@ -36,20 +36,7 @@ export const StockCard: React.FC<StockCardProps> = ({ stock, index, onSelectStoc
     >
       <div className="card-top-row">
         <div className="card-logo-and-sym">
-          <div className="stock-logo-wrap">
-            {logoUrl ? (
-              <img
-                src={logoUrl}
-                alt={`${stock.symbol} logo`}
-                className="stock-logo-img"
-                loading="lazy"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
-              />
-            ) : null}
-            <span className="stock-logo-fallback font-mono">{stock.symbol.slice(0, 2)}</span>
-          </div>
+          <StockLogo symbol={stock.symbol} logoId={stock.logoId} />
 
           <div className="card-sym-col">
             <div className="card-sym-head">

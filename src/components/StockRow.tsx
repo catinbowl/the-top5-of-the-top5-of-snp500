@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Stock } from '../types';
-import { formatMarketCap, formatPrice, formatPercent, getLogoUrl } from '../utils/formatters';
+import { formatMarketCap, formatPrice, formatPercent } from '../utils/formatters';
 import { TrendingUp, TrendingDown, ChevronRight } from 'lucide-react';
+import { StockLogo } from './StockLogo';
 
 interface StockRowProps {
   stock: Stock;
@@ -12,7 +13,6 @@ interface StockRowProps {
 
 export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock, sectorColor }) => {
   const isPositive = stock.change >= 0;
-  const logoUrl = getLogoUrl(stock.logoId);
 
   // 52-week position
   const low52 = stock.low52 || stock.price * 0.7;
@@ -47,20 +47,7 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
       {/* Stock Symbol + Logo + Name */}
       <td className="col-symbol">
         <div className="symbol-cell-content">
-          <div className="stock-logo-wrap">
-            {logoUrl ? (
-              <img
-                src={logoUrl}
-                alt={`${stock.symbol} logo`}
-                className="stock-logo-img"
-                loading="lazy"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
-              />
-            ) : null}
-            <span className="stock-logo-fallback font-mono">{stock.symbol.slice(0, 2)}</span>
-          </div>
+          <StockLogo symbol={stock.symbol} logoId={stock.logoId} />
           <div className="symbol-details">
             <div className="symbol-row">
               <span className="stock-symbol font-mono">{stock.symbol}</span>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import type { Stock } from '../types';
-import { formatMarketCap, formatPrice, formatPercent, formatVolume, getLogoUrl } from '../utils/formatters';
+import { formatMarketCap, formatPrice, formatPercent, formatVolume } from '../utils/formatters';
+import { StockLogo } from './StockLogo';
 import {
   X,
   ExternalLink,
@@ -31,7 +32,6 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
   if (!stock) return null;
 
   const isPositive = stock.change >= 0;
-  const logoUrl = getLogoUrl(stock.logoId);
   const tradingViewSymbol = `${stock.exchange}:${stock.symbol}`;
   const tradingViewExternalUrl = `https://www.tradingview.com/symbols/${stock.exchange}-${stock.symbol}/`;
 
@@ -54,19 +54,13 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
         {/* Modal Header */}
         <div className="modal-header">
           <div className="modal-stock-info">
-            <div className="modal-logo-wrap">
-              {logoUrl ? (
-                <img
-                  src={logoUrl}
-                  alt={`${stock.symbol} logo`}
-                  className="modal-logo-img"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
-                />
-              ) : null}
-              <span className="modal-logo-fallback">{stock.symbol.slice(0, 2)}</span>
-            </div>
+            <StockLogo
+              symbol={stock.symbol}
+              logoId={stock.logoId}
+              className="modal-logo-wrap"
+              imgClassName="modal-logo-img"
+              fallbackClassName="modal-logo-fallback"
+            />
 
             <div className="modal-title-group">
               <div className="modal-symbol-row">
