@@ -98,10 +98,6 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
             Rankings and Top 5 membership reflect the <strong>{currentQuarter?.label ?? 'Q4 2026'}</strong> quarter benchmarked against <strong>{currentQuarter?.prevQuarterLabel ?? 'Q3 2026'}</strong>.
           </p>
         </div>
-        <div className="section-badge-info">
-          <span>5 Industries &bull; 50 Premier Equities</span>
-          <span className="section-badge-sub font-mono">⭐ Top 5 Inner Group &bull; 🎯 Contenders</span>
-        </div>
       </div>
 
       {/* Top 5 Industry Sections */}
