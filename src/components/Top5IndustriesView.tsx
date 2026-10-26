@@ -16,7 +16,6 @@ import {
   Activity,
   ShoppingBag,
   Layers,
-  Sparkles,
   Calendar,
   ShieldCheck,
   Target,
@@ -73,28 +72,22 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
 
   return (
     <div className="top5-view-container">
-      {/* Intro banner */}
-      <div className="section-intro-bar">
-        <div>
-          {currentQuarter && (
-            <div className="quarter-running-indicator-tag">
-              <span className="live-pulsing-dot" />
-              <Calendar size={13} className="text-cyan mr-1" />
-              <span className="quarter-active-title font-mono">
-                RUNNING CYCLE: <strong>{currentQuarter.label}</strong>
-              </span>
-              <span className="quarter-dates-sub font-mono">({currentQuarter.dateRange})</span>
-              <span className="quarter-rebalance-tag font-mono">
-                Next Rebalance: <strong>{currentQuarter.daysRemaining}d</strong>
-              </span>
-            </div>
-          )}
-          <h2 className="section-title">
-            <Sparkles size={18} className="title-icon text-cyan" />
-            Top 5 S&amp;P 500 Industries &bull; Top 10 Stocks in Each
-          </h2>
+      {/* Running Cycle Banner */}
+      {currentQuarter && (
+        <div className="section-intro-bar">
+          <div className="quarter-running-indicator-tag">
+            <span className="live-pulsing-dot" />
+            <Calendar size={13} className="text-cyan mr-1" />
+            <span className="quarter-active-title font-mono">
+              RUNNING CYCLE: <strong>{currentQuarter.label}</strong>
+            </span>
+            <span className="quarter-dates-sub font-mono">({currentQuarter.dateRange})</span>
+            <span className="quarter-rebalance-tag font-mono">
+              Next Rebalance: <strong>{currentQuarter.daysRemaining}d</strong>
+            </span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Top 5 Industry Sections */}
       <div className="sectors-stack">
