@@ -14,6 +14,8 @@ interface StockRowProps {
 export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock, sectorColor }) => {
   const monthlyChange = stock.perf1M ?? stock.change;
   const isPositive = monthlyChange >= 0;
+  const quarterlyChange = stock.perf3M;
+  const isQuarterlyPositive = (quarterlyChange ?? 0) >= 0;
 
   // 52-week position
   const low52 = stock.low52 || stock.price * 0.7;
@@ -124,6 +126,21 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
           {isPositive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
           {formatPercent(monthlyChange)}
         </span>
+      </td>
+
+      {/* Quarterly (3M) Change % */}
+      <td className="col-qtr-change">
+        {quarterlyChange !== null && quarterlyChange !== undefined ? (
+          <span
+            className={`change-pill font-mono ${isQuarterlyPositive ? 'positive' : 'negative'}`}
+            title="Quarterly (3M) Price Change"
+          >
+            {isQuarterlyPositive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
+            {formatPercent(quarterlyChange)}
+          </span>
+        ) : (
+          <span className="text-muted font-mono">—</span>
+        )}
       </td>
 
       {/* Market Cap & Sector Weight */}

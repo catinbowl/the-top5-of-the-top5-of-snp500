@@ -15,7 +15,7 @@ interface MatrixViewProps {
   searchQuery: string;
 }
 
-type MatrixSortKey = 'marketCap' | 'perf1M' | 'price' | 'pe' | 'perfYTD' | 'rankInSP500';
+type MatrixSortKey = 'marketCap' | 'perf1M' | 'perf3M' | 'price' | 'pe' | 'perfYTD' | 'rankInSP500';
 
 export const MatrixView: React.FC<MatrixViewProps> = ({
   top50Stocks,
@@ -141,6 +141,11 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 <span>1M Change</span>
                 {renderSortIndicator('perf1M')}
               </th>
+              <th className="th-qtr-change sortable" onClick={() => handleSort('perf3M')}>
+                <span className="th-desktop">Quarterly Change</span>
+                <span className="th-mobile">Qtr Chg</span>
+                {renderSortIndicator('perf3M')}
+              </th>
               <th className="th-mcap sortable" onClick={() => handleSort('marketCap')}>
                 <span>Market Cap</span>
                 {renderSortIndicator('marketCap')}
@@ -156,7 +161,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
           <tbody>
             {filteredAndSortedStocks.length === 0 ? (
               <tr>
-                <td colSpan={9} className="empty-table-cell">
+                <td colSpan={10} className="empty-table-cell">
                   No stocks match the current filter criteria.
                 </td>
               </tr>

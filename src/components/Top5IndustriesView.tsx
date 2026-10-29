@@ -267,6 +267,10 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                             <th className="th-industry">Sub-Industry</th>
                             <th className="th-price">Price</th>
                             <th className="th-change">1M Chg</th>
+                            <th className="th-qtr-change">
+                              <span className="th-desktop">Quarterly Chg</span>
+                              <span className="th-mobile">Qtr Chg</span>
+                            </th>
                             <th className="th-mcap">
                               <span className="th-desktop">Market Cap &amp; Weight</span>
                               <span className="th-mobile">Mkt Cap</span>

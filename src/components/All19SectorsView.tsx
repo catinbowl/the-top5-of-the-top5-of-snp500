@@ -176,6 +176,10 @@ export const All19SectorsView: React.FC<All19SectorsViewProps> = ({
                           <th className="th-industry">Sub-Industry</th>
                           <th className="th-price">Price</th>
                           <th className="th-change">1M Chg</th>
+                          <th className="th-qtr-change">
+                            <span className="th-desktop">Quarterly Chg</span>
+                            <span className="th-mobile">Qtr Chg</span>
+                          </th>
                           <th className="th-mcap">Market Cap &amp; Weight</th>
                           <th className="th-range">52-Week Range</th>
                           <th className="th-pe">P/E</th>
