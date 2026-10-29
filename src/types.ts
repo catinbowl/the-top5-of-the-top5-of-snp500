@@ -9,6 +9,8 @@ export interface QuarterInfo {
   nextQuarterStartDate: string; // e.g. "Jan 1, 2027"
   dateRange: string;            // e.g. "Oct 1 – Dec 31, 2026"
   daysRemaining: number;
+  isFirstMonthOfQuarter: boolean; // true in Jan, Apr, Jul, Oct
+  currentMonthName: string;       // e.g. "October"
 }
 
 export interface Stock {
@@ -72,7 +74,7 @@ export interface SectorData {
   description: string;
 }
 
-export type ViewMode = 'top5' | 'matrix' | 'treemap' | 'all19';
+export type ViewMode = 'top5' | 'allocator' | 'matrix' | 'treemap' | 'all19';
 
 export type SortField = 'marketCap' | 'perf1M' | 'perf3M' | 'change' | 'price' | 'pe' | 'perfYTD';
 export type SortDirection = 'asc' | 'desc';

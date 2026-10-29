@@ -5,11 +5,13 @@ import { processStockData } from './utils/dataProcessor';
 import { fetchLiveTradingViewStocks } from './services/tradingViewService';
 import { Navbar } from './components/Navbar';
 import { Top5IndustriesView } from './components/Top5IndustriesView';
+import { CapitalDistributionView } from './components/CapitalDistributionView';
 import { MatrixView } from './components/MatrixView';
 import { TreemapView } from './components/TreemapView';
 import { All19SectorsView } from './components/All19SectorsView';
 import { StockDetailModal } from './components/StockDetailModal';
 import { Footer } from './components/Footer';
+import { Layers, Wallet } from 'lucide-react';
 import './App.css';
 
 export const App: React.FC = () => {
@@ -37,10 +39,29 @@ export const App: React.FC = () => {
   const [isLiveOnline, setIsLiveOnline] = useState<boolean>(false);
   const [autoRefresh, setAutoRefresh] = useState<boolean>(false);
 
-  // View state
-  const [currentView] = useState<ViewMode>('top5');
+  // View state (synced with URL hash for bookmarkable pages)
+  const [currentView, setCurrentView] = useState<ViewMode>(() => {
+    return window.location.hash === '#allocator' ? 'allocator' : 'top5';
+  });
   const searchQuery = '';
   const [selectedStock, setSelectedStock] = useState<Stock | null>(null);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setCurrentView(window.location.hash === '#allocator' ? 'allocator' : 'top5');
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const handleViewChange = (view: ViewMode) => {
+    setCurrentView(view);
+    if (view === 'allocator') {
+      window.history.replaceState(null, '', '#allocator');
+    } else {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  };
 
   // Compute processed hierarchy: Top 5 Industries and Top 10 Stocks
   const processed = useMemo(() => {
@@ -103,12 +124,48 @@ export const App: React.FC = () => {
       />
 
       <main className="main-content">
+        {/* Primary Page Navigation Tabs */}
+        <nav className="page-switcher-bar" aria-label="Primary Pages">
+          <div className="view-tabs page-view-tabs" role="tablist">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={currentView === 'top5'}
+              className={`view-tab ${currentView === 'top5' ? 'active' : ''}`}
+              onClick={() => handleViewChange('top5')}
+            >
+              <Layers size={16} />
+              <span>Top 5 Tracker</span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              aria-selected={currentView === 'allocator'}
+              className={`view-tab ${currentView === 'allocator' ? 'active' : ''}`}
+              onClick={() => handleViewChange('allocator')}
+            >
+              <Wallet size={16} />
+              <span>Capital Allocator</span>
+              <span className="tab-pill font-mono">25 Stocks</span>
+            </button>
+          </div>
+        </nav>
+
         {/* View Switching */}
         {currentView === 'top5' && (
           <Top5IndustriesView
             top5Sectors={processed.top5Sectors}
             onSelectStock={setSelectedStock}
             searchQuery={searchQuery}
+            currentQuarter={processed.currentQuarter}
+          />
+        )}
+
+        {currentView === 'allocator' && (
+          <CapitalDistributionView
+            top5Sectors={processed.top5Sectors}
+            onSelectStock={setSelectedStock}
             currentQuarter={processed.currentQuarter}
           />
         )}

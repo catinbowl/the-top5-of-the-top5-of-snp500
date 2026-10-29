@@ -46,6 +46,8 @@ export function getQuarterInfo(targetDate: Date = new Date()): QuarterInfo {
 
   const msRemaining = nextQuarterStart.getTime() - targetDate.getTime();
   const daysRemaining = Math.max(0, Math.ceil(msRemaining / (1000 * 60 * 60 * 24)));
+  const isFirstMonthOfQuarter = month % 3 === 0; // Jan (0), Apr (3), Jul (6), Oct (9)
+  const currentMonthName = targetDate.toLocaleString('en-US', { month: 'long' });
 
   return {
     quarter,
@@ -56,5 +58,7 @@ export function getQuarterInfo(targetDate: Date = new Date()): QuarterInfo {
     nextQuarterStartDate,
     dateRange,
     daysRemaining,
+    isFirstMonthOfQuarter,
+    currentMonthName,
   };
 }

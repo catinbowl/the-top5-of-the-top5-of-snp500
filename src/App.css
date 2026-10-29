@@ -2660,6 +2660,426 @@
 }
 
 /* ==========================================================================
+   13.5 Page Switcher & Capital Allocator Page
+   ========================================================================== */
+.page-switcher-bar {
+  display: flex;
+  align-items: center;
+}
+
+.page-view-tabs {
+  box-shadow: var(--shadow-sm);
+}
+
+.page-view-tabs .view-tab:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.allocator-view-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.allocator-hero-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  border-top: 3px solid var(--cyan-accent);
+}
+
+.allocator-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.allocator-title-block {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.allocator-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--cyan-accent);
+  text-transform: uppercase;
+}
+
+.allocator-heading {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.allocator-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+.capital-input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 280px;
+}
+
+.capital-input-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.capital-input-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.capital-currency-prefix {
+  position: absolute;
+  left: 0.95rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cyan-accent);
+  pointer-events: none;
+}
+
+.capital-amount-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0.65rem 1rem 0.65rem 2.15rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.capital-amount-input:focus {
+  border-color: var(--cyan-accent);
+  box-shadow: 0 0 0 3px var(--cyan-glow);
+}
+
+/* 15-Point Proportional Bar & Sector Point Cards */
+.sector-points-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.allocation-stacked-bar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  gap: 2px;
+}
+
+.allocation-bar-segment {
+  height: 100%;
+  transition: width var(--transition-normal);
+}
+
+.sector-points-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 1120px) {
+  .sector-points-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sector-point-card {
+  padding: 0.8rem 0.9rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-top: 2px solid var(--sector-color, var(--cyan-accent));
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.spc-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.spc-points-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.spc-qtr-move {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.spc-sector-name {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spc-color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.spc-amounts {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.spc-sector-total {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.spc-per-stock {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* Buy & Sell Sections */
+.allocator-sell-section,
+.allocator-buy-section {
+  overflow: hidden;
+}
+
+.allocator-sell-section {
+  border-top: 3px solid var(--rose-accent);
+}
+
+.allocator-buy-section {
+  border-top: 3px solid var(--emerald-accent);
+}
+
+.allocator-section-header {
+  padding: 1.15rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.allocator-section-header.sell-header {
+  background: linear-gradient(90deg, rgba(244, 63, 94, 0.1) 0%, transparent 100%);
+}
+
+.allocator-section-header.buy-header {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.08) 0%, transparent 100%);
+}
+
+.alloc-sec-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.alloc-sec-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.alloc-sec-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.alloc-sec-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sell-count-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--rose-bg);
+  color: var(--rose-accent);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.buy-total-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: rgba(6, 182, 212, 0.14);
+  color: var(--cyan-accent);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.empty-sell-state {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Order Action Pills & Allocator Table Cells */
+.action-order-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.action-order-pill.buy {
+  background: var(--emerald-bg);
+  color: var(--emerald-accent);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.action-order-pill.sell {
+  background: var(--rose-bg);
+  color: var(--rose-accent);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  font-size: 0.68rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.alloc-sector-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.alloc-sector-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.alloc-points-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.rank-shift-badge {
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.replacement-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.alloc-col-price,
+.sell-col-price {
+  font-weight: 700;
+}
+
+.alloc-weight-pill {
+  display: inline-block;
+  padding: 0.18rem 0.48rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-badge);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.alloc-amount-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.alloc-dollar-val {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--cyan-accent);
+  white-space: nowrap;
+}
+
+.alloc-mobile-weight {
+  display: none;
+}
+
+.alloc-shares-val {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
    14. Mobile Responsive Overrides (iPhone 16e & Touch Devices)
    ========================================================================== */
 @media (max-width: 768px) {
@@ -3255,5 +3675,222 @@
   .row-head-right {
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+
+  /* Page Switcher & Capital Allocator on Mobile */
+  .page-switcher-bar {
+    width: 100%;
+  }
+
+  .page-view-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-view-tabs .view-tab {
+    justify-content: center;
+    padding: 0.55rem 0.45rem;
+    font-size: 0.76rem;
+    min-height: 44px;
+    gap: 0.35rem;
+  }
+
+  .page-view-tabs .tab-pill {
+    font-size: 0.56rem;
+    padding: 0.08rem 0.32rem;
+  }
+
+  .allocator-hero-card {
+    padding: 0.9rem 0.75rem;
+    gap: 0.95rem;
+  }
+
+  .allocator-hero-top {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .allocator-title-block {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .allocator-heading {
+    font-size: 1.12rem;
+  }
+
+  .allocator-description {
+    font-size: 0.76rem;
+  }
+
+  .capital-input-form {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .capital-amount-input {
+    font-size: 1.15rem;
+    min-height: 48px;
+  }
+
+  .sector-points-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.45rem;
+  }
+
+  .sector-point-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .sector-point-card {
+    padding: 0.6rem 0.65rem;
+  }
+
+  .allocator-section-header {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .alloc-sec-title {
+    font-size: 0.94rem;
+  }
+
+  .alloc-sec-subtitle {
+    font-size: 0.72rem;
+  }
+
+  /* Allocator Buy Table Mobile Columns */
+  .alloc-col-sector,
+  .alloc-col-qtr,
+  .alloc-col-weight {
+    display: none !important;
+  }
+
+  .alloc-col-rank {
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    padding-left: 0.1rem !important;
+    padding-right: 0.1rem !important;
+  }
+
+  .alloc-col-symbol {
+    width: 145px !important;
+    min-width: 145px !important;
+    max-width: 145px !important;
+    overflow: hidden;
+  }
+
+  .alloc-col-price {
+    width: 58px !important;
+    min-width: 58px !important;
+    max-width: 58px !important;
+    white-space: nowrap !important;
+  }
+
+  td.alloc-col-price {
+    text-align: right !important;
+    font-size: 0.74rem !important;
+  }
+
+  .alloc-col-amount {
+    width: 78px !important;
+    min-width: 78px !important;
+    max-width: 78px !important;
+    padding-right: 0.15rem !important;
+  }
+
+  td.alloc-col-amount {
+    text-align: right !important;
+  }
+
+  .alloc-amount-wrap {
+    min-width: 0 !important;
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  .alloc-dollar-val {
+    font-size: 0.75rem;
+  }
+
+  .alloc-mobile-weight {
+    display: block;
+    font-size: 0.58rem;
+    color: var(--text-muted);
+  }
+
+  .alloc-col-shares {
+    width: 62px !important;
+    min-width: 62px !important;
+    max-width: 62px !important;
+    padding-right: 0.2rem !important;
+  }
+
+  td.alloc-col-shares {
+    text-align: right !important;
+  }
+
+  .alloc-shares-val {
+    font-size: 0.73rem;
+  }
+
+  /* Allocator Sell Table Mobile Columns */
+  .sell-col-sector,
+  .sell-col-replaced {
+    display: none !important;
+  }
+
+  .sell-col-action {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    text-align: center;
+  }
+
+  .action-order-pill.sell {
+    font-size: 0.56rem;
+    padding: 0.14rem 0.28rem;
+  }
+
+  .sell-col-symbol {
+    width: 140px !important;
+    min-width: 140px !important;
+    max-width: 140px !important;
+    overflow: hidden;
+  }
+
+  .sell-col-rank {
+    width: 58px !important;
+    min-width: 58px !important;
+    max-width: 58px !important;
+    text-align: center !important;
+  }
+
+  .rank-shift-badge {
+    font-size: 0.68rem;
+  }
+
+  .sell-col-price {
+    width: 58px !important;
+    min-width: 58px !important;
+    max-width: 58px !important;
+    white-space: nowrap !important;
+  }
+
+  td.sell-col-price {
+    text-align: right !important;
+    font-size: 0.74rem !important;
+  }
+
+  .sell-col-qtr {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    padding-right: 0.15rem !important;
+  }
+
+  td.sell-col-qtr {
+    text-align: right !important;
   }
 }

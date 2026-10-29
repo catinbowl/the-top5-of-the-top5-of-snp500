@@ -17,6 +17,17 @@ export function formatPrice(price: number): string {
   return `$${price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
+export function formatCurrency(amount: number): string {
+  if (amount === undefined || amount === null || isNaN(amount)) return '$0.00';
+  return `$${amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
+export function formatShares(shares: number): string {
+  if (!shares || isNaN(shares) || !isFinite(shares)) return '0';
+  if (shares >= 100) return shares.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return shares.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+}
+
 export function formatPercent(val: number | null | undefined, includeSign = true): string {
   if (val === null || val === undefined || isNaN(val)) return '0.00%';
   const sign = includeSign && val > 0 ? '+' : '';
