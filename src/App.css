@@ -880,6 +880,72 @@
   vertical-align: middle;
 }
 
+/* Table Summary Footer Rows (Weighted 1M & Quarterly Averages) */
+.table-summary-row {
+  background: var(--bg-secondary);
+}
+
+.table-summary-row.summary-row-top5 {
+  background: linear-gradient(
+    90deg,
+    var(--sector-accent, rgba(6, 182, 212, 0.08)) 0%,
+    var(--bg-secondary) 55%
+  );
+}
+
+.stocks-data-table tfoot tr:first-child td {
+  border-top: 2px solid var(--border-hover);
+}
+
+.table-summary-row td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  vertical-align: middle;
+}
+
+.stocks-data-table tfoot tr:last-child td {
+  border-bottom: none;
+}
+
+.summary-rank-badge {
+  font-size: 0.65rem;
+  letter-spacing: -0.02em;
+}
+
+.summary-label-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.summary-label-title {
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary-label-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary-method-pill {
+  font-size: 0.68rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.summary-change-pill {
+  box-shadow: inset 0 0 0 1px var(--border-subtle);
+}
+
 /* Columns */
 .col-rank {
   width: 60px;
@@ -3107,6 +3173,18 @@
   .mcap-weight-text {
     font-size: 0.6rem;
     color: var(--text-muted);
+  }
+
+  .summary-rank-badge {
+    font-size: 0.54rem;
+  }
+
+  .summary-label-title {
+    font-size: 0.72rem;
+  }
+
+  .summary-label-sub {
+    font-size: 0.56rem;
   }
 
   /* Cards View on Mobile */

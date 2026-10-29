@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { SectorData, Stock } from '../types';
 import { StockRow } from './StockRow';
+import { SectorTableSummaryFooter } from './SectorTableSummaryFooter';
 import { formatMarketCap, formatPercent } from '../utils/formatters';
 import {
   PieChart,
@@ -197,6 +198,7 @@ export const All19SectorsView: React.FC<All19SectorsViewProps> = ({
                           />
                         ))}
                       </tbody>
+                      <SectorTableSummaryFooter sector={sector} />
                     </table>
                   </div>
                 </div>

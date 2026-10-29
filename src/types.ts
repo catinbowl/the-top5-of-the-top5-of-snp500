@@ -54,6 +54,8 @@ export interface SectorData {
   avgChange: number;
   avgChangeTop5: number;
   avgChangeTop10: number;
+  avgQtrChangeTop5: number;
+  avgQtrChangeTop10: number;
   shareOfSP500: number; // percentage (e.g. 32.5)
   stocks: Stock[];
   top10Stocks: Stock[];

@@ -119,16 +119,20 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
 
     const totalSectorMarketCap = stocksInSector.reduce((sum, s) => sum + s.marketCap, 0);
 
-    // Market-cap-weighted 1-month performance calculation
-    const calcWeightedMove = (list: Stock[]): number => {
+    // Market-cap-weighted performance calculation (1-month & quarterly)
+    const calcWeightedMove = (
+      list: Stock[],
+      getMove: (s: Stock) => number | null | undefined = (s) => s.perf1M ?? s.change
+    ): number => {
       if (list.length === 0) return 0;
       let totalCurrentCap = 0;
       let totalPrevCap = 0;
 
       for (const s of list) {
-        const move = s.perf1M ?? s.change;
+        const move = getMove(s);
+        if (move === null || move === undefined || isNaN(move)) continue;
         const currentCap = s.marketCap;
-        // Previous cap before the 1M move: currentCap / (1 + move / 100)
+        // Previous cap before the period move: currentCap / (1 + move / 100)
         const prevCap = move > -99.99 ? currentCap / (1 + move / 100) : currentCap;
         totalCurrentCap += currentCap;
         totalPrevCap += prevCap;
@@ -138,8 +142,13 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
       return Number((((totalCurrentCap - totalPrevCap) / totalPrevCap) * 100).toFixed(2));
     };
 
-    const avgChangeTop5 = calcWeightedMove(stocksInSector.slice(0, 5));
-    const avgChangeTop10 = calcWeightedMove(stocksInSector.slice(0, 10));
+    const top5Slice = stocksInSector.slice(0, 5);
+    const top10Slice = stocksInSector.slice(0, 10);
+
+    const avgChangeTop5 = calcWeightedMove(top5Slice, (s) => s.perf1M ?? s.change);
+    const avgChangeTop10 = calcWeightedMove(top10Slice, (s) => s.perf1M ?? s.change);
+    const avgQtrChangeTop5 = calcWeightedMove(top5Slice, (s) => s.perf3M);
+    const avgQtrChangeTop10 = calcWeightedMove(top10Slice, (s) => s.perf3M);
     const avgChange = avgChangeTop5;
 
     // Sub-industries breakdown
@@ -229,6 +238,8 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
       avgChange,
       avgChangeTop5,
       avgChangeTop10,
+      avgQtrChangeTop5,
+      avgQtrChangeTop10,
       shareOfSP500: totalSP500MarketCap > 0 ? Number(((totalSectorMarketCap / totalSP500MarketCap) * 100).toFixed(2)) : 0,
       stocks: stocksInSector,
       top10Stocks,

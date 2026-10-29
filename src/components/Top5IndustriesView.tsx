@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import type { SectorData, Stock, QuarterInfo } from '../types';
 import { StockRow } from './StockRow';
 import { StockCard } from './StockCard';
-import { formatMarketCap, formatPercent } from '../utils/formatters';
+import { SectorTableSummaryFooter } from './SectorTableSummaryFooter';
+import { formatMarketCap } from '../utils/formatters';
 import {
-  TrendingUp,
-  TrendingDown,
   Table as TableIcon,
   LayoutGrid,
   ChevronDown,
@@ -94,8 +93,6 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
         {top5Sectors.map((sector) => {
           const isCollapsed = collapsedSectors[sector.name];
           const layout = layoutModes[sector.name] || 'table';
-          const isTop5Positive = sector.avgChangeTop5 >= 0;
-          const isTop10Positive = sector.avgChangeTop10 >= 0;
 
           // Filter stocks by search query if present
           const q = searchQuery.toLowerCase().trim();
@@ -167,28 +164,6 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                     <div className="sector-metric-item">
                       <span className="metric-label">S&amp;P 500 Share</span>
                       <span className="metric-val font-mono">{sector.shareOfSP500.toFixed(1)}%</span>
-                    </div>
-
-                    <div className="sector-metric-item">
-                      <span className="metric-label" title="Market-Cap Weighted 1-Month Move">Top 5 1M Move</span>
-                      <span
-                        className={`metric-val font-mono ${isTop5Positive ? 'text-green' : 'text-rose'}`}
-                        title="Market-Cap Weighted 1-Month Move of Top 5 stocks"
-                      >
-                        {isTop5Positive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
-                        {formatPercent(sector.avgChangeTop5)}
-                      </span>
-                    </div>
-
-                    <div className="sector-metric-item">
-                      <span className="metric-label" title="Market-Cap Weighted 1-Month Move">Top 10 1M Move</span>
-                      <span
-                        className={`metric-val font-mono ${isTop10Positive ? 'text-green' : 'text-rose'}`}
-                        title="Market-Cap Weighted 1-Month Move of Top 10 stocks"
-                      >
-                        {isTop10Positive ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
-                        {formatPercent(sector.avgChangeTop10)}
-                      </span>
                     </div>
                   </div>
 
@@ -291,6 +266,7 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
                             />
                           ))}
                         </tbody>
+                        <SectorTableSummaryFooter sector={sector} />
                       </table>
                     </div>
                   ) : (
