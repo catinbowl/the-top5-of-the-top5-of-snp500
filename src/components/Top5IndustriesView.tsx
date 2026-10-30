@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo, memo } from 'react';
 import type { SectorData, Stock, QuarterInfo } from '../types';
 import { StockRow } from './StockRow';
 import { StockCard } from './StockCard';
@@ -25,47 +25,315 @@ interface Top5IndustriesViewProps {
   currentQuarter?: QuarterInfo;
 }
 
-export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
+function getSectorIcon(name: string) {
+  switch (name) {
+    case 'Electronic Technology':
+      return <Cpu size={22} className="sector-icon" />;
+    case 'Technology Services':
+      return <Terminal size={22} className="sector-icon" />;
+    case 'Finance':
+      return <Landmark size={22} className="sector-icon" />;
+    case 'Health Technology':
+      return <Activity size={22} className="sector-icon" />;
+    case 'Retail Trade':
+      return <ShoppingBag size={22} className="sector-icon" />;
+    default:
+      return <Layers size={22} className="sector-icon" />;
+  }
+}
+
+interface SectorSectionProps {
+  sector: SectorData;
+  isCollapsed: boolean;
+  layout: 'table' | 'cards';
+  searchQuery: string;
+  quarterLabel?: string;
+  onSelectStock: (stock: Stock) => void;
+  onToggleCollapse: (sectorName: string) => void;
+  onSetLayout: (sectorName: string, mode: 'table' | 'cards') => void;
+}
+
+const SectorSection: React.FC<SectorSectionProps> = memo(({
+  sector,
+  isCollapsed,
+  layout,
+  searchQuery,
+  quarterLabel,
+  onSelectStock,
+  onToggleCollapse,
+  onSetLayout,
+}) => {
+  const q = searchQuery.toLowerCase().trim();
+
+  const filteredTop10 = useMemo(() => {
+    if (!q) return sector.top10Stocks;
+    return sector.top10Stocks.filter(
+      (s) =>
+        s.symbol.toLowerCase().includes(q) ||
+        s.name.toLowerCase().includes(q) ||
+        s.industry.toLowerCase().includes(q)
+    );
+  }, [sector.top10Stocks, q]);
+
+  const { innerGroup, outerContenders } = useMemo(() => {
+    if (layout !== 'cards') {
+      return { innerGroup: [], outerContenders: [] };
+    }
+    return {
+      innerGroup: filteredTop10.filter((s) => (s.rankInSector ?? 0) <= 5),
+      outerContenders: filteredTop10.filter((s) => (s.rankInSector ?? 0) > 5),
+    };
+  }, [filteredTop10, layout]);
+
+  return (
+    <section
+      className={`sector-section glass-panel ${isCollapsed ? 'is-collapsed' : ''}`}
+      style={{
+        '--sector-color': sector.color,
+        '--sector-accent': sector.accentColor,
+      } as React.CSSProperties}
+    >
+      {/* Sector Header Block */}
+      <div
+        className="sector-header"
+        onClick={() => onToggleCollapse(sector.name)}
+        role="button"
+        tabIndex={0}
+        aria-expanded={!isCollapsed}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onToggleCollapse(sector.name);
+          }
+        }}
+      >
+        <div className="sector-header-left">
+          {/* Rank Badge */}
+          <div className="sector-rank-badge font-mono">
+            <span className="rank-hash">#</span>
+            <span className="rank-num">{sector.rank}</span>
+          </div>
+
+          <div className="sector-icon-wrap" style={{ color: sector.color }}>
+            {getSectorIcon(sector.name)}
+          </div>
+
+          <div className="sector-name-group">
+            <div className="sector-title-row">
+              <h3 className="sector-name">{sector.name}</h3>
+            </div>
+            <p className="sector-desc">{sector.description}</p>
+          </div>
+        </div>
+
+        <div className="sector-header-right" onClick={(e) => e.stopPropagation()}>
+          {/* Aggregate Metrics */}
+          <div className="sector-metrics">
+            <div className="sector-metric-item">
+              <span className="metric-label">Sector Total Cap</span>
+              <span className="metric-val font-mono" style={{ color: sector.color }}>
+                {formatMarketCap(sector.totalMarketCap)}
+              </span>
+            </div>
+
+            <div className="sector-metric-item">
+              <span className="metric-label">S&amp;P 500 Share</span>
+              <span className="metric-val font-mono">{sector.shareOfSP500.toFixed(1)}%</span>
+            </div>
+          </div>
+
+          {/* Layout switch button (Table vs Cards) */}
+          <div className="view-mode-switch">
+            <button
+              className={`btn-layout ${layout === 'table' ? 'active' : ''}`}
+              onClick={() => onSetLayout(sector.name, 'table')}
+              title="Switch to compact Table View"
+              aria-label="Table view"
+            >
+              <TableIcon size={15} />
+            </button>
+            <button
+              className={`btn-layout ${layout === 'cards' ? 'active' : ''}`}
+              onClick={() => onSetLayout(sector.name, 'cards')}
+              title="Switch to Card Grid View"
+              aria-label="Card view"
+            >
+              <LayoutGrid size={15} />
+            </button>
+          </div>
+
+          {/* Collapse / Expand Toggle */}
+          <button
+            className="btn-collapse"
+            onClick={() => onToggleCollapse(sector.name)}
+            aria-label={isCollapsed ? 'Expand sector' : 'Collapse sector'}
+          >
+            {isCollapsed ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Sub-industries chips bar */}
+      <div className="sector-sub-industries-bar">
+        <span className="sub-ind-title">Top Sub-Industries:</span>
+        <div className="sub-ind-list">
+          {sector.industries.slice(0, 4).map((ind) => (
+            <span key={ind.name} className="sub-ind-chip">
+              <strong>{ind.name}</strong>
+              <span className="font-mono text-muted">({ind.count} stocks &bull; {formatMarketCap(ind.marketCap)})</span>
+            </span>
+          ))}
+          {sector.industries.length > 4 && (
+            <span className="sub-ind-more text-muted">
+              +{sector.industries.length - 4} more
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Sector Content (Collapsible) */}
+      {!isCollapsed && (
+        <div className="sector-content-body">
+          {filteredTop10.length === 0 ? (
+            <div className="empty-search-state">
+              <p>No stocks in {sector.name} match "{searchQuery}"</p>
+            </div>
+          ) : layout === 'table' ? (
+            /* Table View */
+            <div
+              className="table-wrapper"
+              tabIndex={0}
+              role="region"
+              aria-label={`Top 10 Stocks in ${sector.name}`}
+            >
+              <table className="stocks-data-table">
+                <thead>
+                  <tr>
+                    <th className="th-rank">
+                      <span className="th-desktop">Rank</span>
+                      <span className="th-mobile">#</span>
+                    </th>
+                    <th className="th-symbol">Company</th>
+                    <th className="th-industry">Sub-Industry</th>
+                    <th className="th-price">Price</th>
+                    <th className="th-change">1M Chg</th>
+                    <th className="th-qtr-change">
+                      <span className="th-desktop">Quarterly Chg</span>
+                      <span className="th-mobile">Qtr Chg</span>
+                    </th>
+                    <th className="th-mcap">
+                      <span className="th-desktop">Market Cap &amp; Weight</span>
+                      <span className="th-mobile">Mkt Cap</span>
+                    </th>
+                    <th className="th-range">52-Week Range</th>
+                    <th className="th-pe">P/E</th>
+                    <th className="th-action"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredTop10.map((stock, idx) => (
+                    <StockRow
+                      key={stock.symbol}
+                      stock={stock}
+                      index={idx}
+                      onSelectStock={onSelectStock}
+                      sectorColor={sector.color}
+                    />
+                  ))}
+                </tbody>
+                <SectorTableSummaryFooter sector={sector} />
+              </table>
+            </div>
+          ) : (
+            /* Cards Grid View */
+            <div className="grouped-cards-container">
+              {innerGroup.length > 0 && (
+                <div className="cards-tier-section inner-tier">
+                  <div className="tier-header">
+                    <div className="tier-header-left">
+                      <span className="tier-badge inner-tier-badge font-mono">
+                        ⭐ TOP 5 INNER GROUP
+                      </span>
+                      <span className="tier-title">{sector.name} Core Pillars</span>
+                    </div>
+                    <span className="tier-meta font-mono">
+                      Ranks #1 &ndash; #5 &bull; {quarterLabel || 'Active Cycle'}
+                    </span>
+                  </div>
+                  <div className="stocks-cards-grid">
+                    {innerGroup.map((stock, idx) => (
+                      <StockCard
+                        key={stock.symbol}
+                        stock={stock}
+                        index={idx}
+                        onSelectStock={onSelectStock}
+                        sectorColor={sector.color}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {outerContenders.length > 0 && (
+                <div className="cards-tier-section outer-tier">
+                  <div className="tier-header">
+                    <div className="tier-header-left">
+                      <span className="tier-badge outer-tier-badge font-mono">
+                        🎯 CONTENDERS &amp; CHALLENGERS
+                      </span>
+                      <span className="tier-title">Top 5 Watchlist</span>
+                    </div>
+                    <span className="tier-meta font-mono">Ranks #6 &ndash; #10</span>
+                  </div>
+                  <div className="stocks-cards-grid">
+                    {outerContenders.map((stock, idx) => (
+                      <StockCard
+                        key={stock.symbol}
+                        stock={stock}
+                        index={innerGroup.length + idx}
+                        onSelectStock={onSelectStock}
+                        sectorColor={sector.color}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  );
+});
+
+export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = memo(({
   top5Sectors,
   onSelectStock,
   searchQuery,
   currentQuarter,
 }) => {
-  // Sector display layout mode: table or cards (per sector or global)
+  // Sector display layout mode: table or cards (per sector)
   const [layoutModes, setLayoutModes] = useState<Record<string, 'table' | 'cards'>>({});
   // Collapsed state
   const [collapsedSectors, setCollapsedSectors] = useState<Record<string, boolean>>({});
 
-  const toggleLayout = (sectorName: string) => {
-    setLayoutModes((prev) => ({
-      ...prev,
-      [sectorName]: prev[sectorName] === 'cards' ? 'table' : 'cards',
-    }));
-  };
+  const setSectorLayout = useCallback((sectorName: string, mode: 'table' | 'cards') => {
+    setLayoutModes((prev) => {
+      const current = prev[sectorName] || 'table';
+      if (current === mode) return prev;
+      return {
+        ...prev,
+        [sectorName]: mode,
+      };
+    });
+  }, []);
 
-  const toggleCollapse = (sectorName: string) => {
+  const toggleCollapse = useCallback((sectorName: string) => {
     setCollapsedSectors((prev) => ({
       ...prev,
       [sectorName]: !prev[sectorName],
     }));
-  };
-
-  const getSectorIcon = (name: string) => {
-    switch (name) {
-      case 'Electronic Technology':
-        return <Cpu size={22} className="sector-icon" />;
-      case 'Technology Services':
-        return <Terminal size={22} className="sector-icon" />;
-      case 'Finance':
-        return <Landmark size={22} className="sector-icon" />;
-      case 'Health Technology':
-        return <Activity size={22} className="sector-icon" />;
-      case 'Retail Trade':
-        return <ShoppingBag size={22} className="sector-icon" />;
-      default:
-        return <Layers size={22} className="sector-icon" />;
-    }
-  };
+  }, []);
 
   return (
     <div className="top5-view-container">
@@ -90,247 +358,20 @@ export const Top5IndustriesView: React.FC<Top5IndustriesViewProps> = ({
 
       {/* Top 5 Industry Sections */}
       <div className="sectors-stack">
-        {top5Sectors.map((sector) => {
-          const isCollapsed = collapsedSectors[sector.name];
-          const layout = layoutModes[sector.name] || 'table';
-
-          // Filter stocks by search query if present
-          const q = searchQuery.toLowerCase().trim();
-          const filteredTop10 = sector.top10Stocks.filter((s) => {
-            if (!q) return true;
-            return (
-              s.symbol.toLowerCase().includes(q) ||
-              s.name.toLowerCase().includes(q) ||
-              s.industry.toLowerCase().includes(q)
-            );
-          });
-
-          // Partition into Top 5 Inner Group and Outer Contenders
-          const innerGroup = filteredTop10.filter((s) => (s.rankInSector ?? 0) <= 5);
-          const outerContenders = filteredTop10.filter((s) => (s.rankInSector ?? 0) > 5);
-
-          return (
-            <section
-              key={sector.name}
-              className="sector-section glass-panel"
-              style={{
-                '--sector-color': sector.color,
-                '--sector-accent': sector.accentColor,
-              } as React.CSSProperties}
-            >
-              {/* Sector Header Block */}
-              <div
-                className="sector-header"
-                onClick={() => toggleCollapse(sector.name)}
-                role="button"
-                tabIndex={0}
-                aria-expanded={!isCollapsed}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleCollapse(sector.name);
-                  }
-                }}
-              >
-                <div className="sector-header-left">
-                  {/* Rank Badge */}
-                  <div className="sector-rank-badge font-mono">
-                    <span className="rank-hash">#</span>
-                    <span className="rank-num">{sector.rank}</span>
-                  </div>
-
-                  <div className="sector-icon-wrap" style={{ color: sector.color }}>
-                    {getSectorIcon(sector.name)}
-                  </div>
-
-                  <div className="sector-name-group">
-                    <div className="sector-title-row">
-                      <h3 className="sector-name">{sector.name}</h3>
-                    </div>
-                    <p className="sector-desc">{sector.description}</p>
-                  </div>
-                </div>
-
-                <div className="sector-header-right" onClick={(e) => e.stopPropagation()}>
-                  {/* Aggregate Metrics */}
-                  <div className="sector-metrics">
-                    <div className="sector-metric-item">
-                      <span className="metric-label">Sector Total Cap</span>
-                      <span className="metric-val font-mono" style={{ color: sector.color }}>
-                        {formatMarketCap(sector.totalMarketCap)}
-                      </span>
-                    </div>
-
-                    <div className="sector-metric-item">
-                      <span className="metric-label">S&amp;P 500 Share</span>
-                      <span className="metric-val font-mono">{sector.shareOfSP500.toFixed(1)}%</span>
-                    </div>
-                  </div>
-
-                  {/* Layout switch button (Table vs Cards) */}
-                  <div className="view-mode-switch">
-                    <button
-                      className={`btn-layout ${layout === 'table' ? 'active' : ''}`}
-                      onClick={() => toggleLayout(sector.name)}
-                      title="Switch to compact Table View"
-                      aria-label="Table view"
-                    >
-                      <TableIcon size={15} />
-                    </button>
-                    <button
-                      className={`btn-layout ${layout === 'cards' ? 'active' : ''}`}
-                      onClick={() => toggleLayout(sector.name)}
-                      title="Switch to Card Grid View"
-                      aria-label="Card view"
-                    >
-                      <LayoutGrid size={15} />
-                    </button>
-                  </div>
-
-                  {/* Collapse / Expand Toggle */}
-                  <button
-                    className="btn-collapse"
-                    onClick={() => toggleCollapse(sector.name)}
-                    aria-label={isCollapsed ? 'Expand sector' : 'Collapse sector'}
-                  >
-                    {isCollapsed ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
-                  </button>
-                </div>
-              </div>
-
-              {/* Sub-industries chips bar */}
-              <div className="sector-sub-industries-bar">
-                <span className="sub-ind-title">Top Sub-Industries:</span>
-                <div className="sub-ind-list">
-                  {sector.industries.slice(0, 4).map((ind) => (
-                    <span key={ind.name} className="sub-ind-chip">
-                      <strong>{ind.name}</strong>
-                      <span className="font-mono text-muted">({ind.count} stocks &bull; {formatMarketCap(ind.marketCap)})</span>
-                    </span>
-                  ))}
-                  {sector.industries.length > 4 && (
-                    <span className="sub-ind-more text-muted">
-                      +{sector.industries.length - 4} more
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Sector Content (Collapsible) */}
-              {!isCollapsed && (
-                <div className="sector-content-body">
-                  {filteredTop10.length === 0 ? (
-                    <div className="empty-search-state">
-                      <p>No stocks in {sector.name} match "{searchQuery}"</p>
-                    </div>
-                  ) : layout === 'table' ? (
-                    /* Table View */
-                    <div
-                      className="table-wrapper"
-                      tabIndex={0}
-                      role="region"
-                      aria-label={`Top 10 Stocks in ${sector.name}`}
-                    >
-                      <table className="stocks-data-table">
-                        <thead>
-                          <tr>
-                            <th className="th-rank">
-                              <span className="th-desktop">Rank</span>
-                              <span className="th-mobile">#</span>
-                            </th>
-                            <th className="th-symbol">Company</th>
-                            <th className="th-industry">Sub-Industry</th>
-                            <th className="th-price">Price</th>
-                            <th className="th-change">1M Chg</th>
-                            <th className="th-qtr-change">
-                              <span className="th-desktop">Quarterly Chg</span>
-                              <span className="th-mobile">Qtr Chg</span>
-                            </th>
-                            <th className="th-mcap">
-                              <span className="th-desktop">Market Cap &amp; Weight</span>
-                              <span className="th-mobile">Mkt Cap</span>
-                            </th>
-                            <th className="th-range">52-Week Range</th>
-                            <th className="th-pe">P/E</th>
-                            <th className="th-action"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {filteredTop10.map((stock, idx) => (
-                            <StockRow
-                              key={stock.symbol}
-                              stock={stock}
-                              index={idx}
-                              onSelectStock={onSelectStock}
-                              sectorColor={sector.color}
-                            />
-                          ))}
-                        </tbody>
-                        <SectorTableSummaryFooter sector={sector} />
-                      </table>
-                    </div>
-                  ) : (
-                    /* Cards Grid View */
-                    <div className="grouped-cards-container">
-                      {innerGroup.length > 0 && (
-                        <div className="cards-tier-section inner-tier">
-                          <div className="tier-header">
-                            <div className="tier-header-left">
-                              <span className="tier-badge inner-tier-badge font-mono">
-                                ⭐ TOP 5 INNER GROUP
-                              </span>
-                              <span className="tier-title">{sector.name} Core Pillars</span>
-                            </div>
-                            <span className="tier-meta font-mono">
-                              Ranks #1 &ndash; #5 &bull; {currentQuarter?.label || 'Active Cycle'}
-                            </span>
-                          </div>
-                          <div className="stocks-cards-grid">
-                            {innerGroup.map((stock, idx) => (
-                              <StockCard
-                                key={stock.symbol}
-                                stock={stock}
-                                index={idx}
-                                onSelectStock={onSelectStock}
-                                sectorColor={sector.color}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {outerContenders.length > 0 && (
-                        <div className="cards-tier-section outer-tier">
-                          <div className="tier-header">
-                            <div className="tier-header-left">
-                              <span className="tier-badge outer-tier-badge font-mono">
-                                🎯 CONTENDERS &amp; CHALLENGERS
-                              </span>
-                              <span className="tier-title">Top 5 Watchlist</span>
-                            </div>
-                            <span className="tier-meta font-mono">Ranks #6 &ndash; #10</span>
-                          </div>
-                          <div className="stocks-cards-grid">
-                            {outerContenders.map((stock, idx) => (
-                              <StockCard
-                                key={stock.symbol}
-                                stock={stock}
-                                index={innerGroup.length + idx}
-                                onSelectStock={onSelectStock}
-                                sectorColor={sector.color}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
-            </section>
-          );
-        })}
+        {top5Sectors.map((sector) => (
+          <SectorSection
+            key={sector.name}
+            sector={sector}
+            isCollapsed={Boolean(collapsedSectors[sector.name])}
+            layout={layoutModes[sector.name] || 'table'}
+            searchQuery={searchQuery}
+            quarterLabel={currentQuarter?.label}
+            onSelectStock={onSelectStock}
+            onToggleCollapse={toggleCollapse}
+            onSetLayout={setSectorLayout}
+          />
+        ))}
       </div>
     </div>
   );
-};
+});

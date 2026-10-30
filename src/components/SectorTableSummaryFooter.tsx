@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import type { SectorData } from '../types';
 import { formatPercent } from '../utils/formatters';
 import { TrendingUp, TrendingDown } from 'lucide-react';
@@ -7,7 +7,7 @@ interface SectorTableSummaryFooterProps {
   sector: SectorData;
 }
 
-export const SectorTableSummaryFooter: React.FC<SectorTableSummaryFooterProps> = ({ sector }) => {
+export const SectorTableSummaryFooter: React.FC<SectorTableSummaryFooterProps> = memo(({ sector }) => {
   const isTop5M1Pos = sector.avgChangeTop5 >= 0;
   const isTop5QtrPos = sector.avgQtrChangeTop5 >= 0;
   const isTop10M1Pos = sector.avgChangeTop10 >= 0;
@@ -128,5 +128,5 @@ export const SectorTableSummaryFooter: React.FC<SectorTableSummaryFooterProps> =
       )}
     </tfoot>
   );
-};
+});
 

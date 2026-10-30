@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, memo } from 'react';
 import type { SectorData, Stock, QuarterInfo } from '../types';
 import {
   formatCurrency,
@@ -20,35 +20,251 @@ import {
 
 interface CapitalDistributionViewProps {
   top5Sectors: SectorData[];
+  allSectors?: SectorData[];
   onSelectStock: (stock: Stock) => void;
   currentQuarter?: QuarterInfo;
 }
 
-interface RankedSectorAllocation {
+interface RankedSectorBase {
   sector: SectorData;
   perfRank: number;        // 1 (best) .. 5 (worst)
   points: number;          // 5 .. 1
   sectorShare: number;     // points / 15
-  sectorCapital: number;   // capital * (points / 15)
-  perStockCapital: number; // sectorCapital / 5
+  stockCount: number;
   perStockWeightPct: number;
   stocksToBuy: Stock[];
+}
+
+interface RankedSectorAllocation extends RankedSectorBase {
+  sectorCapital: number;   // capital * (points / 15)
+  perStockCapital: number; // sectorCapital / 5
+}
+
+interface SellCandidate {
+  stock: Stock;
+  sector: SectorData;
+  exitReason: 'sector_exited' | 'stock_exited';
+  replacement: Stock | undefined;
+  replacementSector: SectorData | undefined;
 }
 
 const CAPITAL_STORAGE_KEY = 'snp500_investment_capital';
 const DEFAULT_CAPITAL = 10000;
 
+const INPUT_INT_FMT = new Intl.NumberFormat('en-US', {
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
+});
+
+const INPUT_DEC_FMT = new Intl.NumberFormat('en-US', {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
 function formatInputNumber(val: number): string {
   if (!val && val !== 0) return '';
   const hasDecimals = Math.round(val * 100) !== Math.round(val) * 100;
-  return val.toLocaleString('en-US', {
-    minimumFractionDigits: hasDecimals ? 2 : 0,
-    maximumFractionDigits: 2,
-  });
+  return hasDecimals ? INPUT_DEC_FMT.format(val) : INPUT_INT_FMT.format(val);
 }
 
-export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = ({
+interface AllocatorSellSectionProps {
+  stocksToSell: SellCandidate[];
+  currentQuarter?: QuarterInfo;
+  onSelectStock: (stock: Stock) => void;
+}
+
+const AllocatorSellSection: React.FC<AllocatorSellSectionProps> = memo(({
+  stocksToSell,
+  currentQuarter,
+  onSelectStock,
+}) => (
+  <section className="allocator-sell-section glass-panel">
+    <div className="allocator-section-header sell-header">
+      <div className="alloc-sec-title-group">
+        <div className="alloc-sec-title-row">
+          <AlertTriangle size={18} className="text-rose" />
+          <h2 className="alloc-sec-title">Stocks to Sell (Exited Top 5)</h2>
+          <span className="sell-count-badge font-mono">
+            {stocksToSell.length} {stocksToSell.length === 1 ? 'Stock' : 'Stocks'}
+          </span>
+        </div>
+        <p className="alloc-sec-subtitle">
+          Quarterly rebalance window active for{' '}
+          <strong>
+            {currentQuarter
+              ? `${currentQuarter.currentMonthName} (${currentQuarter.label} Month 1)`
+              : 'Month 1 of Quarter'}
+          </strong>
+          . Lists constituents that dropped out of a Top 5 sector&rsquo;s Top 5 rank, plus all
+          prior Top 5 holdings from any sector that exited the Top 5 industries since{' '}
+          {currentQuarter?.prevQuarterLabel || 'prior quarter'}.
+        </p>
+      </div>
+    </div>
+
+    {stocksToSell.length === 0 ? (
+      <div className="empty-sell-state font-mono">
+        No stocks exited the Top 5 rank across the 5 leading sectors this quarter.
+      </div>
+    ) : (
+      <div
+        className="table-wrapper"
+        tabIndex={0}
+        role="region"
+        aria-label="Stocks to Sell that exited Top 5 rank"
+      >
+        <table className="stocks-data-table allocator-sell-table">
+          <thead>
+            <tr>
+              <th className="sell-col-action">Action</th>
+              <th className="sell-col-symbol">Company</th>
+              <th className="sell-col-sector">Sector</th>
+              <th className="sell-col-rank">Rank Shift</th>
+              <th className="sell-col-replaced">Replaced By</th>
+              <th className="sell-col-price">Price</th>
+              <th className="sell-col-qtr">
+                <span className="th-desktop">Quarterly Chg</span>
+                <span className="th-mobile">Qtr Chg</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {stocksToSell.map(
+              ({ stock, sector, exitReason, replacement, replacementSector }) => {
+                const qtrVal = stock.perf3M ?? 0;
+                const isQtrPos = qtrVal >= 0;
+                const isSectorExit = exitReason === 'sector_exited';
+                return (
+                  <tr
+                    key={stock.symbol}
+                    className="stock-table-row row-exited-top5"
+                    onClick={() => onSelectStock(stock)}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`Sell ${stock.symbol} ${stock.name}`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        onSelectStock(stock);
+                      }
+                    }}
+                  >
+                    <td className="sell-col-action">
+                      <span className="action-order-pill sell font-mono">
+                        <ArrowDownRight size={11} />
+                        SELL
+                      </span>
+                    </td>
+
+                    <td className="sell-col-symbol">
+                      <div className="symbol-cell-content">
+                        <StockLogo symbol={stock.symbol} logoId={stock.logoId} />
+                        <div className="symbol-details">
+                          <div className="symbol-row">
+                            <span className="stock-symbol font-mono">{stock.symbol}</span>
+                            <span className="stock-exchange font-mono">{stock.exchange}</span>
+                          </div>
+                          <span className="stock-company-name" title={stock.name}>
+                            {stock.name}
+                          </span>
+                          <span className="stock-mobile-industry">
+                            {sector.name}
+                            {isSectorExit ? ' (Sector Exited)' : ''}
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className="sell-col-sector">
+                      <div className="alloc-sector-cell">
+                        <span className="alloc-sector-chip">
+                          <span
+                            className="spc-color-dot"
+                            style={{ backgroundColor: sector.color }}
+                          />
+                          <span>{sector.name}</span>
+                        </span>
+                        {isSectorExit && (
+                          <span className="sector-exit-sub font-mono text-rose">
+                            Sector Exited Top 5
+                          </span>
+                        )}
+                      </div>
+                    </td>
+
+                    <td className="sell-col-rank font-mono">
+                      {isSectorExit ? (
+                        <span
+                          className="rank-shift-badge text-rose"
+                          title={`${sector.name} dropped from Sector #${sector.prevQuarterRank} to Sector #${sector.rank} (stock was #${stock.prevQuarterRankInSector} in sector)`}
+                        >
+                          <span className="th-desktop">
+                            Sec #{sector.prevQuarterRank} &rarr; #{sector.rank}
+                          </span>
+                          <span className="th-mobile">
+                            S#{sector.prevQuarterRank}&rarr;#{sector.rank}
+                          </span>
+                        </span>
+                      ) : (
+                        <span className="rank-shift-badge text-rose">
+                          #{stock.prevQuarterRankInSector} &rarr; #{stock.rankInSector}
+                        </span>
+                      )}
+                    </td>
+
+                    <td className="sell-col-replaced font-mono">
+                      {isSectorExit && replacementSector ? (
+                        <span
+                          className="replacement-pill text-green"
+                          title={`Sector replaced by ${replacementSector.name} (Sector #${replacementSector.rank})`}
+                        >
+                          <ArrowUpRight size={12} />
+                          {replacement
+                            ? `${replacement.symbol} (${replacementSector.name})`
+                            : `${replacementSector.name} (Sec #${replacementSector.rank})`}
+                        </span>
+                      ) : replacement ? (
+                        <span className="replacement-pill text-green">
+                          <ArrowUpRight size={12} />
+                          {replacement.symbol} (#{replacement.rankInSector})
+                        </span>
+                      ) : (
+                        <span className="text-muted">—</span>
+                      )}
+                    </td>
+
+                    <td className="sell-col-price font-mono">
+                      {formatPrice(stock.price)}
+                    </td>
+
+                    <td className="sell-col-qtr">
+                      {stock.perf3M !== null && stock.perf3M !== undefined ? (
+                        <span
+                          className={`change-pill font-mono ${
+                            isQtrPos ? 'positive' : 'negative'
+                          }`}
+                        >
+                          {isQtrPos ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
+                          {formatPercent(stock.perf3M)}
+                        </span>
+                      ) : (
+                        <span className="text-muted font-mono">—</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              }
+            )}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </section>
+));
+
+export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = memo(({
   top5Sectors,
+  allSectors,
   onSelectStock,
   currentQuarter,
 }) => {
@@ -95,8 +311,8 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
   };
 
   // Rank the 5 sectors by previous quarter % change (Top 5 market-cap-weighted quarterly move)
-  // Best = 5 pts down to Worst = 1 pt, divided by 15 total points
-  const rankedAllocations = useMemo<RankedSectorAllocation[]>(() => {
+  // Best = 5 pts down to Worst = 1 pt, divided by 15 total points (independent of numericCapital)
+  const rankedSectorBases = useMemo<RankedSectorBase[]>(() => {
     if (top5Sectors.length === 0) return [];
 
     const sorted = [...top5Sectors].sort(
@@ -106,33 +322,41 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
     );
 
     const n = sorted.length;
-    const totalPoints = (n * (n + 1)) / 2; // 15 when n = 5
+    const totalPts = (n * (n + 1)) / 2; // 15 when n = 5
 
     return sorted.map((sector, idx) => {
       const points = n - idx; // 5, 4, 3, 2, 1
-      const sectorShare = totalPoints > 0 ? points / totalPoints : 0;
-      const sectorCapital = numericCapital * sectorShare;
+      const sectorShare = totalPts > 0 ? points / totalPts : 0;
       const stocksToBuy = sector.innerTop5Stocks.slice(0, 5);
-      const count = stocksToBuy.length || 5;
-      const perStockCapital = sectorCapital / count;
-      const perStockWeightPct = (sectorShare / count) * 100;
+      const stockCount = stocksToBuy.length || 5;
+      const perStockWeightPct = (sectorShare / stockCount) * 100;
 
       return {
         sector,
         perfRank: idx + 1,
         points,
         sectorShare,
-        sectorCapital,
-        perStockCapital,
+        stockCount,
         perStockWeightPct,
         stocksToBuy,
       };
     });
-  }, [top5Sectors, numericCapital]);
+  }, [top5Sectors]);
+
+  const rankedAllocations = useMemo<RankedSectorAllocation[]>(() => {
+    return rankedSectorBases.map((base) => {
+      const sectorCapital = numericCapital * base.sectorShare;
+      return {
+        ...base,
+        sectorCapital,
+        perStockCapital: sectorCapital / base.stockCount,
+      };
+    });
+  }, [rankedSectorBases, numericCapital]);
 
   const totalPoints = useMemo(
-    () => rankedAllocations.reduce((sum, item) => sum + item.points, 0),
-    [rankedAllocations]
+    () => rankedSectorBases.reduce((sum, item) => sum + item.points, 0),
+    [rankedSectorBases]
   );
 
   // Flatten all 25 stocks to buy in point-rank order
@@ -160,27 +384,71 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
     ? currentQuarter.isFirstMonthOfQuarter
     : fallbackFirstMonth;
 
-  // Stocks that exited the Top 5 rank across the 5 leading sectors
-  const stocksToSell = useMemo(() => {
+  // Stocks to sell at quarterly rebalance (Month 1 of Quarter):
+  // Any stock held last quarter (sector prevQuarterRank <= 5 AND stock prevQuarterRankInSector <= 5)
+  // that is no longer held this quarter (sector.rank > 5 OR stock rankInSector > 5).
+  const stocksToSell = useMemo<SellCandidate[]>(() => {
     if (!isFirstMonthOfQuarter) return [];
 
-    return top5Sectors.flatMap((sector) => {
+    const sectorsPool = allSectors && allSectors.length > 0 ? allSectors : top5Sectors;
+    const newlyEnteredSectors = top5Sectors.filter(
+      (sec) => sec.top5SectorQuarterStatus === 'entered'
+    );
+    const exitedSectors = sectorsPool.filter(
+      (sec) => (sec.prevQuarterRank ?? sec.rank) <= 5 && sec.rank > 5
+    );
+    const exitedSectorReplacementMap = new Map<string, SectorData | undefined>();
+    exitedSectors.forEach((sec, idx) => {
+      exitedSectorReplacementMap.set(
+        sec.name,
+        newlyEnteredSectors[idx] || newlyEnteredSectors[0]
+      );
+    });
+
+    return sectorsPool.flatMap<SellCandidate>((sector) => {
+      const wasSectorInTop5 = (sector.prevQuarterRank ?? sector.rank) <= 5;
+      if (!wasSectorInTop5) return [];
+
+      const isSectorInTop5 = sector.rank <= 5;
+
+      // Case 1: Entire sector exited the Top 5 industries -> sell all 5 of its prior Top 5 stocks
+      if (!isSectorInTop5) {
+        const replacementSector = exitedSectorReplacementMap.get(sector.name);
+        return [...sector.stocks]
+          .filter((s) => (s.prevQuarterRankInSector ?? s.rankInSector ?? 999) <= 5)
+          .sort(
+            (a, b) =>
+              (a.prevQuarterRankInSector ?? 999) - (b.prevQuarterRankInSector ?? 999)
+          )
+          .map((stock, idx) => ({
+            stock,
+            sector,
+            exitReason: 'sector_exited' as const,
+            replacement: replacementSector?.innerTop5Stocks[idx],
+            replacementSector,
+          }));
+      }
+
+      // Case 2: Sector stayed in Top 5 -> sell stocks that dropped out of this sector's Top 5
       const entrants = sector.innerTop5Stocks.filter(
         (s) => s.top5QuarterStatus === 'entered'
       );
 
       return sector.stocks
-        .filter((s) => s.top5QuarterStatus === 'exited')
-        .map((stock, exitedIdx) => {
-          const replacement = entrants[exitedIdx] || entrants[0];
-          return {
-            stock,
-            sector,
-            replacement,
-          };
-        });
+        .filter(
+          (s) =>
+            (s.prevQuarterRankInSector ?? s.rankInSector ?? 999) <= 5 &&
+            (s.rankInSector ?? 999) > 5
+        )
+        .map((stock, exitedIdx) => ({
+          stock,
+          sector,
+          exitReason: 'stock_exited' as const,
+          replacement: entrants[exitedIdx] || entrants[0],
+          replacementSector: undefined,
+        }));
     });
-  }, [top5Sectors, isFirstMonthOfQuarter]);
+  }, [allSectors, top5Sectors, isFirstMonthOfQuarter]);
 
   return (
     <div className="allocator-view-container">
@@ -318,150 +586,11 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
 
       {/* First Month of Quarter Only: Stocks to Sell (Exited Top 5) */}
       {isFirstMonthOfQuarter && (
-        <section className="allocator-sell-section glass-panel">
-          <div className="allocator-section-header sell-header">
-            <div className="alloc-sec-title-group">
-              <div className="alloc-sec-title-row">
-                <AlertTriangle size={18} className="text-rose" />
-                <h2 className="alloc-sec-title">Stocks to Sell (Exited Top 5)</h2>
-                <span className="sell-count-badge font-mono">
-                  {stocksToSell.length} {stocksToSell.length === 1 ? 'Stock' : 'Stocks'}
-                </span>
-              </div>
-              <p className="alloc-sec-subtitle">
-                Quarterly rebalance window active for{' '}
-                <strong>
-                  {currentQuarter
-                    ? `${currentQuarter.currentMonthName} (${currentQuarter.label} Month 1)`
-                    : 'Month 1 of Quarter'}
-                </strong>
-                . These constituents dropped out of their sector&rsquo;s Top 5 rank since{' '}
-                {currentQuarter?.prevQuarterLabel || 'prior quarter'}.
-              </p>
-            </div>
-          </div>
-
-          {stocksToSell.length === 0 ? (
-            <div className="empty-sell-state font-mono">
-              No stocks exited the Top 5 rank across the 5 leading sectors this quarter.
-            </div>
-          ) : (
-            <div
-              className="table-wrapper"
-              tabIndex={0}
-              role="region"
-              aria-label="Stocks to Sell that exited Top 5 rank"
-            >
-              <table className="stocks-data-table allocator-sell-table">
-                <thead>
-                  <tr>
-                    <th className="sell-col-action">Action</th>
-                    <th className="sell-col-symbol">Company</th>
-                    <th className="sell-col-sector">Sector</th>
-                    <th className="sell-col-rank">Rank Shift</th>
-                    <th className="sell-col-replaced">Replaced By</th>
-                    <th className="sell-col-price">Price</th>
-                    <th className="sell-col-qtr">
-                      <span className="th-desktop">Quarterly Chg</span>
-                      <span className="th-mobile">Qtr Chg</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {stocksToSell.map(({ stock, sector, replacement }) => {
-                    const qtrVal = stock.perf3M ?? 0;
-                    const isQtrPos = qtrVal >= 0;
-                    return (
-                      <tr
-                        key={stock.symbol}
-                        className="stock-table-row row-exited-top5"
-                        onClick={() => onSelectStock(stock)}
-                        tabIndex={0}
-                        role="button"
-                        aria-label={`Sell ${stock.symbol} ${stock.name}`}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            onSelectStock(stock);
-                          }
-                        }}
-                      >
-                        <td className="sell-col-action">
-                          <span className="action-order-pill sell font-mono">
-                            <ArrowDownRight size={11} />
-                            SELL
-                          </span>
-                        </td>
-
-                        <td className="sell-col-symbol">
-                          <div className="symbol-cell-content">
-                            <StockLogo symbol={stock.symbol} logoId={stock.logoId} />
-                            <div className="symbol-details">
-                              <div className="symbol-row">
-                                <span className="stock-symbol font-mono">{stock.symbol}</span>
-                                <span className="stock-exchange font-mono">{stock.exchange}</span>
-                              </div>
-                              <span className="stock-company-name" title={stock.name}>
-                                {stock.name}
-                              </span>
-                              <span className="stock-mobile-industry">{sector.name}</span>
-                            </div>
-                          </div>
-                        </td>
-
-                        <td className="sell-col-sector">
-                          <span className="alloc-sector-chip">
-                            <span
-                              className="spc-color-dot"
-                              style={{ backgroundColor: sector.color }}
-                            />
-                            <span>{sector.name}</span>
-                          </span>
-                        </td>
-
-                        <td className="sell-col-rank font-mono">
-                          <span className="rank-shift-badge text-rose">
-                            #{stock.prevQuarterRankInSector} &rarr; #{stock.rankInSector}
-                          </span>
-                        </td>
-
-                        <td className="sell-col-replaced font-mono">
-                          {replacement ? (
-                            <span className="replacement-pill text-green">
-                              <ArrowUpRight size={12} />
-                              {replacement.symbol} (#{replacement.rankInSector})
-                            </span>
-                          ) : (
-                            <span className="text-muted">—</span>
-                          )}
-                        </td>
-
-                        <td className="sell-col-price font-mono">
-                          {formatPrice(stock.price)}
-                        </td>
-
-                        <td className="sell-col-qtr">
-                          {stock.perf3M !== null && stock.perf3M !== undefined ? (
-                            <span
-                              className={`change-pill font-mono ${
-                                isQtrPos ? 'positive' : 'negative'
-                              }`}
-                            >
-                              {isQtrPos ? <TrendingUp size={13} /> : <TrendingDown size={13} />}
-                              {formatPercent(stock.perf3M)}
-                            </span>
-                          ) : (
-                            <span className="text-muted font-mono">—</span>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </section>
+        <AllocatorSellSection
+          stocksToSell={stocksToSell}
+          currentQuarter={currentQuarter}
+          onSelectStock={onSelectStock}
+        />
       )}
 
       {/* 25 Stocks to Buy Table */}
@@ -512,7 +641,8 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
             </thead>
             <tbody>
               {buyList.map(({ order, stock, alloc, estShares }) => {
-                const isEntered = stock.top5QuarterStatus === 'entered';
+                const isNewSector = alloc.sector.top5SectorQuarterStatus === 'entered';
+                const isEntered = stock.top5QuarterStatus === 'entered' || isNewSector;
                 const qtrVal = stock.perf3M ?? 0;
                 const isQtrPos = qtrVal >= 0;
 
@@ -559,10 +689,16 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
                             {isEntered && (
                               <span
                                 className="quarter-status-pill entered font-mono"
-                                title={`Entered Top 5 this quarter (was #${stock.prevQuarterRankInSector})`}
+                                title={
+                                  isNewSector
+                                    ? `${alloc.sector.name} entered Top 5 sectors this quarter (was #${alloc.sector.prevQuarterRank})`
+                                    : `Entered Top 5 this quarter (was #${stock.prevQuarterRankInSector})`
+                                }
                               >
                                 <ArrowUpRight size={10} />
-                                <span className="pill-text-desktop">NEW</span>
+                                <span className="pill-text-desktop">
+                                  {isNewSector ? 'NEW SECTOR' : 'NEW'}
+                                </span>
                                 <span className="pill-text-mobile">IN</span>
                               </span>
                             )}
@@ -683,4 +819,4 @@ export const CapitalDistributionView: React.FC<CapitalDistributionViewProps> = (
       </section>
     </div>
   );
-};
+});

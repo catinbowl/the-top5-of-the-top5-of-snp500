@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ExternalLink } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC = memo(() => {
   return (
     <footer className="app-footer">
       <div className="footer-content">
@@ -43,4 +43,4 @@ export const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+});

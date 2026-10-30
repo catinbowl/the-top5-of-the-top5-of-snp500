@@ -27,9 +27,9 @@ export const App: React.FC = () => {
     localStorage.setItem('snp500_theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
+  }, []);
 
   // Stocks state initialized with pre-baked high-accuracy snapshot
   const [stocks, setStocks] = useState<Stock[]>(snapshotData.stocks as Stock[]);
@@ -46,6 +46,14 @@ export const App: React.FC = () => {
   const searchQuery = '';
   const [selectedStock, setSelectedStock] = useState<Stock | null>(null);
 
+  const handleToggleAutoRefresh = useCallback(() => {
+    setAutoRefresh((prev) => !prev);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setSelectedStock(null);
+  }, []);
+
   useEffect(() => {
     const onHashChange = () => {
       setCurrentView(window.location.hash === '#allocator' ? 'allocator' : 'top5');
@@ -54,14 +62,14 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  const handleViewChange = (view: ViewMode) => {
+  const handleViewChange = useCallback((view: ViewMode) => {
     setCurrentView(view);
     if (view === 'allocator') {
       window.history.replaceState(null, '', '#allocator');
     } else {
       window.history.replaceState(null, '', window.location.pathname + window.location.search);
     }
-  };
+  }, []);
 
   // Compute processed hierarchy: Top 5 Industries and Top 10 Stocks
   const processed = useMemo(() => {
@@ -115,7 +123,7 @@ export const App: React.FC = () => {
         isLiveLoading={isLiveLoading}
         onRefresh={handleRefresh}
         autoRefresh={autoRefresh}
-        onToggleAutoRefresh={() => setAutoRefresh((prev) => !prev)}
+        onToggleAutoRefresh={handleToggleAutoRefresh}
         isLiveOnline={isLiveOnline}
         liveError={liveError}
         theme={theme}
@@ -165,6 +173,7 @@ export const App: React.FC = () => {
         {currentView === 'allocator' && (
           <CapitalDistributionView
             top5Sectors={processed.top5Sectors}
+            allSectors={processed.allSectors}
             onSelectStock={setSelectedStock}
             currentQuarter={processed.currentQuarter}
           />
@@ -199,7 +208,7 @@ export const App: React.FC = () => {
       {/* Interactive Stock Detail Modal */}
       <StockDetailModal
         stock={selectedStock}
-        onClose={() => setSelectedStock(null)}
+        onClose={handleCloseModal}
         theme={theme}
       />
 

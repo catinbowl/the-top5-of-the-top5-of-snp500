@@ -112,12 +112,18 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
 
   // Build sector data objects
   const sectorList: SectorData[] = [];
+  const prevSectorCapMap = new Map<string, number>();
 
   for (const [secName, stocksInSector] of sectorMap.entries()) {
     // Sort stocks in sector by market cap
     stocksInSector.sort((a, b) => b.marketCap - a.marketCap);
 
     const totalSectorMarketCap = stocksInSector.reduce((sum, s) => sum + s.marketCap, 0);
+    const prevSectorMarketCap = stocksInSector.reduce((sum, s) => {
+      const p3m = typeof s.perf3M === 'number' ? s.perf3M : 0;
+      return sum + (p3m > -99.99 ? s.marketCap / (1 + p3m / 100) : s.marketCap);
+    }, 0);
+    prevSectorCapMap.set(secName, prevSectorMarketCap);
 
     // Market-cap-weighted performance calculation (1-month & quarterly)
     const calcWeightedMove = (
@@ -233,6 +239,9 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
     sectorList.push({
       name: secName,
       rank: 0, // Assigned after sorting
+      prevQuarterRank: 0, // Assigned after sorting
+      quarterlySectorRankDelta: 0,
+      top5SectorQuarterStatus: 'contender',
       totalMarketCap: totalSectorMarketCap,
       stockCount: stocksInSector.length,
       avgChange,
@@ -257,10 +266,33 @@ export function processStockData(rawStocks: Stock[], deduplicateDualClass = true
     });
   }
 
+  // Determine prior-quarter sector ranks by prior-quarter market cap descending
+  const sectorsByPrevCap = [...sectorList].sort(
+    (a, b) => (prevSectorCapMap.get(b.name) ?? 0) - (prevSectorCapMap.get(a.name) ?? 0)
+  );
+  const prevSectorRankMap = new Map<string, number>();
+  sectorsByPrevCap.forEach((sec, idx) => {
+    prevSectorRankMap.set(sec.name, idx + 1);
+  });
+
   // Sort sectors by Total Market Cap descending (Rank #1 down to #19+)
   sectorList.sort((a, b) => b.totalMarketCap - a.totalMarketCap);
   sectorList.forEach((sec, idx) => {
-    sec.rank = idx + 1;
+    const curRank = idx + 1;
+    const prevRank = prevSectorRankMap.get(sec.name) ?? curRank;
+    sec.rank = curRank;
+    sec.prevQuarterRank = prevRank;
+    sec.quarterlySectorRankDelta = prevRank - curRank;
+
+    if (curRank <= 5 && prevRank > 5) {
+      sec.top5SectorQuarterStatus = 'entered';
+    } else if (curRank > 5 && prevRank <= 5) {
+      sec.top5SectorQuarterStatus = 'exited';
+    } else if (curRank <= 5 && prevRank <= 5) {
+      sec.top5SectorQuarterStatus = 'retained';
+    } else {
+      sec.top5SectorQuarterStatus = 'contender';
+    }
   });
 
   const top5Sectors = sectorList.slice(0, 5);

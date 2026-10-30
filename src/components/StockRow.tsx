@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import type { Stock } from '../types';
 import { formatMarketCap, formatPrice, formatPercent } from '../utils/formatters';
 import { TrendingUp, TrendingDown, ChevronRight, ArrowUpRight, ArrowDownRight } from 'lucide-react';
@@ -11,7 +11,7 @@ interface StockRowProps {
   sectorColor?: string;
 }
 
-export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock, sectorColor }) => {
+export const StockRow: React.FC<StockRowProps> = memo(({ stock, index, onSelectStock, sectorColor }) => {
   const monthlyChange = stock.perf1M ?? stock.change;
   const isPositive = monthlyChange >= 0;
   const quarterlyChange = stock.perf3M;
@@ -196,4 +196,4 @@ export const StockRow: React.FC<StockRowProps> = ({ stock, index, onSelectStock,
       </td>
     </tr>
   );
-};
+});

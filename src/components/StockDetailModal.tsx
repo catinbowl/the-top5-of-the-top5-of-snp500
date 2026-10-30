@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import type { Stock } from '../types';
 import { formatMarketCap, formatPrice, formatPercent, formatVolume } from '../utils/formatters';
 import { StockLogo } from './StockLogo';
@@ -17,9 +17,10 @@ interface StockDetailModalProps {
   theme: 'dark' | 'light';
 }
 
-export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClose, theme }) => {
-  // Close on Escape key press
+export const StockDetailModal: React.FC<StockDetailModalProps> = memo(({ stock, onClose, theme }) => {
+  // Close on Escape key press only while modal is open
   useEffect(() => {
+    if (!stock) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
@@ -27,7 +28,7 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  }, [stock, onClose]);
 
   if (!stock) return null;
 
@@ -291,4 +292,4 @@ export const StockDetailModal: React.FC<StockDetailModalProps> = ({ stock, onClo
       </div>
     </div>
   );
-};
+});

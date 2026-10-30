@@ -1,3 +1,13 @@
+const INT_FMT = new Intl.NumberFormat('en-US');
+const PRICE_FMT = new Intl.NumberFormat('en-US', {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+const SHARES_4_FMT = new Intl.NumberFormat('en-US', {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 4,
+});
+
 export function formatMarketCap(val: number): string {
   if (!val || isNaN(val)) return '$0';
   if (val >= 1e12) {
@@ -9,23 +19,23 @@ export function formatMarketCap(val: number): string {
   if (val >= 1e6) {
     return `$${(val / 1e6).toFixed(1)}M`;
   }
-  return `$${val.toLocaleString()}`;
+  return `$${INT_FMT.format(val)}`;
 }
 
 export function formatPrice(price: number): string {
   if (price === undefined || price === null || isNaN(price)) return '$0.00';
-  return `$${price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `$${PRICE_FMT.format(price)}`;
 }
 
 export function formatCurrency(amount: number): string {
   if (amount === undefined || amount === null || isNaN(amount)) return '$0.00';
-  return `$${amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `$${PRICE_FMT.format(amount)}`;
 }
 
 export function formatShares(shares: number): string {
   if (!shares || isNaN(shares) || !isFinite(shares)) return '0';
-  if (shares >= 100) return shares.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  return shares.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+  if (shares >= 100) return PRICE_FMT.format(shares);
+  return SHARES_4_FMT.format(shares);
 }
 
 export function formatPercent(val: number | null | undefined, includeSign = true): string {
@@ -39,7 +49,7 @@ export function formatVolume(val: number): string {
   if (val >= 1e9) return `${(val / 1e9).toFixed(2)}B`;
   if (val >= 1e6) return `${(val / 1e6).toFixed(1)}M`;
   if (val >= 1e3) return `${(val / 1e3).toFixed(1)}K`;
-  return val.toLocaleString();
+  return INT_FMT.format(val);
 }
 
 export function getLogoUrl(logoId: string | null): string | null {

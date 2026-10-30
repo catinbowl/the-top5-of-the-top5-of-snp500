@@ -51,6 +51,9 @@ export interface IndustryGroup {
 export interface SectorData {
   name: string;
   rank: number;
+  prevQuarterRank: number;
+  quarterlySectorRankDelta: number;
+  top5SectorQuarterStatus: Top5QuarterStatus;
   totalMarketCap: number;
   stockCount: number;
   avgChange: number;

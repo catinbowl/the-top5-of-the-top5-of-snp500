@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { getLogoUrl } from '../utils/formatters';
 
 interface StockLogoProps {
@@ -9,19 +9,16 @@ interface StockLogoProps {
   fallbackClassName?: string;
 }
 
-export const StockLogo: React.FC<StockLogoProps> = ({
+export const StockLogo: React.FC<StockLogoProps> = memo(({
   symbol,
   logoId,
   className = 'stock-logo-wrap',
   imgClassName = 'stock-logo-img',
   fallbackClassName = 'stock-logo-fallback font-mono',
 }) => {
-  const [hasError, setHasError] = useState(false);
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
   const logoUrl = getLogoUrl(logoId);
-
-  React.useEffect(() => {
-    setHasError(false);
-  }, [logoId, symbol]);
+  const hasError = logoUrl !== null && failedUrl === logoUrl;
 
   return (
     <div className={className}>
@@ -30,12 +27,15 @@ export const StockLogo: React.FC<StockLogoProps> = ({
           src={logoUrl}
           alt={`${symbol} logo`}
           className={imgClassName}
+          width={32}
+          height={32}
           loading="lazy"
-          onError={() => setHasError(true)}
+          decoding="async"
+          onError={() => setFailedUrl(logoUrl)}
         />
       ) : (
         <span className={fallbackClassName}>{symbol.slice(0, 2)}</span>
       )}
     </div>
   );
-};
+});

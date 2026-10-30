@@ -28,14 +28,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.85rem 1.75rem;
-  background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--bg-card-solid);
   border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
   z-index: 50;
   box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  .navbar-container {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
 
 .navbar-left {
@@ -142,8 +148,7 @@
 
 .pulse-dot.online {
   background-color: var(--emerald-accent);
-  box-shadow: 0 0 10px var(--emerald-glow);
-  animation: pulse-glow 2s infinite;
+  animation: pulse-glow 2.4s ease-in-out infinite;
 }
 
 .pulse-dot.after-hours {
@@ -619,6 +624,21 @@
   border-top: 3px solid var(--sector-color, var(--cyan-accent));
 }
 
+/* Defer layout/paint for below-the-fold sector panels (#2-#5); keep #1 above the fold immediate */
+.sectors-stack > .sector-section:nth-child(n + 2) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 740px;
+}
+
+.sectors-stack > .sector-section.is-collapsed:nth-child(n + 2) {
+  contain-intrinsic-size: auto none auto 132px;
+}
+
+.all19-list > .sector-row-item:nth-child(n + 8) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 76px;
+}
+
 /* Sector Header */
 .sector-header {
   display: flex;
@@ -820,7 +840,6 @@
 .table-wrapper {
   overflow-x: auto;
   max-width: 100%;
-  container-type: inline-size;
 }
 
 .stocks-data-table {
@@ -831,10 +850,7 @@
 }
 
 .stocks-data-table thead {
-  position: sticky;
-  top: 0;
   background: var(--bg-card-solid);
-  z-index: 5;
 }
 
 .stocks-data-table th {
@@ -1739,15 +1755,21 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(5, 8, 15, 0.84);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
   padding: 1.5rem;
   animation: modal-fade-in 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 @keyframes modal-fade-in {
@@ -2278,30 +2300,35 @@
 }
 
 .live-pulsing-dot {
+  position: relative;
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--green-accent);
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  animation: livePulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  background: var(--emerald-accent);
   display: inline-block;
   flex-shrink: 0;
 }
 
+.live-pulsing-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--emerald-accent);
+  animation: livePulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  pointer-events: none;
+}
+
 @keyframes livePulse {
   0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
-
-  70% {
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    opacity: 0.7;
   }
 
+  75%,
   100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    transform: scale(2.5);
+    opacity: 0;
   }
 }
 
@@ -3022,6 +3049,13 @@
 .alloc-points-sub {
   font-size: 0.68rem;
   color: var(--text-muted);
+}
+
+.sector-exit-sub {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .rank-shift-badge {
@@ -3892,5 +3926,31 @@
 
   td.sell-col-qtr {
     text-align: right !important;
+  }
+
+  /* Low-end mobile GPU optimizations: match mobile intrinsic heights & trim heavy blurred shadows */
+  .sectors-stack > .sector-section:nth-child(n + 2) {
+    contain-intrinsic-size: auto none auto 590px;
+  }
+
+  .sectors-stack > .sector-section.is-collapsed:nth-child(n + 2) {
+    contain-intrinsic-size: auto none auto 150px;
+  }
+
+  .glass-panel {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .logo-icon-wrap,
+  .sector-rank-badge,
+  .quarter-nav-pill {
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot.online,
+  .live-pulsing-dot::after {
+    animation: none;
   }
 }
